@@ -49,21 +49,9 @@ function createDir {
 	[ -d $1 ] || mkdir -p $1
 }
 
-function removeDir {
-
-	[ -d $1 ] && rm -rf $1
-}
-
-function removeFile {
-
-	[ -f $1 ] && rm -f $1
-}
-
 function symlinkFile {
 
-	removeFile $2
-
-	ln -s $1 $2
+	ln -sf $1 $2
 }
 
 function symlinkConfigDir {
@@ -71,9 +59,7 @@ function symlinkConfigDir {
 	local configPath="${HOME}/.config/${1}"
 	local dotfileConfigPath="${PWD}/config/${1}"
 
-	[ -d $configPath ] && removeDir $configPath
-
-	ln -s $dotfileConfigPath $configPath
+	ln -sfn $dotfileConfigPath $configPath
 }
 
 function symlinkZshCustomFile {
@@ -81,9 +67,7 @@ function symlinkZshCustomFile {
 	local zshCustomPath="${HOME}/.config/zsh_custom/${1}"
 	local homePath="${HOME}/${1}"
 
-	[ -f $homePath ] && removeFile $homePath
-
-	ln -s $zshCustomPath $homePath
+	ln -sf $zshCustomPath $homePath
 }
 
 function gitDownload {
