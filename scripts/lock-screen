@@ -1,0 +1,35 @@
+#!/bin/bash
+
+BLUE_1="#2E3440"
+BLUE_2="#4C566A"
+RED="#BF616A"
+ORANGE="#D08770"
+WHITE="#D8DEE9"
+
+[ -f "/tmp/lock-screenshot.png" ] && rm -f /tmp/lock-screenshot.png
+scrot /tmp/lock-screenshot.png
+
+[ -f "/tmp/lock-screenshot-blurred.png" ] && rm -f /tmp/lock-screenshot-blurred.png
+convert /tmp/lock-screenshot.png -blur 0x5 /tmp/lock-screenshot-blurred.png
+
+i3lock -i /tmp/lock-screenshot-blurred.png \
+--insidever-color=$ORANGE \
+--ringver-color=$ORANGE \
+--insidewrong-color=$RED \
+--ringwrong-color=$RED \
+--inside-color=$BLUE_1 \
+--ring-color=$BLUE_1 \
+--line-color=$BLUE_2 \
+--separator-color=$BLUE_1 \
+--verif-color=$ORANGE \
+--wrong-color=$RED \
+--time-color=$WHITE \
+--date-color=$WHITE \
+--layout-color=$WHITE \
+--keyhl-color=$ORANGE \
+--bshl-color=$RED \
+--clock \
+--indicator \
+--time-str="%H:%M" \
+--date-str="%d-%m-%Y" \
+--keylayout 1 \

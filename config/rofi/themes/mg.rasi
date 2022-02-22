@@ -1,0 +1,92 @@
+
+* {
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    bg0:    #2E3440CC;  // Nord, polar night 1 - 60% transparency
+    bg1:    #3B4252;    // Nord, polar night 2
+    bg2:    #3D3D3D80;
+	bg3:	#4C566A;    // Nord, polar night 4
+	bg4:	#A3BE8C;    // Nord, aurora green
+
+    fg0:    #E5E9F0;    // Nord, snow storm white 2
+    fg2:    #D08770;    // Nord, aurora orange
+    fg3:    @bg1;
+	fg4:	#000000;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+window {
+    location:       center;
+    width:          600;
+    y-offset:       -200;
+	border-color:	@bg3;
+	border:			2px;
+    border-radius:  3px;
+
+    background-color:   @bg0;
+}
+
+mainbox {
+    padding:    12px;
+}
+
+inputbar {
+    padding:    8px 0px;
+    spacing:    8px;
+    children:   [ prompt, entry ];
+}
+
+prompt {
+    text-color: @fg2;
+}
+
+entry { }
+
+message {
+    margin:             12px 0 0;
+    border-radius:      0px;
+    border-color:       @bg2;
+    background-color:   @bg2;
+}
+
+textbox {
+    padding:    8px 24px;
+}
+
+listview {
+    background-color:   transparent;
+
+    margin:     12px 0 0;
+    lines:      10;
+    columns:    1;
+
+    fixed-height: false;
+}
+
+element {
+    padding:        5px 10px;
+    spacing:        10px;
+    border-radius:  3px;
+}
+
+element normal active {
+    text-color: @bg3;
+}
+
+element selected normal, element selected active {
+	text-color:	@fg4;
+    background-color:   @bg4;
+}
+
+element-icon {
+    size:           1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+}
