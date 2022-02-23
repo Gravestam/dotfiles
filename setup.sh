@@ -43,6 +43,7 @@ pkgs=(
 	"rofimoji"
 	"noto-fonts-emoji"
 	"blueman"
+	"celluloid"
 )
 
 function createDir {
