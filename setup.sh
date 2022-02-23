@@ -129,9 +129,9 @@ speak "-- DONE"
 space 2
 speak "-- CREATING REQUIRED DIRECTORIES"
 
-echo "Creating: ${HOME}/.config" & createDir "${HOME}/.config"
-echo "Creating: ${HOME}/.fonts" & createDir "${HOME}/.fonts"
-echo "Creating: ${HOME}/zsh_extensions" & createDir "${HOME}/zsh_extensions"
+createDir "${HOME}/.config"
+createDir "${HOME}/.fonts"
+createDir "${HOME}/zsh_extensions"
 
 speak "-- DONE"
 
@@ -139,10 +139,10 @@ speak "-- DONE"
 space 2
 speak "-- DOWNLOADING ZSH EXTENSIONS"
 
-echo "Downloading: powerlevel10k" & gitDownload "romkatv/powerlevel10k.git" "${HOME}/zsh_extensions/powerlevel10k"
-echo "Downloading: zsh-autosuggestions" & gitDownload "zsh-users/zsh-autosuggestions.git" "${HOME}/zsh_extensions/zsh-autosuggestions"
-echo "Downloading: zsh-syntax-highlighting" & gitDownload "zsh-users/zsh-syntax-highlighting.git" "${HOME}/zsh_extensions/zsh-syntax-highlighting"
-echo "Downloading: fzf" & gitDownload "junegunn/fzf.git" "${HOME}/zsh_extensions/fzf"
+gitDownload "romkatv/powerlevel10k.git" "${HOME}/zsh_extensions/powerlevel10k"
+gitDownload "zsh-users/zsh-autosuggestions.git" "${HOME}/zsh_extensions/zsh-autosuggestions"
+gitDownload "zsh-users/zsh-syntax-highlighting.git" "${HOME}/zsh_extensions/zsh-syntax-highlighting"
+gitDownload "junegunn/fzf.git" "${HOME}/zsh_extensions/fzf"
 
 speak "-- DONE"
 
@@ -150,14 +150,14 @@ speak "-- DONE"
 space 2
 speak "-- LINKING DIRECTORIES"
 
-echo "Linking: awesome" & symlinkConfigDir "awesome"
-echo "Linking: alacritty" & symlinkConfigDir "alacritty"
-echo "Linking: flameshot" & symlinkConfigDir "flameshot"
-echo "Linking: neofetch" & symlinkConfigDir "neofetch"
-echo "Linking: nvim" & symlinkConfigDir "nvim"
-echo "Linking: picom" & symlinkConfigDir "picom"
-echo "Linking: rofi" & symlinkConfigDir "rofi"
-echo "Linking: zsh_custom" & symlinkConfigDir "zsh_custom"
+symlinkConfigDir "awesome"
+symlinkConfigDir "alacritty"
+symlinkConfigDir "flameshot"
+symlinkConfigDir "neofetch"
+symlinkConfigDir "nvim"
+symlinkConfigDir "picom"
+symlinkConfigDir "rofi"
+symlinkConfigDir "zsh_custom"
 
 speak "-- DONE"
 
@@ -165,11 +165,11 @@ speak "-- DONE"
 space 2
 speak "-- LINKING FILES"
 
-echo "Linking: .zshrc" & symlinkZshCustomFile ".zshrc"
-echo "Linking: .p10k.zsh" & symlinkZshCustomFile ".p10k.zsh"
-echo "Linking: .fzf.zsh" & symlinkZshCustomFile ".fzf.zsh"
+symlinkZshCustomFile ".zshrc"
+symlinkZshCustomFile ".p10k.zsh"
+symlinkZshCustomFile ".fzf.zsh"
 
-echo "Linking: .xprofile" & symlinkFile "${PWD}/misc/.xprofile" "${HOME}/.xprofile"
+symlinkFile "${PWD}/misc/.xprofile" "${HOME}/.xprofile"
 
 speak "-- DONE"
 
@@ -177,10 +177,10 @@ speak "-- DONE"
 space 2
 speak "-- COPYING FILES & DIRECTORIES"
 
-echo "Copying: rofi-run" & copyFileSudo "${PWD}/scripts/rofi-run" "/usr/local/bin/rofi-run" && makeExecutableSudo "/usr/local/bin/rofi-run"
-echo "Copying: lock-screen" & copyFileSudo "${PWD}/scripts/lock-screen" "/usr/local/bin/lock-screen" && makeExecutableSudo "/usr/local/bin/lock-screen"
-echo "Copying: pacman.conf" & copyFileSudo "${PWD}/misc/pacman.conf" "/etc/pacman.conf"
-echo "Copying: JetBrainsMono" & copyDir "${PWD}/fonts/JetBrainsMono" "${HOME}/.fonts/"
+copyFileSudo "${PWD}/scripts/rofi-run" "/usr/local/bin/rofi-run" && makeExecutableSudo "/usr/local/bin/rofi-run"
+copyFileSudo "${PWD}/scripts/lock-screen" "/usr/local/bin/lock-screen" && makeExecutableSudo "/usr/local/bin/lock-screen"
+copyFileSudo "${PWD}/misc/pacman.conf" "/etc/pacman.conf"
+copyDir "${PWD}/fonts/JetBrainsMono" "${HOME}/.fonts/"
 
 speak "-- DONE"
 
