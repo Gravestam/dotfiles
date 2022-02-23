@@ -260,6 +260,10 @@ awful.screen.connect_for_each_screen(function(s)
 		style   = {
 			spacing = 12,
 			font = "JetBrains Mono NF 20",
+			fg_focus = nordColors.polarNight._1,
+			bg_focus = nordColors.auroraContrast._3,
+			fg_urgent = nordColors.polarNight._1,
+			bg_urgent = nordColors.auroraContrast._1
 		},
 		buttons = taglist_buttons
 	}
