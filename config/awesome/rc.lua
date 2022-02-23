@@ -106,7 +106,7 @@ function customKeyboardLayout()
 
 	local kbl = awful.widget.keyboardlayout()
 
-	kbl.widget.font = "JetBrains Mono NF 14"
+	kbl.widget.font = "JetBrains Mono NF 12"
 
 	return kbl
 end
@@ -229,14 +229,14 @@ local systray = wibox.widget.systray()
 systray:set_base_size(20)
 
 local tagList = {
-	"  ",	-- 1 Code brackets
-	"  ",	-- 2 Globe
-	"  ",	-- 3 Terminal
-	"  ",	-- 4 Message
-	"  ",	-- 5 Datebase
-	"  ",	-- 6 Smiley with glases
-	"  ",	-- 7 Tux
-	"  "	-- 8 Game
+	"",	-- 1 Code brackets
+	"",	-- 2 Globe
+	"",	-- 3 Terminal
+	"",	-- 4 Message
+	"",	-- 5 Datebase
+	"",	-- 6 Smiley with glases
+	"",	-- 7 Tux
+	""		-- 8 Game
 }
 
 awful.screen.connect_for_each_screen(function(s)
@@ -258,7 +258,8 @@ awful.screen.connect_for_each_screen(function(s)
 		screen  = s,
 		filter  = awful.widget.taglist.filter.all,
 		style   = {
-			font = "JetBrains Mono NF 18",
+			spacing = 12,
+			font = "JetBrains Mono NF 20",
 		},
 		buttons = taglist_buttons
 	}
@@ -275,7 +276,8 @@ awful.screen.connect_for_each_screen(function(s)
 		height = dpi(22),
 		border_width = dpi(0),
 		bg = nordColors.polarNight._1,
-		visible = true
+		visible = true,
+		opacity = 0.85
 	})
 
 	s.mywibox:setup {
