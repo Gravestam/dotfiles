@@ -235,7 +235,8 @@ local tagList = {
 	"  ",	-- 4 Message
 	"  ",	-- 5 Datebase
 	"  ",	-- 6 Smiley with glases
-	"  "	-- 7 Tux
+	"  ",	-- 7 Tux
+	"  "	-- 8 Game
 }
 
 awful.screen.connect_for_each_screen(function(s)
