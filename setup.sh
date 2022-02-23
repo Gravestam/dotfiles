@@ -42,6 +42,7 @@ pkgs=(
 	"imagemagick"
 	"rofimoji"
 	"noto-fonts-emoji"
+	"blueman"
 )
 
 function createDir {
