@@ -111,9 +111,9 @@ function customKeyboardLayout()
 	return kbl
 end
 
-mykeyboardlayout = customKeyboardLayout()
+local mykeyboardlayout = customKeyboardLayout()
 
-mytextclock = wibox.widget.textclock("| %d-%m-%Y | %H:%M", 10)
+local mytextclock = wibox.widget.textclock("| %d-%m-%Y | %H:%M", 10)
 
 local taglist_buttons = gears.table.join(
 	awful.button({}, 1, function(t) t:view_only() end),
@@ -312,7 +312,7 @@ root.buttons(gears.table.join(
 	awful.button({}, 5, awful.tag.viewprev)
 ))
 
-globalkeys = gears.table.join(
+local globalkeys = gears.table.join(
 
 	awful.key({ modkey }, "F1", hotkeys_popup.show_help, { description = "Show help", group = "Settings" }),
 	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "Settings" }),
@@ -353,7 +353,7 @@ globalkeys = gears.table.join(
 	awful.key({ modkey, altkey }, "Left", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" })
 )
 
-clientkeys = gears.table.join(
+local clientkeys = gears.table.join(
 
 	awful.key({ modkey }, "f", function(c) c.fullscreen = not c.fullscreen c:raise() end, { description = "Toggle fullscreen", group = "Client" }),
 	awful.key({ modkey }, "q", function(c) c:kill() end, { description = "Close", group = "Client" }),
@@ -404,7 +404,7 @@ for i = 1, 9 do
 	)
 end
 
-clientbuttons = gears.table.join(
+local clientbuttons = gears.table.join(
 	awful.button({}, 1, function(c) c:emit_signal("request::activate", "mouse_click", { raise = true }) end),
 	awful.button({ modkey }, 1, function(c) c:emit_signal("request::activate", "mouse_click", { raise = true }) awful.mouse.client.move(c) end),
 	awful.button({ modkey }, 3, function(c) c:emit_signal("request::activate", "mouse_click", { raise = true }) awful.mouse.client.resize(c) end)
