@@ -2,48 +2,50 @@
 
 # Packages to install
 pkgs=(
-	"neofetch"
-	"neovim"
-	"rofi"
-	"awesome"
-	"bitwarden-rofi-git"
-	"picom-git"
-	"flameshot"
-	"alacritty"
-	"nitrogen"
-	"zsh"
-	"bitwarden-cli"
-	"thunar"
-	"xdotool"
-	"xclip"
-	"rofi-power-menu"
-	"jq"
-	"tmux"
-	"exa"
-	"pa-applet-git"
-	"ttf-fira-code"
-	"ttf-roboto"
-	"ttf-meslo-nerd-font-powerlevel10k"
-	"materia-theme"
-	"qt5-styleplugins"
-	"reflector"
-	"network-manager-applet"
-	"npm"
-	"sshfs"
-	"robo3t-bin"
-	"dropbox"
-	"spotify"
-	"slack-desktop"
-	"nsxiv"
-	"tty-clock-git"
-	"xplr"
-	"scrot"
-	"i3lock-color"
-	"imagemagick"
-	"rofimoji"
-	"noto-fonts-emoji"
-	"blueman"
-	"celluloid"
+	"neofetch"								# CLI display info
+	"neovim"								# Vim replacement
+	"rofi"									# Launcher
+	"awesome"								# WM
+	"bitwarden-rofi-git"					# Bitwarden in rofi
+	"picom-git"								# Compositor (blur, opacity)
+	"flameshot"								# GUI sceenshot
+	"alacritty"								# Terminal emulator
+	"nitrogen"								# Sets wallpapers
+	"zsh"									# Shell
+	"bitwarden-cli"							# Bitwarden pw manager CLI tool
+	"thunar"								# GUI file explorer
+	"xdotool"								# CLI tool to simumate kb and mouse (req for bw rofi)
+	"xclip"									# CLI clipboard
+	"rofi-power-menu"						# Adds power menu options to rofi
+	"jq"									# CLI JSON tool
+	"tmux"									# Terminal multi head
+	"exa"									# ls replacement
+	"pa-applet-git"							# Sound control applet
+	"ttf-fira-code"							# Font
+	"ttf-roboto"							# Font
+	"ttf-meslo-nerd-font-powerlevel10k"		# Font
+	"materia-theme"							# QT theme
+	"qt5-styleplugins"						# QT Plugins
+	"reflector"								# Updates pkg list providers (to find the fastest)
+	"network-manager-applet"				# Network applet
+	"npm"									# Node package manager
+	"sshfs"									# Mount filessystems
+	"robo3t-bin"							# mongodb GUI
+	"dropbox"								# Cloud storage
+	"spotify"								# Music streamer
+	"slack-desktop"							# Messaging
+	"nsxiv"									# Picute viewer
+	"tty-clock-git"							# Clock that runs in the terminal
+	"xplr"									# CLI file explorer
+	"scrot"									# CLI screenshot
+	"i3lock-color"							# Lock screen
+	"imagemagick"							# CLI image manipulation tool, req for lock-screen script
+	"rofimoji"								# Emojipicker for rofi
+	"noto-fonts-emoji"						# Req for rofimoji
+	"blueman"								# Bluetooth applet
+	"celluloid" 							# Mediaplayer
+	"xorg-xprop" 							# Display propery tool
+	"pcloud-drive"							# Cloud storage
 )
 
 function createDir {
