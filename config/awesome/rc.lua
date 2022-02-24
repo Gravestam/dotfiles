@@ -228,20 +228,24 @@ end
 local systray = wibox.widget.systray()
 systray:set_base_size(20)
 
-local tagList = {
-	"",	-- 1 Code brackets
-	"",	-- 2 Globe
-	"",	-- 3 Terminal
-	"",	-- 4 Message
-	"",	-- 5 Datebase
-	"",	-- 6 Smiley with glases
-	"",	-- 7 Tux
-	""		-- 8 Game
-}
-
 awful.screen.connect_for_each_screen(function(s)
 
-	awful.tag(tagList, s, awful.layout.layouts[1])
+	-- 1 Code brackets
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1], selected = true })
+	-- 2 Globe
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
+	-- 3 Terminal
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[3], master_count = 2 })
+	-- 4 Message
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
+	-- 5 Datebase
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
+	-- 6 Smiley with glases
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
+	-- 7 Tux
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
+	-- 8 Game
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
 
 	s.mypromptbox = awful.widget.prompt()
 
@@ -430,7 +434,7 @@ awful.rules.rules = {
 		properties = { titlebars_enabled = false }
 	},
 	{
-		rule_any = { instance = { "customfloat" } },
+		rule = { instance = "customfloat" },
 		properties = { placement = awful.placement.centered, floating = true }
 	}
 }
