@@ -301,8 +301,8 @@ end
 awful.screen.connect_for_each_screen(function(s)
 
 	-- createTags(s, "numbers_solid", "3")
-	-- createTags(s, "numbers_outline", "3")
-	createTags(s, "icons", "3")
+	createTags(s, "numbers_outline", "3")
+	-- createTags(s, "icons", "3")
 
 	s.mypromptbox = awful.widget.prompt()
 
@@ -493,6 +493,28 @@ awful.rules.rules = {
 	{
 		rule = { instance = "customfloat" },
 		properties = { placement = awful.placement.centered, floating = true }
+	},
+
+	-- If started with instance name "scriptStart" (--class scriptStart) these will be placed in correct tags
+	{
+		rule = { instance = 'scriptStart', class = "Brave-browser"},
+		properties = { tag = awful.screen.focused().tags[2] }
+	},
+	{
+		rule = { instance = 'scriptStart', class = "Slack"},
+		properties = { tag = awful.screen.focused().tags[4] }
+	},
+	{
+		rule = { instance = 'scriptStart', class = "robo3t"},
+		properties = { tag = awful.screen.focused().tags[5] }
+	},
+	{
+		rule = { instance = 'scriptStart', class = "Code"},
+		properties = { tag = awful.screen.focused().tags[5] }
+	},
+	{
+		rule = { instance = 'scriptStart', class = "Alacritty"},
+		properties = { tag = awful.screen.focused().tags[3] }
 	}
 }
 
