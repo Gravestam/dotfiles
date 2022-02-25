@@ -228,63 +228,81 @@ end
 local systray = wibox.widget.systray()
 systray:set_base_size(20)
 
-function createTags(s, type)
-	local tags = {
-		tag1 = { identifier = "1", options = { screen = s, layout = awful.layout.layouts[1], selected = true, master_count = 1 }},
-		tag2 = { identifier = "2", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
-		tag3 = { identifier = "3", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 2 }},
-		tag4 = { identifier = "4", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
-		tag5 = { identifier = "5", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
-		tag6 = { identifier = "6", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
-		tag7 = { identifier = "7", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
-		tag8 = { identifier = "8", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }}
-	}
+local function tableFind(table, key, value)
 
-	if (type == "numbers_outline") then
-		tags.tag1.identifier = ""
-		tags.tag2.identifier = ""
-		tags.tag3.identifier = ""
-		tags.tag4.identifier = ""
-		tags.tag5.identifier = ""
-		tags.tag6.identifier = ""
-		tags.tag7.identifier = ""
-		tags.tag8.identifier = ""
-	elseif (type == "numbers_solid") then
-		tags.tag1.identifier = ""
-		tags.tag2.identifier = ""
-		tags.tag3.identifier = ""
-		tags.tag4.identifier = ""
-		tags.tag5.identifier = ""
-		tags.tag6.identifier = ""
-		tags.tag7.identifier = ""
-		tags.tag8.identifier = ""
-	elseif (type == "icons") then
-		tags.tag1.identifier = ""	-- Code
-		tags.tag2.identifier = ""	-- Browser
-		tags.tag3.identifier = ""	-- Terminal
-		tags.tag4.identifier = ""	-- Message
-		tags.tag5.identifier = ""	-- Database
-		tags.tag6.identifier = ""	-- Arch
-		tags.tag7.identifier = ""	-- Box
-		tags.tag8.identifier = ""	-- Controler
+	for k in pairs(table) do
+
+		if (table[k][key] == value) then return k end
+
 	end
 
-	awful.tag.add(tags.tag1.identifier, tags.tag1.options)
-	awful.tag.add(tags.tag2.identifier, tags.tag2.options)
-	awful.tag.add(tags.tag3.identifier, tags.tag3.options)
-	awful.tag.add(tags.tag4.identifier, tags.tag4.options)
-	awful.tag.add(tags.tag5.identifier, tags.tag5.options)
-	awful.tag.add(tags.tag6.identifier, tags.tag6.options)
-	awful.tag.add(tags.tag7.identifier, tags.tag7.options)
-	awful.tag.add(tags.tag8.identifier, tags.tag8.options)
+	return nil
+end
 
+local function createTags(s, type, sel)
+
+	local tags = {
+		tag1 = { id = "1", tagName = "1", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag2 = { id = "2", tagName = "2", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag3 = { id = "3", tagName = "3", options = { screen = s, layout = awful.layout.layouts[3], selected = false, master_count = 2 }},
+		tag4 = { id = "4", tagName = "4", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag5 = { id = "5", tagName = "5", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag6 = { id = "6", tagName = "6", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag7 = { id = "7", tagName = "7", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag8 = { id = "8", tagName = "8", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }}
+	}
+
+	if (sel) then
+
+		local foundTag = tableFind(tags, "id", sel)
+
+		if (foundTag) then tags[foundTag].options.selected = true end
+	end
+
+	if (type == "numbers_outline") then
+		tags.tag1.tagName = ""
+		tags.tag2.tagName = ""
+		tags.tag3.tagName = ""
+		tags.tag4.tagName = ""
+		tags.tag5.tagName = ""
+		tags.tag6.tagName = ""
+		tags.tag7.tagName = ""
+		tags.tag8.tagName = ""
+	elseif (type == "numbers_solid") then
+		tags.tag1.tagName = ""
+		tags.tag2.tagName = ""
+		tags.tag3.tagName = ""
+		tags.tag4.tagName = ""
+		tags.tag5.tagName = ""
+		tags.tag6.tagName = ""
+		tags.tag7.tagName = ""
+		tags.tag8.tagName = ""
+	elseif (type == "icons") then
+		tags.tag1.tagName = ""	-- Code
+		tags.tag2.tagName = ""	-- Browser
+		tags.tag3.tagName = ""	-- Terminal
+		tags.tag4.tagName = ""	-- Message
+		tags.tag5.tagName = ""	-- Database
+		tags.tag6.tagName = ""	-- Arch
+		tags.tag7.tagName = ""	-- Box
+		tags.tag8.tagName = ""	-- Controler
+	end
+
+	awful.tag.add(tags.tag1.tagName, tags.tag1.options)
+	awful.tag.add(tags.tag2.tagName, tags.tag2.options)
+	awful.tag.add(tags.tag3.tagName, tags.tag3.options)
+	awful.tag.add(tags.tag4.tagName, tags.tag4.options)
+	awful.tag.add(tags.tag5.tagName, tags.tag5.options)
+	awful.tag.add(tags.tag6.tagName, tags.tag6.options)
+	awful.tag.add(tags.tag7.tagName, tags.tag7.options)
+	awful.tag.add(tags.tag8.tagName, tags.tag8.options)
 end
 
 awful.screen.connect_for_each_screen(function(s)
 
-	-- createTags(s, "numbers_solid")
-	-- createTags(s, "numbers_outline")
-	createTags(s, "icons")
+	-- createTags(s, "numbers_solid", "3")
+	-- createTags(s, "numbers_outline", "3")
+	createTags(s, "icons", "3")
 
 	s.mypromptbox = awful.widget.prompt()
 

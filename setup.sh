@@ -46,6 +46,7 @@ pkgs=(
 	"celluloid" 							# Mediaplayer
 	"xorg-xprop" 							# Display propery tool
 	"pcloud-drive"							# Cloud storage
+	"brave-bin"								# Brave browser
 )
 
 function createDir {
