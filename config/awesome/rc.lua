@@ -228,26 +228,24 @@ end
 local systray = wibox.widget.systray()
 systray:set_base_size(20)
 
-local iconFolder = os.getenv("HOME") .. "/dotfiles/config/awesome/icons/"
-
 awful.screen.connect_for_each_screen(function(s)
 
 	-- 1 Code brackets
-	awful.tag.add("-1", { screen = s, layout = awful.layout.layouts[1], icon = iconFolder .. "code.png" })
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
 	-- 2 Globe
-	awful.tag.add("-2", { screen = s, layout = awful.layout.layouts[1], icon = iconFolder .. "internet.png" })
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
 	-- 3 Terminal
-	awful.tag.add("-3", { screen = s, layout = awful.layout.layouts[3],selected = true,  master_count = 2, icon = iconFolder .. "terminal.png" })
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[3], selected = true,  master_count = 2 })
 	-- 4 Message
-	awful.tag.add("-4", { screen = s, layout = awful.layout.layouts[1], icon = iconFolder .."chat.png" })
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
 	-- 5 Datebase
-	awful.tag.add("-5", { screen = s, layout = awful.layout.layouts[1], icon = iconFolder .."db.png" })
-	-- 6 Smiley with glases
-	awful.tag.add("-6", { screen = s, layout = awful.layout.layouts[1], icon = iconFolder .."pirate.png" })
-	-- 7 Tux
-	awful.tag.add("-7", { screen = s, layout = awful.layout.layouts[1], icon = iconFolder .."tux.png" })
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
+	-- 6 Arch
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
+	-- 7 Misc
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
 	-- 8 Game
-	awful.tag.add("-8", { screen = s, layout = awful.layout.layouts[1], icon = iconFolder .."game.png" })
+	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
 
 	s.mypromptbox = awful.widget.prompt()
 
@@ -265,7 +263,7 @@ awful.screen.connect_for_each_screen(function(s)
 		filter  = awful.widget.taglist.filter.all,
 		style   = {
 			spacing = dpi(10),
-			font = "JetBrains Mono NF 12",
+			font = "JetBrains Mono NF 25",
 			fg_focus = nordColors.polarNight._1,
 			bg_focus = nordColors.auroraContrast._3,
 			fg_urgent = nordColors.polarNight._1,
