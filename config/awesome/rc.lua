@@ -228,24 +228,63 @@ end
 local systray = wibox.widget.systray()
 systray:set_base_size(20)
 
+function createTags(s, type)
+	local tags = {
+		tag1 = { identifier = "1", options = { screen = s, layout = awful.layout.layouts[1], selected = true, master_count = 1 }},
+		tag2 = { identifier = "2", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag3 = { identifier = "3", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 2 }},
+		tag4 = { identifier = "4", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag5 = { identifier = "5", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag6 = { identifier = "6", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag7 = { identifier = "7", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }},
+		tag8 = { identifier = "8", options = { screen = s, layout = awful.layout.layouts[1], selected = false, master_count = 1 }}
+	}
+
+	if (type == "numbers_outline") then
+		tags.tag1.identifier = ""
+		tags.tag2.identifier = ""
+		tags.tag3.identifier = ""
+		tags.tag4.identifier = ""
+		tags.tag5.identifier = ""
+		tags.tag6.identifier = ""
+		tags.tag7.identifier = ""
+		tags.tag8.identifier = ""
+	elseif (type == "numbers_solid") then
+		tags.tag1.identifier = ""
+		tags.tag2.identifier = ""
+		tags.tag3.identifier = ""
+		tags.tag4.identifier = ""
+		tags.tag5.identifier = ""
+		tags.tag6.identifier = ""
+		tags.tag7.identifier = ""
+		tags.tag8.identifier = ""
+	elseif (type == "icons") then
+		tags.tag1.identifier = ""	-- Code
+		tags.tag2.identifier = ""	-- Browser
+		tags.tag3.identifier = ""	-- Terminal
+		tags.tag4.identifier = ""	-- Message
+		tags.tag5.identifier = ""	-- Database
+		tags.tag6.identifier = ""	-- Arch
+		tags.tag7.identifier = ""	-- Box
+		tags.tag8.identifier = ""	-- Controler
+	end
+
+	awful.tag.add(tags.tag1.identifier, tags.tag1.options)
+	awful.tag.add(tags.tag2.identifier, tags.tag2.options)
+	awful.tag.add(tags.tag3.identifier, tags.tag3.options)
+	awful.tag.add(tags.tag4.identifier, tags.tag4.options)
+	awful.tag.add(tags.tag5.identifier, tags.tag5.options)
+	awful.tag.add(tags.tag6.identifier, tags.tag6.options)
+	awful.tag.add(tags.tag7.identifier, tags.tag7.options)
+	awful.tag.add(tags.tag8.identifier, tags.tag8.options)
+
+end
+
 awful.screen.connect_for_each_screen(function(s)
 
-	-- 1 Code brackets
-	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
-	-- 2 Globe
-	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
-	-- 3 Terminal
-	awful.tag.add("", { screen = s, layout = awful.layout.layouts[3], selected = true,  master_count = 2 })
-	-- 4 Message
-	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
-	-- 5 Datebase
-	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
-	-- 6 Arch
-	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
-	-- 7 Misc
-	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
-	-- 8 Game
-	awful.tag.add("", { screen = s, layout = awful.layout.layouts[1] })
+	-- createTags(s, "numbers_solid")
+	-- createTags(s, "numbers_outline")
+	createTags(s, "icons")
 
 	s.mypromptbox = awful.widget.prompt()
 
@@ -262,7 +301,7 @@ awful.screen.connect_for_each_screen(function(s)
 		screen  = s,
 		filter  = awful.widget.taglist.filter.all,
 		style   = {
-			spacing = dpi(10),
+			spacing = dpi(3),
 			font = "JetBrains Mono NF 25",
 			fg_focus = nordColors.polarNight._1,
 			bg_focus = nordColors.auroraContrast._3,
