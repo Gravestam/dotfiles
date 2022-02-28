@@ -301,8 +301,8 @@ end
 awful.screen.connect_for_each_screen(function(s)
 
 	-- createTags(s, "numbers_solid", "3")
-	createTags(s, "numbers_outline", "3")
-	-- createTags(s, "icons", "3")
+	-- createTags(s, "numbers_outline", "3")
+	createTags(s, "icons", "3")
 
 	s.mypromptbox = awful.widget.prompt()
 
@@ -403,9 +403,9 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey, "Shift" }, "l", function() awful.tag.incnmaster(-1, nil, true) end, { description = "Decrease the number of master clients", group = "Layout" }),
 	awful.key({ superkey }, "Tab", function() awful.layout.inc( 1) end, { description = "Cycle layout", group = "Layout" }),
 
-	awful.key({ superkey }, "Return", function() awful.spawn.with_shell("rofi-run") end, { description = "Prompt", group = "Launcher" }),
-	awful.key({ superkey }, "t", function() awful.spawn(terminal) end, { description = "Terminal", group = "Launcher" }),
-	awful.key({ superkey, "Control" }, "t", function() awful.spawn(terminal .. " --class customfloat") end, { description = "Terminal (floating)", group = "Launcher" }),
+	awful.key({ superkey }, "space", function() awful.spawn.with_shell("rofi-run") end, { description = "Prompt", group = "Launcher" }),
+	awful.key({ superkey }, "Return", function() awful.spawn(terminal) end, { description = "Terminal", group = "Launcher" }),
+	awful.key({ superkey, "Control" }, "Return", function() awful.spawn(terminal .. " --class customfloat") end, { description = "Terminal (floating)", group = "Launcher" }),
 	awful.key({ superkey }, "b", function() awful.spawn.with_shell("bwmenu") end, { description = "Bitwarden", group = "Launcher" }),
 	awful.key({ superkey }, "p", function() awful.spawn.with_shell("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
 	awful.key({ superkey }, "e", function() awful.spawn.with_shell("rofimoji") end, { description = "Emojis", group = "Launcher" }),
@@ -420,7 +420,7 @@ local clientkeys = gears.table.join(
 	awful.key({ superkey }, "q", function(c) c:kill() end, { description = "Close", group = "Client" }),
 	awful.key({ superkey, "Control" }, "space", awful.client.floating.toggle, { description = "Toggle floating", group = "Client" }),
 	awful.key({ superkey }, "o", function(c) c:move_to_screen() end, { description = "Move to screen next screen", group = "Client" }),
-	awful.key({ superkey, "Shift" }, "t", function(c) c.ontop = not c.ontop end, { description = "Toggle keep on top", group = "Client" })
+	awful.key({ superkey }, "t", function(c) c.ontop = not c.ontop end, { description = "Toggle keep on top", group = "Client" })
 )
 
 for i = 1, 9 do

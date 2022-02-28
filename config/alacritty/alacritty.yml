@@ -12,6 +12,9 @@ window:
   padding:
     x: 10
     y: 10
+  dimensions:
+    columns: 100
+    lines: 30
 
 env:
   TERM: "xterm-256color"
