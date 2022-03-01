@@ -43,6 +43,7 @@ alias v="nvim"
 
 alias clip="xclip -selection clipboard"
 alias fm="xplr"
+alias pic="nsxiv"
 alias clock="tty-clock -c -C 4"
 alias fixfile="sudo sed -i -e 's/\r$//'"
 
