@@ -491,31 +491,9 @@ awful.rules.rules = {
 		properties = { titlebars_enabled = false }
 	},
 	{
-		rule_any = { instance = { "customfloat", "nsxiv", "simplescreenrecorder" } },
+		rule_any = { instance = { "customfloat", "nsxiv", "simplescreenrecorder" }, class = { "mpv" } },
 		properties = { placement = awful.placement.centered, floating = true, ontop = true }
 	}
-
-	-- If started with instance name "scriptStart" (--class scriptStart) these will be placed in correct tags
-	-- {
-	-- 	rule = { instance = 'scriptStart', class = "Brave-browser"},
-	-- 	properties = { tag = awful.screen.focused().tags[2] }
-	-- },
-	-- {
-	-- 	rule = { instance = 'scriptStart', class = "Slack"},
-	-- 	properties = { tag = awful.screen.focused().tags[4] }
-	-- },
-	-- {
-	-- 	rule = { instance = 'scriptStart', class = "robo3t"},
-	-- 	properties = { tag = awful.screen.focused().tags[5] }
-	-- },
-	-- {
-	-- 	rule = { instance = 'scriptStart', class = "Code"},
-	-- 	properties = { tag = awful.screen.focused().tags[5] }
-	-- },
-	-- {
-	-- 	rule = { instance = 'scriptStart', class = "Alacritty"},
-	-- 	properties = { tag = awful.screen.focused().tags[3] }
-	-- }
 }
 
 client.connect_signal("manage", function(c)
