@@ -57,4 +57,4 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
 # INITIAL COMMANDS
-neofetch
+#neofetch
