@@ -43,10 +43,13 @@ pkgs=(
 	"rofimoji"								# Emojipicker for rofi
 	"noto-fonts-emoji"						# Req for rofimoji
 	"blueman"								# Bluetooth applet
-	"celluloid" 							# Mediaplayer
+	"mpv" 									# Mediaplayer
 	"xorg-xprop" 							# Display propery tool
 	"pcloud-drive"							# Cloud storage
 	"brave-bin"								# Brave browser
+	"cbatticon"								# Systray battery icon
+	"simplescreenrecorder"					# Screenrecorder
+	"google-chrome-dev"						# Chrome browser (Canary)
 )
 
 function createDir {
