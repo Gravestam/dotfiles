@@ -36,7 +36,7 @@ alias update="pac -Syu"
 alias install="pac -S"
 alias remove="pac -Rsn"
 
-alias update-mirrors="sudo reflector --verbose -c "Sweden,Germany" --protocol "https,http" -l 6 --sort rate --save /etc/pacman.d/mirrorlist"
+alias update-mirrors="sudo reflector --verbose -c 'Sweden,Germany,Denmark' -l 40 -n 20  -p https --sort rate --save /etc/pacman.d/mirrorlist"
 
 alias vim="nvim"
 alias v="nvim"

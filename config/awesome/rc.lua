@@ -491,9 +491,9 @@ awful.rules.rules = {
 		properties = { titlebars_enabled = false }
 	},
 	{
-		rule_any = { instance = { "customfloat", "nsxiv" } },
+		rule_any = { instance = { "customfloat", "nsxiv", "simplescreenrecorder" } },
 		properties = { placement = awful.placement.centered, floating = true, ontop = true }
-	},
+	}
 
 	-- If started with instance name "scriptStart" (--class scriptStart) these will be placed in correct tags
 	-- {
