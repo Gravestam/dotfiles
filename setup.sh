@@ -50,6 +50,9 @@ pkgs=(
 	"cbatticon"								# Systray battery icon
 	"simplescreenrecorder"					# Screenrecorder
 	"google-chrome-dev"						# Chrome browser (Canary)
+	"galculator"							# Calculator
+	"wireguard-tools"						# VPN
+	"bucklespring"							# Keyboard typing sounds
 )
 
 function createDir {
