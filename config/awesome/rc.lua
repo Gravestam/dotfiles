@@ -494,7 +494,7 @@ awful.rules.rules = {
 		properties = { titlebars_enabled = false }
 	},
 	{
-		rule_any = { instance = { "customfloat", "nsxiv", "simplescreenrecorder" }, class = { "mpv" } },
+		rule_any = { instance = { "customfloat", "nsxiv", "simplescreenrecorder", "galculator" }, class = { "mpv" } },
 		properties = { placement = awful.placement.centered, floating = true, ontop = true }
 	}
 }
