@@ -378,9 +378,13 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey }, "F1", hotkeys_popup.show_help, { description = "Show help", group = "Settings" }),
 	awful.key({ superkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "Settings" }),
 	awful.key({ superkey }, "i", function() kbd.switch() end, { description = "Switch keyboard layout", group = "Settings" }),
-	
+
 	awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn_with_shell("xbacklight -dec 5") end, { description = "Decrease screen backlight", group = "Settings" }),
 	awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn_with_shell("xbacklight -inc 5") end, { description = "Increase screen backlight", group = "Settings" }),
+
+	awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn_with_shell("amixer set Master playback 2%-") end, { description = "Decrease sound volume", group = "Settings" }),
+	awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn_with_shell("amixer set Master playback 2%+") end, { description = "Increase sound volume", group = "Settings" }),
+	awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
 
 	awful.key({ superkey }, "j", function() awful.screen.focus_relative( 1) end, { description = "Focus next", group = "Screen" }),
 	awful.key({ superkey }, "k", function() awful.screen.focus_relative(-1) end, { description = "Focus previous", group = "Screen" }),
