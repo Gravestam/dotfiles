@@ -36,7 +36,7 @@ pkgs=(
 	"slack-desktop"							# Messaging
 	"nsxiv"									# Picute viewer
 	"tty-clock-git"							# Clock that runs in the terminal
-	"xplr"									# CLI file explorer
+	"ranger"								# CLI file explorer
 	"scrot"									# CLI screenshot
 	"i3lock-color"							# Lock screen
 	"imagemagick"							# CLI image manipulation tool, req for lock-screen script
@@ -52,7 +52,7 @@ pkgs=(
 	"google-chrome-dev"						# Chrome browser (Canary)
 	"galculator"							# Calculator
 	"wireguard-tools"						# VPN
-	"bucklespring"							# Keyboard typing sounds
+	"fd"									# nvim (telescope) dependency
 )
 
 function createDir {
