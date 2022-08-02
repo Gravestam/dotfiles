@@ -1,13 +1,12 @@
-
 local lsp_installer = require('nvim-lsp-installer')
 
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 
 local on_attach = function(client, bufnr)
 
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-	local bufopts = { noremap=true, silent=true, buffer=bufnr }
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)

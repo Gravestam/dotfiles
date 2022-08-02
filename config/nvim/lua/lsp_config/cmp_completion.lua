@@ -1,4 +1,3 @@
-
 local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 local cmp = require('cmp')
@@ -45,7 +44,7 @@ cmp.setup {
 			mode = 'symbol_text', -- 'symbol' 'text' 'text_symbol' 'symbol_text'
 			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
-			before = function (entry, vim_item)
+			before = function(entry, vim_item)
 				return vim_item
 			end
 		})

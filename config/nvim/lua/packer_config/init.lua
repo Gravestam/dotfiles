@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
 	use 'nvim-treesitter/nvim-treesitter-refactor'					-- highlighting and renaming
 	use 'nvim-lua/plenary.nvim'										-- telescope dependency
 	use 'nvim-telescope/telescope.nvim'								-- fuzzy finder popup
+	use 'jose-elias-alvarez/null-ls.nvim'							-- post action hooks (format on save etc)
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'
