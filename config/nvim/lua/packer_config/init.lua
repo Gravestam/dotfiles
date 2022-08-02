@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
 	use 'nvim-lua/plenary.nvim'										-- telescope dependency
 	use 'nvim-telescope/telescope.nvim'								-- fuzzy finder popup
 	use 'jose-elias-alvarez/null-ls.nvim'							-- post action hooks (format on save etc)
+	use 'numToStr/Comment.nvim'										-- commenting lines
+	use 'windwp/nvim-autopairs'										-- automatic pair insertion
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'
