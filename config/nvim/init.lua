@@ -1,6 +1,6 @@
 
 require('settings')
-require('packer_config')
+require('plugins')
 require('colorschemes_config.dracula')
 require('keybinds')
 require('nvimtree_config')
