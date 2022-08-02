@@ -164,6 +164,7 @@ speak "-- LINKING DIRECTORIES"
 
 symlinkConfigDir "awesome"
 symlinkConfigDir "alacritty"
+symlinkConfigDir "ranger"
 symlinkConfigDir "flameshot"
 symlinkConfigDir "neofetch"
 symlinkConfigDir "nvim"
