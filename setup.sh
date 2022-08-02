@@ -3,6 +3,8 @@
 # Packages to install
 pkgs=(
 	"neofetch"								# CLI display info
+	"bat"									# Better cat
+	"tree"									# Filetree
 	"neovim"								# Vim replacement
 	"rofi"									# Launcher
 	"awesome"								# WM
