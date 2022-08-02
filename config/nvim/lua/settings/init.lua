@@ -1,4 +1,6 @@
 
+vim.notify = require("notify")
+
 local o = vim.opt
 
 o.backup = false			-- creates a backup file

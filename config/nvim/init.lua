@@ -1,15 +1,11 @@
 
-require 'user.options'
-require 'user.plugins'
-require 'user.keymaps'
-require 'user.colorscheme'
-require 'user.lualine'
-require 'user.bufferline'
-require 'user.treesitter'
-require 'user.comment'
-require 'user.lsp'
-require 'user.cmp'
-require 'user.nvim-tree'
-require 'user.telescope'
-require 'user.illuminate'
-require 'user.alpha'
+require('settings')
+require('packer_config')
+require('colorschemes_config.dracula')
+require('keybinds')
+require('nvimtree_config')
+require('lsp_config.language_servers')
+require('lsp_config.cmp_completion')
+require('lualine_config')
+require('barbar_config')
+require('treesitter_config')

@@ -69,60 +69,40 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["Comment.nvim"] = {
+  LuaSnip = {
     loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/Comment.nvim",
-    url = "https://github.com/numToStr/Comment.nvim"
+    path = "/home/master/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["alpha-nvim"] = {
+  ["barbar.nvim"] = {
     loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/alpha-nvim",
-    url = "https://github.com/goolord/alpha-nvim"
-  },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
+    path = "/home/master/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/master/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["cmp-path"] = {
+  cmp_luasnip = {
     loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
-  },
-  ["cmp-vsnip"] = {
-    loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
-  },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
+    path = "/home/master/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/home/master/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/master/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/master/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -139,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/master/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/home/master/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/master/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -148,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/master/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-refactor"] = {
+    loaded = true,
+    path = "/home/master/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-refactor"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -168,16 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/master/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vim-illuminate"] = {
-    loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/master/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 
