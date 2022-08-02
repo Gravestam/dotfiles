@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
 	use 'jose-elias-alvarez/null-ls.nvim'							-- post action hooks (format on save etc)
 	use 'numToStr/Comment.nvim'										-- commenting lines
 	use 'windwp/nvim-autopairs'										-- automatic pair insertion
+	use 'rafamadriz/friendly-snippets'								-- snippets for several languages
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'

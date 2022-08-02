@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/master/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/master/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/master/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
