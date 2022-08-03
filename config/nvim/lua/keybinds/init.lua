@@ -41,5 +41,5 @@ keymap('n', '<leader>e', ':NvimTreeToggle<CR>', options)
 -- telescope
 keymap('n', '<leader>ff', ':Telescope find_files<CR>', options)
 keymap('n', '<leader>ft', ':Telescope live_grep<CR>', options)
-keymap('n', '<leader>fp', ':Telescope projects<CR>', options)
 keymap('n', '<leader>fb', ':Telescope buffers<CR>', options)
+keymap('n', '<leader>fh', ':Telescope oldfiles<CR>', options)

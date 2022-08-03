@@ -56,6 +56,7 @@ return packer.startup(function(use)
 	use 'windwp/nvim-autopairs'										-- automatic pair insertion
 	use 'rafamadriz/friendly-snippets'								-- snippets for several languages
 	use 'goolord/alpha-nvim'										-- dashboard
+	use 'mg979/vim-visual-multi'									-- multi cursor support
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'

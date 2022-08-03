@@ -47,6 +47,10 @@ alias pic="nsxiv"
 alias clock="tty-clock -c -C 4"
 alias fixfile="sudo sed -i -e 's/\r$//'"
 
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+
 [ -f "${HOME}/private_aliases/one" ] && source "${HOME}/private_aliases/one"
 
 # MISC
