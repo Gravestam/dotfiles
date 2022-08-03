@@ -1,30 +1,42 @@
-/*Dracula theme based on the Purple official rofi theme*/
-
 * {
+    /* Dracula theme colour palette */
+    drac-bgd: #282a36;
+    drac-cur: #44475a;
+    drac-fgd: #f8f8f2;
+    drac-cmt: #6272a4;
+    drac-cya: #8be9fd;
+    drac-grn: #50fa7b;
+    drac-ora: #ffb86c;
+    drac-pnk: #ff79c6;
+    drac-pur: #bd93f9;
+    drac-red: #ff5555;
+    drac-yel: #f1fa8c;
+
     font: "Jetbrains Mono 12";
-    foreground: #f8f8f2;
-    background-color: #282a36;
-    active-background: #6272a4;
-    urgent-background: #ff5555;
-    selected-background: #50fa7b;
+
+    foreground: @drac-fgd;
+    background-color: @drac-bgd;
+    active-background: @drac-pnk;
+    urgent-background: @drac-red;
+
+    selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: #bd93f9;
+    bordercolor: #6272a4;
 }
 
 #window {
     background-color: @background-color;
-    border: 2px;
-    border-radius: 3px;
+    border:           2;
+    border-radius: 3;
+	width: 600;
     border-color: @bordercolor;
-    padding: 10px;
-	location: center;
-	width: 600px;
+    padding:          5;
 }
 #mainbox {
-    border:  0px;
-    padding: 2px;
+    border:  0;
+    padding: 5;
 }
 #message {
     border:       1px dash 0px 0px ;
@@ -36,18 +48,16 @@
 }
 #listview {
     fixed-height: 0;
-    border: 2px dash 0px 0px ;
+    border:       2px dash 0px 0px ;
     border-color: @bordercolor;
     spacing:      2px ;
     scrollbar:    false;
-	lines: 10;
-	columns: 1;
     padding:      2px 0px 0px ;
+	lines: 10;
 }
 #element {
     border:  0;
-    padding: 0px 10px;
-	spacing: 0px;
+    padding: 1px ;
 }
 #element.normal.normal {
     background-color: @background-color;
@@ -58,8 +68,8 @@
     text-color:       @urgent-foreground;
 }
 #element.normal.active {
-    background-color: @active-background;
-    text-color:       @foreground;
+    background-color: @drac-yel;
+    text-color:       @background-color;
 }
 #element.selected.normal {
     background-color: @selected-background;
@@ -71,7 +81,7 @@
 }
 #element.selected.active {
     background-color: @selected-active-background;
-    text-color:       @foreground;
+    text-color:       @drac-yel;
 }
 #element.alternate.normal {
     background-color: @background-color;
@@ -100,9 +110,9 @@
     text-color:       @foreground;
 }
 #inputbar {
-    spacing:    8px;
-    text-color: #ff79c6;
-    padding:    8px 0px;
+    spacing:    0;
+    text-color: @foreground;
+    padding:    1px ;
 }
 #case-indicator {
     spacing:    0;
@@ -110,11 +120,11 @@
 }
 #entry {
     spacing:    0;
-    text-color: @foreground;
+    text-color: @drac-cya;
 }
 #prompt {
     spacing:    0;
-    text-color: #ff79c6;
+    text-color: @drac-grn;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -123,7 +133,7 @@
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
+    text-color: @drac-grn;
 }
 element-text, element-icon {
     background-color: inherit;
