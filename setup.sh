@@ -11,7 +11,7 @@ pkgs=(
 	"bitwarden-rofi-git"					# Bitwarden in rofi
 	"picom-git"								# Compositor (blur, opacity)
 	"flameshot"								# GUI sceenshot
-	"alacritty"								# Terminal emulator
+	"kitty"									# Terminal emulator
 	"nitrogen"								# Sets wallpapers
 	"zsh"									# Shell
 	"bitwarden-cli"							# Bitwarden pw manager CLI tool
@@ -163,7 +163,7 @@ space 2
 speak "-- LINKING DIRECTORIES"
 
 symlinkConfigDir "awesome"
-symlinkConfigDir "alacritty"
+symlinkConfigDir "kitty"
 symlinkConfigDir "ranger"
 symlinkConfigDir "flameshot"
 symlinkConfigDir "neofetch"

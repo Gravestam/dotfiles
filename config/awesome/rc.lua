@@ -42,7 +42,7 @@ end
 
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
-local terminal = "alacritty"
+local terminal = "kitty"
 local editor = os.getenv("vim") or "nano"
 local editor_cmd = terminal .. " -e " .. editor
 
