@@ -16,14 +16,12 @@ vim.g.maplocalleader = ''
 -- c = command
 
 -- window navigation
-keymap('n', '<C-Up>', '<C-w>k', options)
-keymap('n', '<C-Down>', '<C-w>j', options)
-keymap('n', '<C-Left>', '<C-w>h', options)
-keymap('n', '<C-Right>', '<C-w>l', options)
+keymap('n', '<leader>j', '<C-w>h', options)
+keymap('n', '<leader>k', '<C-w>l', options)
 
 -- buffer navigation
-keymap('n', '<S-Right>', ':bnext<Cr>', options)
-keymap('n', '<S-Left>', ':bprevious<Cr>', options)
+keymap('n', '<leader>,', ':bnext<Cr>', options)
+keymap('n', '<leader>m', ':bprevious<Cr>', options)
 
 -- close buffer
 keymap('n', '<S-q>', '<cmd>bdelete!<Cr>', options)
@@ -43,3 +41,6 @@ keymap('n', '<leader>ff', ':Telescope find_files<CR>', options)
 keymap('n', '<leader>ft', ':Telescope live_grep<CR>', options)
 keymap('n', '<leader>fb', ':Telescope buffers<CR>', options)
 keymap('n', '<leader>fh', ':Telescope oldfiles<CR>', options)
+
+-- terminal
+keymap('n', '<leader>;', ':lua NTGlobal["terminal"]:toggle()<cr>', options)

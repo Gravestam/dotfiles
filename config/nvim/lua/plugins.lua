@@ -57,7 +57,8 @@ return packer.startup(function(use)
 	use 'rafamadriz/friendly-snippets'								-- snippets for several languages
 	use 'goolord/alpha-nvim'										-- dashboard
 	use 'mg979/vim-visual-multi'									-- multi cursor support
-	use 'kylechui/nvim-surround'									-- multi cursor support
+	use 'kylechui/nvim-surround'									-- surround values
+	use { 'akinsho/toggleterm.nvim', tag = 'v2.*' }					-- popup terminal
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'
