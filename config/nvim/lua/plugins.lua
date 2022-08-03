@@ -57,6 +57,7 @@ return packer.startup(function(use)
 	use 'rafamadriz/friendly-snippets'								-- snippets for several languages
 	use 'goolord/alpha-nvim'										-- dashboard
 	use 'mg979/vim-visual-multi'									-- multi cursor support
+	use 'kylechui/nvim-surround'									-- multi cursor support
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'

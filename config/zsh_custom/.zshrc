@@ -8,8 +8,16 @@ source ~/.fzf.zsh
 source ~/zsh_extensions/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/zsh_extensions/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# EXTENSIONS (SETTINGS)
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='bg=#808080'
+# TAB COMPLETION
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
+# VIM MODE
+bindkey -v
+export KEYTIMEOUT=1
 
 # HISTORY
 HISTFILE=~/.histfile
@@ -21,6 +29,8 @@ setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
 # ALIASES
+alias ssh="kitty +kitten ssh"
+
 alias l="exa -lhg --icons --time-style long-iso --sort=type -L2"
 alias ll="exa -lahg --icons --time-style long-iso --sort=type -L2"
 alias l.="ll -d .*"

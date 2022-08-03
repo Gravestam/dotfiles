@@ -13,3 +13,5 @@ require('treesitter_config')
 require('comment_config')
 require('autopairs_config')
 require('alpha_config')
+require('surround_config')
+
