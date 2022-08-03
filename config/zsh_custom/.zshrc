@@ -50,6 +50,7 @@ alias fixfile="sudo sed -i -e 's/\r$//'"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
+alias gp="git push"
 
 [ -f "${HOME}/private_aliases/one" ] && source "${HOME}/private_aliases/one"
 
