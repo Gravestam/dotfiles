@@ -3,7 +3,7 @@ require('nvim-tree').setup {
 	auto_reload_on_write = true,
 	create_in_closed_folder = false,
 	disable_netrw = false,
-	hijack_cursor = false,
+	hijack_cursor = true,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
 	ignore_buffer_on_setup = false,
@@ -26,7 +26,7 @@ require('nvim-tree').setup {
 		side = "left",
 		preserve_window_proportions = false,
 		number = false,
-		relativenumber = false,
+		relativenumber = true,
 		signcolumn = "yes",
 		mappings = {
 			custom_only = false,
@@ -143,7 +143,7 @@ require('nvim-tree').setup {
 			exclude = {},
 		},
 		open_file = {
-			quit_on_open = false,
+			quit_on_open = true,
 			resize_window = true,
 			window_picker = {
 				enable = true,

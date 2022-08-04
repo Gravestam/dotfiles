@@ -31,6 +31,7 @@ dashboard.section.buttons.val = {
 	dashboard.button('t', ' ' .. '   Find Text (live grep)', ':Telescope live_grep <CR>'),
 	dashboard.button('p', '冷' .. '   Find Project', ':Telescope projects <CR>'),
 	dashboard.button('c', ' ' .. '   Config', ':e ~/.config/nvim/init.lua <CR>'),
+	dashboard.button('h', ' ' .. '   Help', ':Telescope help_tags <CR>'),
 	dashboard.button('q', ' ' .. '   Exit vim ', ':qa <CR>')
 }
 

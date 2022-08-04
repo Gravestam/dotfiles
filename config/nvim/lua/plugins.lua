@@ -62,6 +62,7 @@ return packer.startup(function(use)
 	use 'norcalli/nvim-colorizer.lua'								-- show color sytax
 	use 'folke/which-key.nvim'										-- show keybindings on type
 	use 'ahmedkhalf/project.nvim'									-- project managment
+	use 'simrat39/symbols-outline.nvim'								-- taglist with LSP support
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'
