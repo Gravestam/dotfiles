@@ -38,12 +38,12 @@ return packer.startup(function(use)
 	use 'kyazdani42/nvim-tree.lua'									-- file explorer
 	use 'neovim/nvim-lspconfig'										-- language server protocol
 	use 'williamboman/nvim-lsp-installer'							-- language server installer
-	use 'hrsh7th/nvim-cmp' 											-- Autocompletion plugin
+	use 'hrsh7th/nvim-cmp' 											-- autocompletion plugin
 	use 'hrsh7th/cmp-nvim-lsp'										-- LSP source for nvim-cmp
 	use 'hrsh7th/cmp-buffer'										-- buffer completions
 	use 'hrsh7th/cmp-path' 											-- path completions
-	use 'saadparwaiz1/cmp_luasnip'									-- Snippets source for nvim-cmp
-	use 'L3MON4D3/LuaSnip'											-- Snippets plugin
+	use 'saadparwaiz1/cmp_luasnip'									-- snippets source for nvim-cmp
+	use 'L3MON4D3/LuaSnip'											-- snippets plugin
 	use 'onsails/lspkind.nvim'										-- cmp icons
 	use 'nvim-lualine/lualine.nvim'									-- statusline
 	use 'romgrk/barbar.nvim'										-- buffer tabs
@@ -59,7 +59,9 @@ return packer.startup(function(use)
 	use 'mg979/vim-visual-multi'									-- multi cursor support
 	use 'kylechui/nvim-surround'									-- surround values
 	use { 'akinsho/toggleterm.nvim', tag = 'v2.*' }					-- popup terminal
-	use { 'norcalli/nvim-colorizer.lua' }							-- Show color sytax
+	use 'norcalli/nvim-colorizer.lua'								-- show color sytax
+	use 'folke/which-key.nvim'										-- show keybindings on type
+	use 'ahmedkhalf/project.nvim'									-- project managment
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'

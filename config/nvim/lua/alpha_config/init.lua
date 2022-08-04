@@ -29,6 +29,7 @@ dashboard.section.buttons.val = {
 	dashboard.button('e', ' ' .. '   New File', ':ene <BAR> startinsert <CR>'),
 	dashboard.button('r', ' ' .. '   Recent Files', ':Telescope oldfiles <CR>'),
 	dashboard.button('t', ' ' .. '   Find Text (live grep)', ':Telescope live_grep <CR>'),
+	dashboard.button('p', '冷' .. '   Find Project', ':Telescope projects <CR>'),
 	dashboard.button('c', ' ' .. '   Config', ':e ~/.config/nvim/init.lua <CR>'),
 	dashboard.button('q', ' ' .. '   Exit vim ', ':qa <CR>')
 }
