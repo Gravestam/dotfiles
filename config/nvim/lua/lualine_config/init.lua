@@ -62,7 +62,7 @@ require('lualine').setup {
 		theme = 'dracula-nvim',
 		component_separators = { left = '', right = '' },
 		section_separators = { left = '', right = '' },
-		disabled_filetypes = { 'alpha', 'NvimTree', 'toggleterm' },
+		disabled_filetypes = { 'alpha', 'NvimTree', 'toggleterm', 'Outline' },
 		ignore_focus = {},
 		always_divide_middle = false,
 		globalstatus = false,

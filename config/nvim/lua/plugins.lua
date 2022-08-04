@@ -66,6 +66,7 @@ return packer.startup(function(use)
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'
+	use 'folke/tokyonight.nvim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()

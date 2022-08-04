@@ -33,6 +33,6 @@ o.signcolumn = 'yes'		-- always show the sign column, otherwise it would shift t
 o.wrap = false				-- wrap lines
 o.scrolloff = 8				-- minimal number of lines to keep above the cursor
 o.sidescrolloff = 8			-- minimal number of colums to keep to the right and left of cursor
-o.guifont = 'monospace:h17'	-- the font used in graphical nvim applications
+o.guifont = 'FiraCode Nerd Font Mono:h8'	-- the font used in graphical nvim applications
 o.fillchars.eob = ' '		-- replaces ~ with empty space
 o.hidden = true				-- hide buffers instead of deleting when closed (terminal need this to prevent it from opening a new terminal every single time)

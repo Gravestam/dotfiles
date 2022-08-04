@@ -5,7 +5,7 @@ local options = { silent = true }
 -- space as leader
 keymap('', '<Space>', '<Nop>', options)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ''
+vim.g.maplocalleader = ' '
 
 -- modes
 -- n = normal
@@ -42,6 +42,7 @@ keymap('n', '<leader>ff', ':Telescope find_files<CR>', options)
 keymap('n', '<leader>ft', ':Telescope live_grep<CR>', options)
 keymap('n', '<leader>fb', ':Telescope buffers<CR>', options)
 keymap('n', '<leader>fh', ':Telescope oldfiles<CR>', options)
+keymap('n', '<leader>fp', ':Telescope projects<CR>', options)
 
 -- taglist
 keymap('n', '<leader>t', ':SymbolsOutline<Cr>', options)
