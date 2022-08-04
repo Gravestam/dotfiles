@@ -398,6 +398,8 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey }, "b", function() awful.spawn.with_shell("bwmenu") end, { description = "Bitwarden", group = "Launcher" }),
 	awful.key({ superkey }, "p", function() awful.spawn.with_shell("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
 	awful.key({ superkey }, "e", function() awful.spawn.with_shell("rofimoji") end, { description = "Emojis", group = "Launcher" }),
+	awful.key({ superkey }, 'n', function() awful.spawn.with_shell("neovide --multigrid") end, { description = "Gui editor", group = "Launcher" }),
+	awful.key({ superkey }, 'm', function() awful.spawn("brave") end, { description = "Browser", group = "Launcher" }),
 
 	awful.key({ superkey, altkey }, "Right", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
 	awful.key({ superkey, altkey }, "Left", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" })
