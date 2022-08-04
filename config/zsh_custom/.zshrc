@@ -51,6 +51,8 @@ alias remove="pac -Rsn"
 
 alias update-mirrors="sudo reflector --verbose -c 'Sweden,Germany,Denmark' -l 40 -n 20  -p https --sort rate --save /etc/pacman.d/mirrorlist"
 
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
 alias vim="nvim"
 alias v="nvim"
 alias vg="neovide"
@@ -65,6 +67,10 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
+
+alias grep="rg"
+alias ps="procs"
+alias cat="bat"
 
 [ -f "${HOME}/private_aliases/one" ] && source "${HOME}/private_aliases/one"
 

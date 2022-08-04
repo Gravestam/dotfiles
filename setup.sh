@@ -5,7 +5,9 @@ pkgs=(
 	"neofetch"								# CLI display info
 	"bat"									# Better cat
 	"tree"									# Filetree
+	"procs"									# ps replacement
 	"neovim"								# Vim replacement
+	"ripgrep"								# Better grep
 	"rofi"									# Launcher
 	"awesome"								# WM
 	"bitwarden-rofi-git"					# Bitwarden in rofi

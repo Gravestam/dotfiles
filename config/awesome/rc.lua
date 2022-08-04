@@ -77,7 +77,7 @@ beautiful.gap_single_client = true
 
 beautiful.border_width = dpi(2)
 
-beautiful.border_focus = colors._6
+beautiful.border_focus = colors._5
 beautiful.border_normal = colors._1
 beautiful.bg_focus = colors._3
 
