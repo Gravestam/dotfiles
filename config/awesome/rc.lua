@@ -83,7 +83,7 @@ beautiful.bg_focus = colors._3
 
 beautiful.notification_font = "JetBrains Mono NF 10"
 naughty.config.defaults.border_width = dpi(2)
-naughty.config.defaults.position = "top_middle"
+naughty.config.defaults.position = "top_right"
 beautiful.notification_border_color = colors._4
 
 beautiful.bg_systray = colors.bg
@@ -204,10 +204,10 @@ kbd.current = "us"
 kbd.switch = function()
 	if kbd.current == "us" then
 		kbd.current = "se"
-		awful.spawn.with_shell("setxkbmap se")
+		awful.spawn("setxkbmap se")
 	elseif kbd.current == "se" then
 		kbd.current = "us"
-		awful.spawn.with_shell("setxkbmap us")
+		awful.spawn("setxkbmap us")
 	end
 end
 
@@ -360,17 +360,17 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "Settings" }),
 	awful.key({ superkey }, "i", function() kbd.switch() end, { description = "Switch keyboard layout", group = "Settings" }),
 
-	awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn_with_shell("xbacklight -dec 5") end, { description = "Decrease screen backlight", group = "Settings" }),
-	awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn_with_shell("xbacklight -inc 5") end, { description = "Increase screen backlight", group = "Settings" }),
+	awful.key({}, "XF86MonBrightnessDown", function() awful.util("xbacklight -dec 5") end, { description = "Decrease screen backlight", group = "Settings" }),
+	awful.key({}, "XF86MonBrightnessUp", function() awful.util("xbacklight -inc 5") end, { description = "Increase screen backlight", group = "Settings" }),
 
-	awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn_with_shell("amixer set Master playback 2%-") end, { description = "Decrease sound volume", group = "Settings" }),
-	awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn_with_shell("amixer set Master playback 2%+") end, { description = "Increase sound volume", group = "Settings" }),
-	awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
+	awful.key({}, "XF86AudioLowerVolume", function() awful.util("amixer set Master playback 2%-") end, { description = "Decrease sound volume", group = "Settings" }),
+	awful.key({}, "XF86AudioRaiseVolume", function() awful.util("amixer set Master playback 2%+") end, { description = "Increase sound volume", group = "Settings" }),
+	awful.key({}, "XF86AudioMute", function() awful.util("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
 
 	awful.key({ superkey }, "j", function() awful.screen.focus_relative( 1) end, { description = "Focus next", group = "Screen" }),
 	awful.key({ superkey }, "k", function() awful.screen.focus_relative(-1) end, { description = "Focus previous", group = "Screen" }),
 
-	awful.key({ superkey }, "l", function() awful.spawn.with_shell("lock-screen") end, { description = "Lock screen", group = "Screen" }),
+	awful.key({ superkey }, "l", function() awful.spawn("lock-screen") end, { description = "Lock screen", group = "Screen" }),
 
 	awful.key({ superkey }, "Down", function() awful.client.focus.global_bydirection("down") if client.focus then client.focus:raise() end end, { description = "focus down", group = "Client" }),
 	awful.key({ superkey }, "Up", function() awful.client.focus.global_bydirection("up") if client.focus then client.focus:raise() end end, { description = "focus up", group = "Client" }),
@@ -391,14 +391,14 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey, "Shift" }, "l", function() awful.tag.incnmaster(-1, nil, true) end, { description = "Decrease the number of master clients", group = "Layout" }),
 	awful.key({ superkey, "Control" }, "Tab", function() awful.layout.inc( 1) end, { description = "Cycle layout", group = "Layout" }),
 
-	awful.key({ superkey }, "space", function() awful.spawn.with_shell("rofi-run") end, { description = "Prompt", group = "Launcher" }),
+	awful.key({ superkey }, "space", function() awful.spawn("rofi-run") end, { description = "Prompt", group = "Launcher" }),
 	awful.key({ superkey }, "Return", function() awful.spawn(terminal) end, { description = "Terminal", group = "Launcher" }),
-	awful.key({ superkey }, "Tab", function() awful.spawn.with_shell("rofi -show window") end, { description = "Show windows", group = "Launcher" }),
+	awful.key({ superkey }, "Tab", function() awful.spawn("rofi -show window") end, { description = "Show windows", group = "Launcher" }),
 	awful.key({ superkey, "Control" }, "Return", function() awful.spawn(terminal .. " --class customfloat") end, { description = "Terminal (floating)", group = "Launcher" }),
-	awful.key({ superkey }, "b", function() awful.spawn.with_shell("bwmenu") end, { description = "Bitwarden", group = "Launcher" }),
-	awful.key({ superkey }, "p", function() awful.spawn.with_shell("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
-	awful.key({ superkey }, "e", function() awful.spawn.with_shell("rofimoji") end, { description = "Emojis", group = "Launcher" }),
-	awful.key({ superkey }, 'n', function() awful.spawn.with_shell("neovide --multigrid") end, { description = "Gui editor", group = "Launcher" }),
+	awful.key({ superkey }, "b", function() awful.spawn("bwmenu") end, { description = "Bitwarden", group = "Launcher" }),
+	awful.key({ superkey }, "p", function() awful.spawn("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
+	awful.key({ superkey }, "e", function() awful.spawn("rofimoji") end, { description = "Emojis", group = "Launcher" }),
+	awful.key({ superkey }, 'n', function() awful.spawn("neovide") end, { description = "Gui editor", group = "Launcher" }),
 	awful.key({ superkey }, 'm', function() awful.spawn("brave") end, { description = "Browser", group = "Launcher" }),
 
 	awful.key({ superkey, altkey }, "Right", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
@@ -530,5 +530,5 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- Autostart on reload
-awful.spawn.with_shell("picom --experimental-backends")
-awful.spawn.with_shell("nitrogen --restore")
+awful.spawn("picom --experimental-backends")
+awful.spawn("nitrogen --restore")

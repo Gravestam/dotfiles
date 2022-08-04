@@ -53,6 +53,7 @@ alias update-mirrors="sudo reflector --verbose -c 'Sweden,Germany,Denmark' -l 40
 
 alias vim="nvim"
 alias v="nvim"
+alias vg="neovide"
 
 alias clip="xclip -selection clipboard"
 alias fm="ranger"

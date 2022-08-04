@@ -35,15 +35,19 @@ keymap('n', '>', '>>', options)
 keymap('n', '<', '<<', options)
 
 -- tree
-keymap('n', '<leader>e', ':NvimTreeToggle<CR>', options)
+keymap('n', '<leader><Tab>', ':NvimTreeToggle<Cr>', options)
 
 -- telescope
-keymap('n', '<leader>ff', ':Telescope find_files<CR>', options)
-keymap('n', '<leader>ft', ':Telescope live_grep<CR>', options)
-keymap('n', '<leader>fb', ':Telescope buffers<CR>', options)
-keymap('n', '<leader>fh', ':Telescope oldfiles<CR>', options)
-keymap('n', '<leader>fp', ':Telescope projects<CR>', options)
-keymap('n', '<leader>fr', ':Telescope registers<CR>', options)
+keymap('n', '<leader>ff', ':Telescope find_files<Cr>', options)
+keymap('n', '<leader>ft', ':Telescope live_grep<Cr>', options)
+keymap('n', '<leader>fb', ':Telescope buffers<Cr>', options)
+keymap('n', '<leader>fh', ':Telescope oldfiles<Cr>', options)
+keymap('n', '<leader>fp', ':Telescope projects<Cr>', options)
+keymap('n', '<leader>fr', ':Telescope registers<Cr>', options)
 
 -- taglist
 keymap('n', '<leader>t', ':SymbolsOutline<Cr>', options)
+
+-- move lines
+keymap('n', '<A-Down>', ':move +1<Cr>')
+keymap('n', '<A-Up>', ':move -2<Cr>')
