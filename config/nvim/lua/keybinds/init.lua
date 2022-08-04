@@ -22,6 +22,7 @@ keymap('n', '<leader>k', '<C-w>l', options)
 -- buffer navigation
 keymap('n', '<leader>,', ':bnext<Cr>', options)
 keymap('n', '<leader>m', ':bprevious<Cr>', options)
+keymap('n', '<leader>b', ':BufferPick<Cr>', options)
 
 -- close buffer
 keymap('n', '<S-q>', '<cmd>bdelete!<Cr>', options)
@@ -41,6 +42,3 @@ keymap('n', '<leader>ff', ':Telescope find_files<CR>', options)
 keymap('n', '<leader>ft', ':Telescope live_grep<CR>', options)
 keymap('n', '<leader>fb', ':Telescope buffers<CR>', options)
 keymap('n', '<leader>fh', ':Telescope oldfiles<CR>', options)
-
--- terminal
-keymap('n', '<leader>;', ':lua NTGlobal["terminal"]:toggle()<cr>', options)

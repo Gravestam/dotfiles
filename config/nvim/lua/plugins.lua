@@ -59,6 +59,7 @@ return packer.startup(function(use)
 	use 'mg979/vim-visual-multi'									-- multi cursor support
 	use 'kylechui/nvim-surround'									-- surround values
 	use { 'akinsho/toggleterm.nvim', tag = 'v2.*' }					-- popup terminal
+	use { 'norcalli/nvim-colorizer.lua' }							-- Show color sytax
 
 	-- colorschemes
 	use 'Mofiqul/dracula.nvim'

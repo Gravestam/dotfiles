@@ -286,9 +286,9 @@ end
 
 awful.screen.connect_for_each_screen(function(s)
 
-	createTags(s, "numbers_solid", "1")
-	-- createTags(s, "numbers_outline", "3")
-	-- createTags(s, "icons", "3")
+	-- createTags(s, "numbers_solid", "1")
+	createTags(s, "numbers_outline", "1")
+	-- createTags(s, "icons", "1")
 
 	s.mypromptbox = awful.widget.prompt()
 
@@ -325,10 +325,11 @@ awful.screen.connect_for_each_screen(function(s)
 		position = "top",
 		screen = s,
 		height = dpi(24),
-		border_width = dpi(0),
+		border_width = dpi(2),
+		border_color = colors.bg,
 		bg = colors.bg,
 		visible = true,
-		opacity = 0.85
+		opacity = 1
 	})
 
 	s.mywibox:setup {
