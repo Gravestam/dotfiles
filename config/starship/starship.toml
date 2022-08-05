@@ -105,7 +105,7 @@ modified = " "
 staged = '[$count](#50fa7b) '
 renamed = "👅 "
 deleted = "🗑 "
-format = '\( $all_status\)'
+format = '\( $all_status$ahead_behind\)'
 
 [git_metrics]
 disabled = false
