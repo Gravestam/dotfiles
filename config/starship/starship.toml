@@ -2,8 +2,8 @@
 # ⊏ ⊐ ─ ■ ╭ ╰ ╼ ╾ ▶ ◀
 
 format = """
-╭─ $username$hostname $directory $git_branch $git_status
-╰── $sudo$character 
+[╭─](#bd93f9) $username$hostname [─](#bd93f9) $directory $git_branch $git_status
+[╰──](#bd93f9) $sudo$character 
 """
 
 right_format = """
@@ -34,7 +34,7 @@ show_always = true
 
 [hostname]
 disabled = false
-ssh_only = false
+ssh_only = true
 style = "bold #ffb86c"
 format = "@[$hostname]($style)"
 trim_at = ".companyname.com"
@@ -62,13 +62,13 @@ time_range = "-"
 [status]
 disabled = false
 style = "#f8f8f2"
-symbol = ""
-success_symbol = ""
-not_executable_symbol = ""
-not_found_symbol = ""
-sigint_symbol = ""
-signal_symbol = ""
-format = '[\[$symbol]($style) $int\]'
+symbol = "[ $int](bold #ff5555)"
+success_symbol = "[](bold #50fa7b)"
+not_executable_symbol = "[ $int](bold #ff5555)"
+not_found_symbol = "[ $int](bold #ffb86c)"
+sigint_symbol = "[ $int](bold #ffb86c)"
+signal_symbol = "[ $int](bold #ffb86c)"
+format = '[$symbol]($style)'
 map_symbol = true
 recognize_signal_code = true
 
