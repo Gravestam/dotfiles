@@ -2,7 +2,7 @@
 # ⊏ ⊐ ─ ■ ╭ ╰ ╼ ╾ ▶ ◀
 
 format = """
-[╭─](#bd93f9) $username$hostname [─](#bd93f9) $directory $git_branch $git_status
+[╭─](#bd93f9) $username$hostname [─](#bd93f9) $directory $git_branch $git_status$git_metrics
 [╰──](#bd93f9) $sudo$character 
 """
 
@@ -105,10 +105,11 @@ modified = "[](#ffb86c) "
 staged = '[$count](#50fa7b) '
 renamed = "[凜](#ffb86c) "
 deleted = "[](#ffb86c) "
-format = '\( $all_status$ahead_behind\)'
+# format = '\[ $all_status$ahead_behind\]'
+format = '[\[ ](#bd93f9)$all_status$ahead_behind[\]](#bd93f9)'
 
 [git_metrics]
 disabled = false
-added_style = "bold #6272a4"
+added_style = "bold #50fa7b"
 deleted_style = "bold #ff5555"
-format = '[$added]($added_style)/[$deleted]($deleted_style) '
+format = '[\[ ](#bd93f9)[$added]($added_style)/[$deleted]($deleted_style)[ \]](#bd93f9)'
