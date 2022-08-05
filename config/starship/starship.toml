@@ -110,6 +110,6 @@ format = '[\[ ](#bd93f9)$all_status$ahead_behind[\]](#bd93f9)'
 [git_metrics]
 disabled = false
 only_nonzero_diffs = true
-added_style = "bold #50fa7b"
-deleted_style = "bold #ff5555"
+added_style = "#50fa7b"
+deleted_style = "#ff5555"
 format = '[\[ ](#bd93f9)[$added]($added_style)/[$deleted]($deleted_style)[ \]](#bd93f9)'
