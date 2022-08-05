@@ -51,7 +51,7 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 alias vim="nvim"
 alias v="nvim"
-alias vg="neovide"
+alias gv="neovide"
 
 alias clip="xclip -selection clipboard"
 alias fm="ranger"
