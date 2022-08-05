@@ -1,8 +1,4 @@
 
-# THEME
-source ~/zsh_extensions/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.p10k.zsh
-
 # EXTENSIONS (LOAD)
 source ~/.fzf.zsh
 source ~/zsh_extensions/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -77,9 +73,13 @@ alias cat="bat"
 # MISC
 unsetopt correct
 
-bindkey "^[[3~" delete-char
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
+ bindkey "^[[3~" delete-char
+ bindkey "^[[H" beginning-of-line
+ bindkey "^[[F" end-of-line
+
+# PROMPT
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init zsh)"
 
 # INITIAL COMMANDS
 #neofetch

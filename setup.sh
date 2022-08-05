@@ -4,6 +4,7 @@
 pkgs=(
 	"neofetch"								# CLI display info
 	"bat"									# Better cat
+	"starship"								# Prompt for zsh, bash & fish
 	"tree"									# Filetree
 	"procs"									# ps replacement
 	"neovim"								# Vim replacement
@@ -27,7 +28,6 @@ pkgs=(
 	"pa-applet-git"							# Sound control applet
 	"ttf-fira-code"							# Font
 	"ttf-roboto"							# Font
-	"ttf-meslo-nerd-font-powerlevel10k"		# Font
 	"materia-theme"							# QT theme
 	"qt5-styleplugins"						# QT Plugins
 	"reflector"								# Updates pkg list providers (to find the fastest)
@@ -153,7 +153,6 @@ speak "-- DONE"
 space 2
 speak "-- DOWNLOADING ZSH EXTENSIONS"
 
-gitDownload "romkatv/powerlevel10k.git" "${HOME}/zsh_extensions/powerlevel10k"
 gitDownload "zsh-users/zsh-autosuggestions.git" "${HOME}/zsh_extensions/zsh-autosuggestions"
 gitDownload "zsh-users/zsh-syntax-highlighting.git" "${HOME}/zsh_extensions/zsh-syntax-highlighting"
 gitDownload "junegunn/fzf.git" "${HOME}/zsh_extensions/fzf"
@@ -172,6 +171,7 @@ symlinkConfigDir "neofetch"
 symlinkConfigDir "nvim"
 symlinkConfigDir "picom"
 symlinkConfigDir "rofi"
+symlinkConfigDir "starship"
 symlinkConfigDir "zsh_custom"
 
 speak "-- DONE"
