@@ -95,9 +95,9 @@ tag_symbol = "🔖 "
 [git_status]
 disabled = false
 conflicted = "🏳 "
-ahead = "${count} "
+ahead = "$count "
 diverged = "${ahead_count}${behind_count} "
-behind = "${count} "
+behind = "$count "
 up_to_date = " "
 untracked = " "
 stashed = " "
