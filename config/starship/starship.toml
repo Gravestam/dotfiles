@@ -105,11 +105,11 @@ modified = "[](#ffb86c) "
 staged = '[$count](#50fa7b) '
 renamed = "[凜](#ffb86c) "
 deleted = "[](#ffb86c) "
-# format = '\[ $all_status$ahead_behind\]'
 format = '[\[ ](#bd93f9)$all_status$ahead_behind[\]](#bd93f9)'
 
 [git_metrics]
 disabled = false
+only_nonzero_diffs = true
 added_style = "bold #50fa7b"
 deleted_style = "bold #ff5555"
 format = '[\[ ](#bd93f9)[$added]($added_style)/[$deleted]($deleted_style)[ \]](#bd93f9)'
