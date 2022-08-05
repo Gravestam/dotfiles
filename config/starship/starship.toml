@@ -94,17 +94,17 @@ tag_symbol = "🔖 "
 
 [git_status]
 disabled = false
-conflicted = "🏳 "
-ahead = "$count "
-diverged = "${ahead_count}${behind_count} "
-behind = "$count "
-up_to_date = " "
-untracked = " "
-stashed = " "
-modified = " "
+conflicted = "[ﲅ](#ff5555) "
+ahead = "[$count](#ffb86c) "
+diverged = "[${ahead_count}${behind_count}](#ffb86c) "
+behind = "[$count](#ffb86c) "
+up_to_date = "[](#50fa7b) "
+untracked = "[](#ffb86c) "
+stashed = "[](#ffb86c) "
+modified = "[](#ffb86c) "
 staged = '[$count](#50fa7b) '
-renamed = "👅 "
-deleted = "🗑 "
+renamed = "[凜](#ffb86c) "
+deleted = "[](#ffb86c) "
 format = '\( $all_status$ahead_behind\)'
 
 [git_metrics]
