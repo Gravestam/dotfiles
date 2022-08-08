@@ -360,12 +360,12 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "Settings" }),
 	awful.key({ superkey }, "i", function() kbd.switch() end, { description = "Switch keyboard layout", group = "Settings" }),
 
-	awful.key({}, "XF86MonBrightnessDown", function() awful.util("xbacklight -dec 5") end, { description = "Decrease screen backlight", group = "Settings" }),
-	awful.key({}, "XF86MonBrightnessUp", function() awful.util("xbacklight -inc 5") end, { description = "Increase screen backlight", group = "Settings" }),
+	awful.key({}, "XF86MonBrightnessDown", function() awful.spawn("xbacklight -dec 5") end, { description = "Decrease screen backlight", group = "Settings" }),
+	awful.key({}, "XF86MonBrightnessUp", function() awful.spawn("xbacklight -inc 5") end, { description = "Increase screen backlight", group = "Settings" }),
 
-	awful.key({}, "XF86AudioLowerVolume", function() awful.util("amixer set Master playback 2%-") end, { description = "Decrease sound volume", group = "Settings" }),
-	awful.key({}, "XF86AudioRaiseVolume", function() awful.util("amixer set Master playback 2%+") end, { description = "Increase sound volume", group = "Settings" }),
-	awful.key({}, "XF86AudioMute", function() awful.util("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
+	awful.key({}, "XF86AudioLowerVolume", function() awful.spawn("amixer set Master playback 2%-") end, { description = "Decrease sound volume", group = "Settings" }),
+	awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("amixer set Master playback 2%+") end, { description = "Increase sound volume", group = "Settings" }),
+awful.key({}, "XF86AudioMute", function() awful.spawn("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
 
 	awful.key({ superkey }, "j", function() awful.screen.focus_relative( 1) end, { description = "Focus next", group = "Screen" }),
 	awful.key({ superkey }, "k", function() awful.screen.focus_relative(-1) end, { description = "Focus previous", group = "Screen" }),
@@ -482,7 +482,7 @@ awful.rules.rules = {
 		properties = { titlebars_enabled = false }
 	},
 	{
-		rule_any = { instance = { "customfloat", "nsxiv", "simplescreenrecorder", "galculator" }, class = { "mpv" } },
+		rule_any = { instance = { "customfloat", "nsxiv", "simplescreenrecorder", "galculator", "nitrogen" }, class = { "mpv" } },
 		properties = { placement = awful.placement.centered, floating = true, ontop = true }
 	}
 }
