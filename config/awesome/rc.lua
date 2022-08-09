@@ -5,7 +5,7 @@ local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
-local naughty = require("naughty")
+-- local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local xresources = require("beautiful.xresources")
@@ -14,32 +14,32 @@ local dpi = xresources.apply_dpi
 require("awful.autofocus")
 require("awful.hotkeys_popup.keys")
 
-if awesome.startup_errors then
-	naughty.notify({
-		preset = naughty.config.presets.critical,
-		title = "Startup errors!",
-		text = awesome.startup_errors
-	})
-end
+-- if awesome.startup_errors then
+	-- naughty.notify({
+		-- preset = naughty.config.presets.critical,
+		-- title = "Startup errors!",
+		-- text = awesome.startup_errors
+	-- })
+-- end
 
-do
-	local in_error = false
-	awesome.connect_signal("debug::error", function(err)
-
-		if in_error then return end
-
-		in_error = true
-
-		naughty.notify({
-			preset = naughty.config.presets.critical,
-			title = "Error!",
-			text = tostring(err)
-		})
-
-		in_error = false
-	end)
-end
-
+-- do
+-- 	local in_error = false
+-- 	awesome.connect_signal("debug::error", function(err)
+--
+-- 		if in_error then return end
+--
+-- 		in_error = true
+--
+-- 		naughty.notify({
+-- 			preset = naughty.config.presets.critical,
+-- 			title = "Error!",
+-- 			text = tostring(err)
+-- 		})
+--
+-- 		in_error = false
+-- 	end)
+-- end
+--
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 local terminal = "kitty"
@@ -82,8 +82,8 @@ beautiful.border_normal = colors._1
 beautiful.bg_focus = colors._3
 
 beautiful.notification_font = "JetBrains Mono NF 10"
-naughty.config.defaults.border_width = dpi(2)
-naughty.config.defaults.position = "top_right"
+-- naughty.config.defaults.border_width = dpi(2)
+-- naughty.config.defaults.position = "top_right"
 beautiful.notification_border_color = colors._4
 
 beautiful.bg_systray = colors.bg
@@ -402,7 +402,10 @@ awful.key({}, "XF86AudioMute", function() awful.spawn("amixer set Master toggle"
 	awful.key({ superkey }, 'm', function() awful.spawn("brave") end, { description = "Browser", group = "Launcher" }),
 
 	awful.key({ superkey, altkey }, "Right", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
-	awful.key({ superkey, altkey }, "Left", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" })
+	awful.key({ superkey, altkey }, "Left", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" }),
+
+	awful.key({ superkey, 'Control' }, "h", function() awful.spawn("dunstctl history-pop")  end, { description = "Show last", group = "Notifications" }),
+	awful.key({ superkey, 'Control' }, "k", function() awful.spawn("dunstctl close-all")  end, { description = "Close all", group = "Notifications" })
 )
 
 local clientkeys = gears.table.join(

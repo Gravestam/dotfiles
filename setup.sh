@@ -60,6 +60,7 @@ pkgs=(
 	"bluez"									# bluetooth
 	"bluez-tool"							# bluetooth
 	"bluez-utils"							# bluetooth
+	"dunst"									# notifications
 )
 
 function createDir {
@@ -176,6 +177,7 @@ symlinkConfigDir "picom"
 symlinkConfigDir "rofi"
 symlinkConfigDir "starship"
 symlinkConfigDir "zsh_custom"
+symlinkConfigDir "dunst"
 
 speak "-- DONE"
 
