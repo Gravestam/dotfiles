@@ -12,8 +12,8 @@ compinit
 _comp_options+=(globdots)
 
 # VIM MODE
-bindkey -v
-export KEYTIMEOUT=1
+# bindkey -v
+# export KEYTIMEOUT=1
 	# Forces VIM MODE to start in normal mode (default is insert)
 	# autoload -Uz add-zle-hook-widget
 	# add-zle-hook-widget line-init vi-cmd-mode

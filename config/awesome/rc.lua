@@ -106,7 +106,7 @@ end
 
 local mykeyboardlayout = customKeyboardLayout()
 
-local mytextclock = wibox.widget.textclock("| %d-%m-%Y | %H:%M", 10)
+local mytextclock = wibox.widget.textclock("| %d-%m-%Y (%A) | %H:%M", 10)
 
 local taglist_buttons = gears.table.join(
 	awful.button({}, 1, function(t) t:view_only() end),
@@ -516,6 +516,10 @@ awful.rules.rules = {
 }
 
 client.connect_signal("manage", function(c)
+
+	c.shape = function(cr, w, h)
+		gears.shape.rounded_rect(cr, w, h, 5)
+	end
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		awful.placement.no_offscreen(c)
 	end
@@ -558,5 +562,5 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- Autostart on reload
-awful.spawn("picom --experimental-backends")
+-- awful.spawn("picom --experimental-backends")
 awful.spawn("nitrogen --restore")
