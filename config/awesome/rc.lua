@@ -11,35 +11,42 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
+-- hack to remove the tmux keybindings
+package.loaded["awful.hotkeys_popup.keys.tmux"] = {}
+
 require("awful.autofocus")
 require("awful.hotkeys_popup.keys")
 
--- if awesome.startup_errors then
-	-- naughty.notify({
-		-- preset = naughty.config.presets.critical,
-		-- title = "Startup errors!",
-		-- text = awesome.startup_errors
-	-- })
--- end
+if awesome.startup_errors then
 
--- do
--- 	local in_error = false
--- 	awesome.connect_signal("debug::error", function(err)
---
--- 		if in_error then return end
---
--- 		in_error = true
---
--- 		naughty.notify({
--- 			preset = naughty.config.presets.critical,
--- 			title = "Error!",
--- 			text = tostring(err)
--- 		})
---
--- 		in_error = false
--- 	end)
--- end
---
+	awful.spawn("dustify " .. awesome.startup_errors .. " -u critical")
+
+	-- naughty.notify({
+	-- 	preset = naughty.config.presets.critical,
+	-- 	title = "Startup errors!",
+	-- 	text = awesome.startup_errors
+	-- })
+end
+
+do
+	local in_error = false
+	awesome.connect_signal("debug::error", function(err)
+
+		if in_error then return end
+
+		in_error = true
+		awful.spawn("dustify " .. toString(err) .. " -u critical")
+
+		-- naughty.notify({
+		-- 	preset = naughty.config.presets.critical,
+		-- 	title = "Error!",
+		-- 	text = tostring(err)
+		-- })
+
+		in_error = false
+	end)
+end
+
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 local terminal = "kitty"
@@ -88,7 +95,7 @@ beautiful.notification_border_color = colors._4
 
 beautiful.bg_systray = colors.bg
 
-function customKeyboardLayout()
+local function customKeyboardLayout()
 
 	local kbl = awful.widget.keyboardlayout()
 
@@ -211,9 +218,6 @@ kbd.switch = function()
 	end
 end
 
-local systray = wibox.widget.systray()
-systray:set_base_size(20)
-
 local function tableFind(table, key, value)
 
 	for k in pairs(table) do
@@ -286,8 +290,8 @@ end
 
 awful.screen.connect_for_each_screen(function(s)
 
-	-- createTags(s, "numbers_solid", "1")
-	createTags(s, "numbers_outline", "1")
+	createTags(s, "numbers_solid", "1")
+	-- createTags(s, "numbers_outline", "1")
 	-- createTags(s, "icons", "1")
 
 	s.mypromptbox = awful.widget.prompt()
@@ -332,13 +336,32 @@ awful.screen.connect_for_each_screen(function(s)
 		opacity = 1
 	})
 
+	s.systray = wibox.widget.systray()
+	s.systray.visible = false
+	s.systray:set_base_size(20)
+
+	local function sep(w)
+
+		local wsep = wibox.widget {
+			widget = wibox.widget.separator,
+			orientation = "vertical",
+			forced_width = w,
+			visible = true,
+			color = colors.bg
+		}
+
+		return wsep
+	end
+
 	s.mywibox:setup {
 		layout = wibox.layout.align.horizontal,
 		expand = "none",
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
 			expand = "outside",
+			sep(5),
 			s.mylayoutbox,
+			sep(20),
 			s.mytaglist,
 		},
 		{ -- Middle widget
@@ -349,7 +372,8 @@ awful.screen.connect_for_each_screen(function(s)
 		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			systray,
+			s.systray,
+			sep(5)
 		},
 	}
 end)
@@ -365,12 +389,13 @@ local globalkeys = gears.table.join(
 
 	awful.key({}, "XF86AudioLowerVolume", function() awful.spawn("amixer set Master playback 2%-") end, { description = "Decrease sound volume", group = "Settings" }),
 	awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("amixer set Master playback 2%+") end, { description = "Increase sound volume", group = "Settings" }),
-awful.key({}, "XF86AudioMute", function() awful.spawn("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
+	awful.key({}, "XF86AudioMute", function() awful.spawn("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
+	awful.key({ superkey }, "y", function() awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible end, { description = "Toggle system tray", group = "Settings" }),
 
 	awful.key({ superkey }, "j", function() awful.screen.focus_relative( 1) end, { description = "Focus next", group = "Screen" }),
 	awful.key({ superkey }, "k", function() awful.screen.focus_relative(-1) end, { description = "Focus previous", group = "Screen" }),
 
-	awful.key({ superkey }, "l", function() awful.spawn("lock-screen") end, { description = "Lock screen", group = "Screen" }),
+	awful.key({ superkey, "Control" }, "l", function() awful.spawn("lock-screen") end, { description = "Lock screen", group = "Screen" }),
 
 	awful.key({ superkey }, "Down", function() awful.client.focus.global_bydirection("down") if client.focus then client.focus:raise() end end, { description = "focus down", group = "Client" }),
 	awful.key({ superkey }, "Up", function() awful.client.focus.global_bydirection("up") if client.focus then client.focus:raise() end end, { description = "focus up", group = "Client" }),
@@ -404,8 +429,8 @@ awful.key({}, "XF86AudioMute", function() awful.spawn("amixer set Master toggle"
 	awful.key({ superkey, altkey }, "Right", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
 	awful.key({ superkey, altkey }, "Left", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" }),
 
-	awful.key({ superkey, 'Control' }, "h", function() awful.spawn("dunstctl history-pop")  end, { description = "Show last", group = "Notifications" }),
-	awful.key({ superkey, 'Control' }, "k", function() awful.spawn("dunstctl close-all")  end, { description = "Close all", group = "Notifications" })
+	awful.key({ superkey }, "h", function() awful.spawn("dunstctl history-pop")  end, { description = "Show last", group = "Notifications" }),
+	awful.key({ superkey }, "k", function() awful.spawn("dunstctl close-all")  end, { description = "Close all", group = "Notifications" })
 )
 
 local clientkeys = gears.table.join(
