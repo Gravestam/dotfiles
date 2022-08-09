@@ -51,3 +51,7 @@ keymap('n', '<leader>t', ':SymbolsOutline<Cr>', options)
 -- move lines
 keymap('n', '<A-Down>', ':move +1<Cr>')
 keymap('n', '<A-Up>', ':move -2<Cr>')
+
+-- new lines
+keymap('n', '<leader>o', 'o<Esc>')
+keymap('n', '<leader>O', 'O<Esc>')

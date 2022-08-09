@@ -67,6 +67,7 @@ alias gp="git push"
 alias grep="rg"
 alias ps="procs"
 alias cat="bat"
+alias bt="bluetoothctl"
 
 [ -f "${HOME}/private_aliases/one" ] && source "${HOME}/private_aliases/one"
 

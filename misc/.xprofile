@@ -14,5 +14,5 @@
 bash ~/dotfiles/misc/setup_monitors &
 nm-applet &
 pa-applet &
-blueman-applet &
+#blueman-applet &
 cbatticon &

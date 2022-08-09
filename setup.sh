@@ -57,6 +57,9 @@ pkgs=(
 	"galculator"							# Calculator
 	"wireguard-tools"						# VPN
 	"fd"									# nvim (telescope) dependency
+	"bluez"									# bluetooth
+	"bluez-tool"							# bluetooth
+	"bluez-utils"							# bluetooth
 )
 
 function createDir {
