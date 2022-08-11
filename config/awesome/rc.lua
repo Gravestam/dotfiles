@@ -5,8 +5,6 @@ local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
--- local naughty = require("naughty")
-local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
@@ -20,12 +18,6 @@ require("awful.hotkeys_popup.keys")
 if awesome.startup_errors then
 
 	awful.spawn("dustify " .. awesome.startup_errors .. " -u critical")
-
-	-- naughty.notify({
-	-- 	preset = naughty.config.presets.critical,
-	-- 	title = "Startup errors!",
-	-- 	text = awesome.startup_errors
-	-- })
 end
 
 do
@@ -37,12 +29,6 @@ do
 		in_error = true
 		awful.spawn("dustify " .. toString(err) .. " -u critical")
 
-		-- naughty.notify({
-		-- 	preset = naughty.config.presets.critical,
-		-- 	title = "Error!",
-		-- 	text = tostring(err)
-		-- })
-
 		in_error = false
 	end)
 end
@@ -50,7 +36,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 local terminal = "kitty"
-local editor = os.getenv("vim") or "nano"
+local editor = os.getenv("nvim") or "vi"
 local editor_cmd = terminal .. " -e " .. editor
 
 local superkey = "Mod4"
@@ -62,6 +48,7 @@ awful.layout.layouts = {
 	awful.layout.suit.tile.top
 }
 
+-- Dracula
 local colors = {
 	bg = '#282a36',
 	fg = '#f8f8f2',
@@ -88,11 +75,6 @@ beautiful.border_focus = colors._5
 beautiful.border_normal = colors._1
 beautiful.bg_focus = colors._3
 
-beautiful.notification_font = "JetBrains Mono NF 10"
--- naughty.config.defaults.border_width = dpi(2)
--- naughty.config.defaults.position = "top_right"
-beautiful.notification_border_color = colors._4
-
 beautiful.bg_systray = colors.bg
 
 local function customKeyboardLayout()
@@ -106,15 +88,13 @@ end
 
 local mykeyboardlayout = customKeyboardLayout()
 
-local mytextclock = wibox.widget.textclock("| %d-%m-%Y (%A) | %H:%M", 10)
+local mytextclock = wibox.widget.textclock("| %Y-%m-%d | %A | %H:%M", 10)
 
 local taglist_buttons = gears.table.join(
-	awful.button({}, 1, function(t) t:view_only() end),
+	awul.button({}, 1, function(t) t:view_only() end),
 	awful.button({ superkey }, 1, function(t) if client.focus then client.focus:move_to_tag(t) end end),
 	awful.button({}, 3, awful.tag.viewtoggle),
-	awful.button({ superkey }, 3, function(t) if client.focus then client.focus:toggle_tag(t) end end),
-	awful.button({}, 4, function(t) awful.tag.viewnext(t.screen) end),
-	awful.button({}, 5, function(t) awful.tag.viewprev(t.screen) end)
+	awful.button({ superkey }, 3, function(t) if client.focus then client.focus:toggle_tag(t) end end)
 )
 
 local tasklist_buttons = gears.table.join(
@@ -360,18 +340,17 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			expand = "outside",
 			sep(5),
-			s.mylayoutbox,
-			sep(20),
-			s.mytaglist,
+			s.mylayoutbox
 		},
 		{ -- Middle widget
 			layout = wibox.layout.fixed.horizontal,
 			expand = "outside",
-			mykeyboardlayout,
-			mytextclock,
+			s.mytaglist,
 		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			mykeyboardlayout,
+			mytextclock,
 			s.systray,
 			sep(5)
 		},
@@ -429,8 +408,8 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey, altkey }, "Right", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
 	awful.key({ superkey, altkey }, "Left", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" }),
 
-	awful.key({ superkey }, "h", function() awful.spawn("dunstctl history-pop")  end, { description = "Show last", group = "Notifications" }),
-	awful.key({ superkey }, "k", function() awful.spawn("dunstctl close-all")  end, { description = "Close all", group = "Notifications" })
+	awful.key({ superkey }, ",", function() awful.spawn("dunstctl history-pop")  end, { description = "Show last", group = "Notifications" }),
+	awful.key({ superkey }, ".", function() awful.spawn("dunstctl close-all")  end, { description = "Close all", group = "Notifications" })
 )
 
 local clientkeys = gears.table.join(
@@ -562,5 +541,5 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- Autostart on reload
--- awful.spawn("picom --experimental-backends")
+awful.spawn("picom --experimental-backends")
 awful.spawn("nitrogen --restore")
