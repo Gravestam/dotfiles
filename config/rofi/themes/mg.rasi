@@ -65,7 +65,7 @@
 }
 #element.normal.urgent {
     background-color: @urgent-background;
-    text-color:       @urgent-foreground;
+    text-color:       @background-color;
 }
 #element.normal.active {
     background-color: @drac-yel;

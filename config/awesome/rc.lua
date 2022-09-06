@@ -91,7 +91,7 @@ local mykeyboardlayout = customKeyboardLayout()
 local mytextclock = wibox.widget.textclock("| %Y-%m-%d | %A | %H:%M", 10)
 
 local taglist_buttons = gears.table.join(
-	awul.button({}, 1, function(t) t:view_only() end),
+	awful.button({}, 1, function(t) t:view_only() end),
 	awful.button({ superkey }, 1, function(t) if client.focus then client.focus:move_to_tag(t) end end),
 	awful.button({}, 3, awful.tag.viewtoggle),
 	awful.button({ superkey }, 3, function(t) if client.focus then client.focus:toggle_tag(t) end end)
@@ -359,9 +359,9 @@ end)
 
 local globalkeys = gears.table.join(
 
-	awful.key({ superkey }, "F1", hotkeys_popup.show_help, { description = "Show help", group = "Settings" }),
+	awful.key({ superkey }, "h", hotkeys_popup.show_help, { description = "Show help", group = "Settings" }),
 	awful.key({ superkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "Settings" }),
-	awful.key({ superkey }, "i", function() kbd.switch() end, { description = "Switch keyboard layout", group = "Settings" }),
+	awful.key({ superkey }, "BackSpace", function() kbd.switch() end, { description = "Switch keyboard layout", group = "Settings" }),
 
 	awful.key({}, "XF86MonBrightnessDown", function() awful.spawn("xbacklight -dec 5") end, { description = "Decrease screen backlight", group = "Settings" }),
 	awful.key({}, "XF86MonBrightnessUp", function() awful.spawn("xbacklight -inc 5") end, { description = "Increase screen backlight", group = "Settings" }),
@@ -371,25 +371,25 @@ local globalkeys = gears.table.join(
 	awful.key({}, "XF86AudioMute", function() awful.spawn("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
 	awful.key({ superkey }, "y", function() awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible end, { description = "Toggle system tray", group = "Settings" }),
 
-	awful.key({ superkey }, "j", function() awful.screen.focus_relative( 1) end, { description = "Focus next", group = "Screen" }),
-	awful.key({ superkey }, "k", function() awful.screen.focus_relative(-1) end, { description = "Focus previous", group = "Screen" }),
+	awful.key({ superkey, "Control" }, "t", function() awful.screen.focus_relative( 1) end, { description = "Focus next", group = "Screen" }),
+	awful.key({ superkey, "Control" }, "s", function() awful.screen.focus_relative(-1) end, { description = "Focus previous", group = "Screen" }),
 
 	awful.key({ superkey, "Control" }, "l", function() awful.spawn("lock-screen") end, { description = "Lock screen", group = "Screen" }),
 
-	awful.key({ superkey }, "Down", function() awful.client.focus.global_bydirection("down") if client.focus then client.focus:raise() end end, { description = "focus down", group = "Client" }),
-	awful.key({ superkey }, "Up", function() awful.client.focus.global_bydirection("up") if client.focus then client.focus:raise() end end, { description = "focus up", group = "Client" }),
-	awful.key({ superkey }, "Left", function() awful.client.focus.global_bydirection("left") if client.focus then client.focus:raise() end end, { description = "focus left", group = "Client" }),
-	awful.key({ superkey }, "Right", function() awful.client.focus.global_bydirection("right") if client.focus then client.focus:raise() end end, { description = "focus right", group = "Client" }),
+	awful.key({ superkey }, "e", function() awful.client.focus.global_bydirection("down") if client.focus then client.focus:raise() end end, { description = "focus down", group = "Client" }),
+	awful.key({ superkey }, "u", function() awful.client.focus.global_bydirection("up") if client.focus then client.focus:raise() end end, { description = "focus up", group = "Client" }),
+	awful.key({ superkey }, "n", function() awful.client.focus.global_bydirection("left") if client.focus then client.focus:raise() end end, { description = "focus left", group = "Client" }),
+	awful.key({ superkey }, "i", function() awful.client.focus.global_bydirection("right") if client.focus then client.focus:raise() end end, { description = "focus right", group = "Client" }),
 
-	awful.key({ superkey, "Control" }, "Down", function() clientHandler.resize_client(client.focus, "down") end, { description = "Resize height +", group = "Client" }),
-	awful.key({ superkey, "Control" }, "Up", function() clientHandler.resize_client(client.focus, "up") end, { description = "Resize height -", group = "Client" }),
-	awful.key({ superkey, "Control" }, "Left", function() clientHandler.resize_client(client.focus, "left") end, { description = "Resize width -", group = "Client" }),
-	awful.key({ superkey, "Control" }, "Right", function() clientHandler.resize_client(client.focus, "right") end, { description = "Resize width +", group = "Client" }),
+	awful.key({ superkey, "Control" }, "e", function() clientHandler.resize_client(client.focus, "down") end, { description = "Resize height +", group = "Client" }),
+	awful.key({ superkey, "Control" }, "u", function() clientHandler.resize_client(client.focus, "up") end, { description = "Resize height -", group = "Client" }),
+	awful.key({ superkey, "Control" }, "n", function() clientHandler.resize_client(client.focus, "left") end, { description = "Resize width -", group = "Client" }),
+	awful.key({ superkey, "Control" }, "i", function() clientHandler.resize_client(client.focus, "right") end, { description = "Resize width +", group = "Client" }),
 
-	awful.key({ superkey, "Shift" }, "Down", function() clientHandler.move_client_freeFloat(client.focus, "down") end, { description = "Move down", group = "Client" }),
-	awful.key({ superkey, "Shift" }, "Up", function() clientHandler.move_client_freeFloat(client.focus, "up") end, { description = "Move up", group = "Client" }),
-	awful.key({ superkey, "Shift" }, "Left", function() clientHandler.move_client_freeFloat(client.focus, "left") end, { description = "Move left", group = "Client" }),
-	awful.key({ superkey, "Shift" }, "Right", function() clientHandler.move_client_freeFloat(client.focus, "right") end, { description = "Move right", group = "Client" }),
+	awful.key({ superkey, "Shift" }, "e", function() clientHandler.move_client_freeFloat(client.focus, "down") end, { description = "Move down", group = "Client" }),
+	awful.key({ superkey, "Shift" }, "u", function() clientHandler.move_client_freeFloat(client.focus, "up") end, { description = "Move up", group = "Client" }),
+	awful.key({ superkey, "Shift" }, "n", function() clientHandler.move_client_freeFloat(client.focus, "left") end, { description = "Move left", group = "Client" }),
+	awful.key({ superkey, "Shift" }, "i", function() clientHandler.move_client_freeFloat(client.focus, "right") end, { description = "Move right", group = "Client" }),
 
 	awful.key({ superkey, "Shift" }, "h", function() awful.tag.incnmaster( 1, nil, true) end, { description = "Increase the number of master clients", group = "Layout" }),
 	awful.key({ superkey, "Shift" }, "l", function() awful.tag.incnmaster(-1, nil, true) end, { description = "Decrease the number of master clients", group = "Layout" }),
@@ -400,13 +400,11 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey }, "Tab", function() awful.spawn("rofi -show window") end, { description = "Show windows", group = "Launcher" }),
 	awful.key({ superkey, "Control" }, "Return", function() awful.spawn(terminal .. " --class customfloat") end, { description = "Terminal (floating)", group = "Launcher" }),
 	awful.key({ superkey }, "b", function() awful.spawn("bwmenu") end, { description = "Bitwarden", group = "Launcher" }),
-	awful.key({ superkey }, "p", function() awful.spawn("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
-	awful.key({ superkey }, "e", function() awful.spawn("rofimoji") end, { description = "Emojis", group = "Launcher" }),
-	awful.key({ superkey }, 'n', function() awful.spawn("neovide") end, { description = "Gui editor", group = "Launcher" }),
-	awful.key({ superkey }, 'm', function() awful.spawn("brave") end, { description = "Browser", group = "Launcher" }),
+	awful.key({}, "Print", function() awful.spawn("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
+	awful.key({ superkey }, "m", function() awful.spawn("rofimoji") end, { description = "Emojis", group = "Launcher" }),
 
-	awful.key({ superkey, altkey }, "Right", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
-	awful.key({ superkey, altkey }, "Left", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" }),
+	awful.key({ superkey }, "t", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
+	awful.key({ superkey }, "s", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" }),
 
 	awful.key({ superkey }, ",", function() awful.spawn("dunstctl history-pop")  end, { description = "Show last", group = "Notifications" }),
 	awful.key({ superkey }, ".", function() awful.spawn("dunstctl close-all")  end, { description = "Close all", group = "Notifications" })
@@ -418,7 +416,7 @@ local clientkeys = gears.table.join(
 	awful.key({ superkey }, "q", function(c) c:kill() end, { description = "Close", group = "Client" }),
 	awful.key({ superkey, "Control" }, "f", awful.client.floating.toggle, { description = "Toggle floating", group = "Client" }),
 	awful.key({ superkey }, "o", function(c) c:move_to_screen() end, { description = "Move to screen next screen", group = "Client" }),
-	awful.key({ superkey }, "t", function(c) c.ontop = not c.ontop end, { description = "Toggle keep on top", group = "Client" })
+	awful.key({ superkey, "Control" }, "o", function(c) c.ontop = not c.ontop end, { description = "Toggle keep on top", group = "Client" })
 )
 
 for i = 1, 9 do

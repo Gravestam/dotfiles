@@ -16,13 +16,13 @@ vim.g.maplocalleader = ' '
 -- c = command
 
 -- window navigation
-keymap('n', '<leader>j', '<C-w>h', options)
-keymap('n', '<leader>k', '<C-w>l', options)
+keymap('n', '<leader>h', '<C-w>h', options)
+keymap('n', '<leader>,', '<C-w>l', options)
 
 -- buffer navigation
-keymap('n', '<leader>,', ':bnext<Cr>', options)
-keymap('n', '<leader>m', ':bprevious<Cr>', options)
-keymap('n', '<leader>b', ':BufferPick<Cr>', options)
+keymap('n', '<leader>e', ':bnext<Cr>', options)
+keymap('n', '<leader>n', ':bprevious<Cr>', options)
+keymap('n', '<leader>k', ':BufferPick<Cr>', options)
 
 -- close buffer
 keymap('n', '<S-q>', '<cmd>bdelete!<Cr>', options)
