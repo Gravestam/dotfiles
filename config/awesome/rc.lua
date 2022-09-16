@@ -35,7 +35,7 @@ end
 
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
-local terminal = "kitty"
+local terminal = "alacritty"
 local editor = os.getenv("nvim") or "vi"
 local editor_cmd = terminal .. " -e " .. editor
 
@@ -318,7 +318,7 @@ awful.screen.connect_for_each_screen(function(s)
 
 	s.systray = wibox.widget.systray()
 	s.systray.visible = false
-	s.systray:set_base_size(20)
+	s.systray:set_base_size(42)
 
 	local function sep(w)
 
@@ -371,8 +371,7 @@ local globalkeys = gears.table.join(
 	awful.key({}, "XF86AudioMute", function() awful.spawn("amixer set Master toggle") end, { description = "Mute/Unmute sound", group = "Settings" }),
 	awful.key({ superkey }, "y", function() awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible end, { description = "Toggle system tray", group = "Settings" }),
 
-	awful.key({ superkey, "Control" }, "t", function() awful.screen.focus_relative( 1) end, { description = "Focus next", group = "Screen" }),
-	awful.key({ superkey, "Control" }, "s", function() awful.screen.focus_relative(-1) end, { description = "Focus previous", group = "Screen" }),
+	awful.key({ superkey }, "p", function() awful.screen.focus_relative( 1) end, { description = "Focus next", group = "Screen" }),
 
 	awful.key({ superkey, "Control" }, "l", function() awful.spawn("lock-screen") end, { description = "Lock screen", group = "Screen" }),
 
@@ -397,11 +396,9 @@ local globalkeys = gears.table.join(
 
 	awful.key({ superkey }, "space", function() awful.spawn("rofi-run") end, { description = "Prompt", group = "Launcher" }),
 	awful.key({ superkey }, "Return", function() awful.spawn(terminal) end, { description = "Terminal", group = "Launcher" }),
-	awful.key({ superkey }, "Tab", function() awful.spawn("rofi -show window") end, { description = "Show windows", group = "Launcher" }),
+	awful.key({ superkey }, "Tab", function() awful.spawn("rofi -show window -dpi 192") end, { description = "Show windows", group = "Launcher" }),
 	awful.key({ superkey, "Control" }, "Return", function() awful.spawn(terminal .. " --class customfloat") end, { description = "Terminal (floating)", group = "Launcher" }),
-	awful.key({ superkey }, "b", function() awful.spawn("bwmenu") end, { description = "Bitwarden", group = "Launcher" }),
 	awful.key({}, "Print", function() awful.spawn("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
-	awful.key({ superkey }, "m", function() awful.spawn("rofimoji") end, { description = "Emojis", group = "Launcher" }),
 
 	awful.key({ superkey }, "t", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
 	awful.key({ superkey }, "s", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" }),
@@ -539,5 +536,5 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- Autostart on reload
-awful.spawn("picom --experimental-backends")
+awful.spawn("picom")
 awful.spawn("nitrogen --restore")

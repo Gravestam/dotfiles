@@ -30,7 +30,7 @@
     background-color: @background-color;
     border:           2;
     border-radius: 3;
-	width: 600;
+	width: 30%;
     border-color: @bordercolor;
     padding:          5;
 }
@@ -138,4 +138,8 @@
 element-text, element-icon {
     background-color: inherit;
     text-color: inherit;
+}
+
+element-icon {
+	size: 1.8ch;
 }

@@ -11,10 +11,10 @@ pkgs=(
 	"ripgrep"								# Better grep
 	"rofi"									# Launcher
 	"awesome"								# WM
-	"bitwarden-rofi-git"					# Bitwarden in rofi
 	"picom-git"								# Compositor (blur, opacity)
 	"flameshot"								# GUI sceenshot
 	"kitty"									# Terminal emulator
+	"alacritty"								# Terminal emulator
 	"nitrogen"								# Sets wallpapers
 	"zsh"									# Shell
 	"bitwarden-cli"							# Bitwarden pw manager CLI tool
@@ -23,7 +23,6 @@ pkgs=(
 	"xclip"									# CLI clipboard
 	"rofi-power-menu"						# Adds power menu options to rofi
 	"jq"									# CLI JSON tool
-	"tmux"									# Terminal multi head
 	"exa"									# ls replacement
 	"pa-applet-git"							# Sound control applet
 	"ttf-fira-code"							# Font
@@ -44,7 +43,6 @@ pkgs=(
 	"scrot"									# CLI screenshot
 	"i3lock-color"							# Lock screen
 	"imagemagick"							# CLI image manipulation tool, req for lock-screen script
-	"rofimoji"								# Emojipicker for rofi
 	"noto-fonts-emoji"						# Req for rofimoji
 	"blueman"								# Bluetooth applet
 	"mpv" 									# Mediaplayer

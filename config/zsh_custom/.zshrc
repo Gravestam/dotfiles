@@ -28,7 +28,7 @@ setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
 # ALIASES
-alias ssh="kitty +kitten ssh"
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 alias l="exa -lhg --icons --time-style long-iso --sort=type -L2"
 alias ll="exa -lahg --icons --time-style long-iso --sort=type -L2"
