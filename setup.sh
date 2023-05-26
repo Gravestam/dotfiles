@@ -2,10 +2,9 @@
 
 # Packages to install
 pkgs=(
-	"neofetch"								# CLI display info
+	"fastfetch"								# CLI display info
 	"bat"									# Better cat
 	"starship"								# Prompt for zsh, bash & fish
-	"tree"									# Filetree
 	"procs"									# ps replacement
 	"neovim"								# Vim replacement
 	"ripgrep"								# Better grep
@@ -13,18 +12,15 @@ pkgs=(
 	"awesome"								# WM
 	"picom-git"								# Compositor (blur, opacity)
 	"flameshot"								# GUI sceenshot
-	"kitty"									# Terminal emulator
 	"alacritty"								# Terminal emulator
 	"nitrogen"								# Sets wallpapers
 	"zsh"									# Shell
-	"bitwarden-cli"							# Bitwarden pw manager CLI tool
-	"thunar"								# GUI file explorer
 	"xdotool"								# CLI tool to simumate kb and mouse (req for bw rofi)
 	"xclip"									# CLI clipboard
 	"rofi-power-menu"						# Adds power menu options to rofi
 	"jq"									# CLI JSON tool
 	"exa"									# ls replacement
-	"pa-applet-git"							# Sound control applet
+	"pasystray"								# Sound control applet
 	"ttf-fira-code"							# Font
 	"ttf-roboto"							# Font
 	"materia-theme"							# QT theme
@@ -33,13 +29,11 @@ pkgs=(
 	"network-manager-applet"				# Network applet
 	"npm"									# Node package manager
 	"sshfs"									# Mount filessystems
-	"robo3t-bin"							# mongodb GUI
-	"dropbox"								# Cloud storage
 	"spotify"								# Music streamer
 	"slack-desktop"							# Messaging
 	"nsxiv"									# Picute viewer
 	"tty-clock-git"							# Clock that runs in the terminal
-	"ranger"								# CLI file explorer
+	"hunter"								# CLI file explorer
 	"scrot"									# CLI screenshot
 	"i3lock-color"							# Lock screen
 	"imagemagick"							# CLI image manipulation tool, req for lock-screen script
@@ -52,13 +46,18 @@ pkgs=(
 	"cbatticon"								# Systray battery icon
 	"simplescreenrecorder"					# Screenrecorder
 	"google-chrome-dev"						# Chrome browser (Canary)
-	"galculator"							# Calculator
-	"wireguard-tools"						# VPN
 	"fd"									# nvim (telescope) dependency
 	"bluez"									# bluetooth
 	"bluez-tool"							# bluetooth
 	"bluez-utils"							# bluetooth
+	"blueberry"								# Bluetooth configuration tool
 	"dunst"									# notifications
+	"gnome-keyring"							# keyring
+	"xterm"									# terminal
+	"arandr"								# screen layout tool
+	"nvidia-prime"							# nvidia gpu switching
+	"expac"									# pkg info tool
+	"tldr"									# Command line client for tldr, a collection of simplified and community-driven man pages.
 )
 
 function createDir {
@@ -129,7 +128,7 @@ function speak {
 # 1 - Update DB
 speak "-- UPDATING DB"
 
-yay -Sy
+paru -Sy
 
 speak "-- DONE"
 
@@ -137,7 +136,7 @@ speak "-- DONE"
 space 2
 speak "-- INSTALLING PACKAGES"
 
-yay -S ${pkgs[@]}
+paru -S ${pkgs[@]}
 
 speak "-- DONE"
 
@@ -165,17 +164,18 @@ speak "-- DONE"
 space 2
 speak "-- LINKING DIRECTORIES"
 
+symlinkConfigDir "alacritty"
 symlinkConfigDir "awesome"
-symlinkConfigDir "kitty"
-symlinkConfigDir "ranger"
+symlinkConfigDir "dunst"
+symlinkConfigDir "fastfetch"
 symlinkConfigDir "flameshot"
-symlinkConfigDir "neofetch"
+symlinkConfigDir "hunter"
+symlinkConfigDir "nitrogen"
 symlinkConfigDir "nvim"
 symlinkConfigDir "picom"
 symlinkConfigDir "rofi"
 symlinkConfigDir "starship"
 symlinkConfigDir "zsh_custom"
-symlinkConfigDir "dunst"
 
 speak "-- DONE"
 
@@ -184,10 +184,10 @@ space 2
 speak "-- LINKING FILES"
 
 symlinkZshCustomFile ".zshrc"
-symlinkZshCustomFile ".p10k.zsh"
 symlinkZshCustomFile ".fzf.zsh"
 
 symlinkFile "${PWD}/misc/.xprofile" "${HOME}/.xprofile"
+symlinkFile "${PWD}/misc/.Xresources" "${HOME}/.Xresources"
 
 speak "-- DONE"
 

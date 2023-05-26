@@ -5,10 +5,11 @@ source ~/zsh_extensions/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/zsh_extensions/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # TAB COMPLETION
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
+autoload -Uz compinit
 compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+zmodload zsh/complist
 _comp_options+=(globdots)
 
 # VIM MODE
@@ -19,13 +20,15 @@ _comp_options+=(globdots)
 	# add-zle-hook-widget line-init vi-cmd-mode
 
 # HISTORY
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 HISTCONTROL=ignoreboth
 HISTSIZE=50000
 SAVEHIST=50000
 setopt appendhistory
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+setopt histignorealldups
+setopt sharehistory
 
 # ALIASES
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
@@ -49,10 +52,9 @@ alias update-mirrors="sudo reflector --verbose -c 'Sweden,Germany,Denmark' -l 40
 
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-alias vim="nvim"
 alias v="nvim"
-alias gv="neovide"
 
+alias ff="fastfetch"
 alias clip="xclip -selection clipboard"
 alias fm="ranger"
 alias pic="nsxiv"
@@ -74,13 +76,13 @@ alias bt="bluetoothctl"
 # MISC
 unsetopt correct
 
- bindkey "^[[3~" delete-char
- bindkey "^[[H" beginning-of-line
- bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 # PROMPT
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
 
 # INITIAL COMMANDS
-#neofetch
+#fastfetch

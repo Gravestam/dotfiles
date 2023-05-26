@@ -13,6 +13,5 @@
 # More in https://wiki.archlinux.org/index.php/Autostarting
 bash ~/dotfiles/misc/setup_monitors &
 nm-applet &
-pa-applet &
-#blueman-applet &
+pasystray &
 cbatticon &

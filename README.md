@@ -7,14 +7,15 @@ Please review `setup.sh` prior to executing it. By default it ***WILL DELETE*** 
 
 #### Dependencies
 
-You need to run Arch and have `yay` installed (If a different AUR helper is installed, the `setup.sh` needs to be modified)
+You need to run Arch and have `paru` installed (If a different AUR helper is installed, the `setup.sh` needs to be modified)
 
 #### 1.
 
 ```
 git clone git@github.com:Gravestam/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-bash setup.sh
+chmod +x setup.sh
+./setup.sh
 ```
 
 #### 2.

@@ -396,7 +396,7 @@ local globalkeys = gears.table.join(
 
 	awful.key({ superkey }, "space", function() awful.spawn("rofi-run") end, { description = "Prompt", group = "Launcher" }),
 	awful.key({ superkey }, "Return", function() awful.spawn(terminal) end, { description = "Terminal", group = "Launcher" }),
-	awful.key({ superkey }, "Tab", function() awful.spawn("rofi -show window -dpi 192") end, { description = "Show windows", group = "Launcher" }),
+	awful.key({ superkey }, "Tab", function() awful.spawn("rofi -show window") end, { description = "Show windows", group = "Launcher" }),
 	awful.key({ superkey, "Control" }, "Return", function() awful.spawn(terminal .. " --class customfloat") end, { description = "Terminal (floating)", group = "Launcher" }),
 	awful.key({}, "Print", function() awful.spawn("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
 
@@ -411,7 +411,7 @@ local clientkeys = gears.table.join(
 
 	awful.key({ superkey }, "f", function(c) c.fullscreen = not c.fullscreen c:raise() end, { description = "Toggle fullscreen", group = "Client" }),
 	awful.key({ superkey }, "q", function(c) c:kill() end, { description = "Close", group = "Client" }),
-	awful.key({ superkey, "Control" }, "f", awful.client.floating.toggle, { description = "Toggle floating", group = "Client" }),
+	awful.key({ superkey }, "g", awful.client.floating.toggle, { description = "Toggle floating", group = "Client" }),
 	awful.key({ superkey }, "o", function(c) c:move_to_screen() end, { description = "Move to screen next screen", group = "Client" }),
 	awful.key({ superkey, "Control" }, "o", function(c) c.ontop = not c.ontop end, { description = "Toggle keep on top", group = "Client" })
 )

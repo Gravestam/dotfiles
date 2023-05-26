@@ -7,6 +7,7 @@ configuration {
 	matching: "fuzzy";
 	click-to-exit: true;
 	font: "JetBrains Mono NF 12";
+	dpi: 192;
 }
 
 @theme "mg"
