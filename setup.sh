@@ -3,21 +3,26 @@
 # Packages to install
 pkgs=(
 	"fastfetch"								# CLI display info
+	"openssh"								# SSH
+	"rog-control-center"					# GUI for controlling ASUS ROG laptops
 	"bat"									# Better cat
 	"starship"								# Prompt for zsh, bash & fish
 	"procs"									# ps replacement
 	"neovim"								# Vim replacement
 	"ripgrep"								# Better grep
+	"signal-desktop"						# Messaging
 	"rofi"									# Launcher
 	"awesome"								# WM
+	"7-zip-full"							# 7zip
 	"picom-git"								# Compositor (blur, opacity)
 	"flameshot"								# GUI sceenshot
 	"alacritty"								# Terminal emulator
+	"studio-3t"								# MongoDB GUI
 	"nitrogen"								# Sets wallpapers
 	"zsh"									# Shell
 	"xdotool"								# CLI tool to simumate kb and mouse (req for bw rofi)
 	"xclip"									# CLI clipboard
-	"rofi-power-menu"						# Adds power menu options to rofi
+	"rofi-power-menu-git"					# Adds power menu options to rofi
 	"jq"									# CLI JSON tool
 	"exa"									# ls replacement
 	"pasystray"								# Sound control applet
@@ -58,6 +63,7 @@ pkgs=(
 	"nvidia-prime"							# nvidia gpu switching
 	"expac"									# pkg info tool
 	"tldr"									# Command line client for tldr, a collection of simplified and community-driven man pages.
+	"firefox"								# browser
 )
 
 function createDir {
@@ -136,7 +142,7 @@ speak "-- DONE"
 space 2
 speak "-- INSTALLING PACKAGES"
 
-paru -S ${pkgs[@]}
+paru -S ${pkgs[@]} --skipreview --noremovemake --nocleanafter --noconfirm
 
 speak "-- DONE"
 
