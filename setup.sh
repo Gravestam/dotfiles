@@ -66,6 +66,8 @@ pkgs=(
 	"udisks2"								# disk management (mounting)
 	"udiskie"								# disk management (automount, systemstray, requires udisks2)
 	"sxiv"									# image viewer
+	"libcaca"								# image viewer dependency
+	"odt2txt"								# odt to txt converter
 )
 
 function createDir {
