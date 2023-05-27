@@ -36,9 +36,8 @@ pkgs=(
 	"sshfs"									# Mount filessystems
 	"spotify"								# Music streamer
 	"slack-desktop"							# Messaging
-	"nsxiv"									# Picute viewer
 	"tty-clock-git"							# Clock that runs in the terminal
-	"hunter"								# CLI file explorer
+	"ranger"								# CLI file explorer
 	"scrot"									# CLI screenshot
 	"i3lock-color"							# Lock screen
 	"imagemagick"							# CLI image manipulation tool, req for lock-screen script
@@ -66,6 +65,7 @@ pkgs=(
 	"firefox"								# browser
 	"udisks2"								# disk management (mounting)
 	"udiskie"								# disk management (automount, systemstray, requires udisks2)
+	"sxiv"									# image viewer
 )
 
 function createDir {
@@ -177,7 +177,7 @@ symlinkConfigDir "awesome"
 symlinkConfigDir "dunst"
 symlinkConfigDir "fastfetch"
 symlinkConfigDir "flameshot"
-symlinkConfigDir "hunter"
+symlinkConfigDir "ranger"
 symlinkConfigDir "nitrogen"
 symlinkConfigDir "nvim"
 symlinkConfigDir "picom"

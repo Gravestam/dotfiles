@@ -1,4 +1,10 @@
 
+# SHELL ENVIRONMENT
+export EDITOR="nvim"
+export VISUAL="code"
+export BROWSER="firefox"
+export PAGER="less"
+
 # EXTENSIONS (LOAD)
 source ~/.fzf.zsh
 source ~/zsh_extensions/zsh-autosuggestions/zsh-autosuggestions.zsh
