@@ -64,6 +64,8 @@ pkgs=(
 	"expac"									# pkg info tool
 	"tldr"									# Command line client for tldr, a collection of simplified and community-driven man pages.
 	"firefox"								# browser
+	"udisks2"								# disk management (mounting)
+	"udiskie"								# disk management (automount, systemstray, requires udisks2)
 )
 
 function createDir {
