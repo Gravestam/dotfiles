@@ -68,6 +68,7 @@ pkgs=(
 	"sxiv"									# image viewer
 	"libcaca"								# image viewer dependency
 	"odt2txt"								# odt to txt converter
+	"ueberzug"								# image viewer dependency
 )
 
 function createDir {
