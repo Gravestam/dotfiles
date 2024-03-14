@@ -380,15 +380,15 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey }, "n", function() awful.client.focus.global_bydirection("left") if client.focus then client.focus:raise() end end, { description = "focus left", group = "Client" }),
 	awful.key({ superkey }, "i", function() awful.client.focus.global_bydirection("right") if client.focus then client.focus:raise() end end, { description = "focus right", group = "Client" }),
 
-	awful.key({ superkey, "Control" }, "e", function() clientHandler.resize_client(client.focus, "down") end, { description = "Resize height +", group = "Client" }),
-	awful.key({ superkey, "Control" }, "u", function() clientHandler.resize_client(client.focus, "up") end, { description = "Resize height -", group = "Client" }),
-	awful.key({ superkey, "Control" }, "n", function() clientHandler.resize_client(client.focus, "left") end, { description = "Resize width -", group = "Client" }),
-	awful.key({ superkey, "Control" }, "i", function() clientHandler.resize_client(client.focus, "right") end, { description = "Resize width +", group = "Client" }),
+	awful.key({ superkey, "Shift" }, "e", function() clientHandler.resize_client(client.focus, "down") end, { description = "Resize height +", group = "Client" }),
+	awful.key({ superkey, "Shift" }, "u", function() clientHandler.resize_client(client.focus, "up") end, { description = "Resize height -", group = "Client" }),
+	awful.key({ superkey, "Shift" }, "n", function() clientHandler.resize_client(client.focus, "left") end, { description = "Resize width -", group = "Client" }),
+	awful.key({ superkey, "Shift" }, "i", function() clientHandler.resize_client(client.focus, "right") end, { description = "Resize width +", group = "Client" }),
 
-	awful.key({ superkey, "Shift" }, "e", function() clientHandler.move_client_freeFloat(client.focus, "down") end, { description = "Move down", group = "Client" }),
-	awful.key({ superkey, "Shift" }, "u", function() clientHandler.move_client_freeFloat(client.focus, "up") end, { description = "Move up", group = "Client" }),
-	awful.key({ superkey, "Shift" }, "n", function() clientHandler.move_client_freeFloat(client.focus, "left") end, { description = "Move left", group = "Client" }),
-	awful.key({ superkey, "Shift" }, "i", function() clientHandler.move_client_freeFloat(client.focus, "right") end, { description = "Move right", group = "Client" }),
+	awful.key({ superkey, "Control" }, "e", function() clientHandler.move_client_freeFloat(client.focus, "down") end, { description = "Move down", group = "Client" }),
+	awful.key({ superkey, "Control" }, "u", function() clientHandler.move_client_freeFloat(client.focus, "up") end, { description = "Move up", group = "Client" }),
+	awful.key({ superkey, "Control" }, "n", function() clientHandler.move_client_freeFloat(client.focus, "left") end, { description = "Move left", group = "Client" }),
+	awful.key({ superkey, "Control" }, "i", function() clientHandler.move_client_freeFloat(client.focus, "right") end, { description = "Move right", group = "Client" }),
 
 	awful.key({ superkey, "Shift" }, "h", function() awful.tag.incnmaster( 1, nil, true) end, { description = "Increase the number of master clients", group = "Layout" }),
 	awful.key({ superkey, "Shift" }, "l", function() awful.tag.incnmaster(-1, nil, true) end, { description = "Decrease the number of master clients", group = "Layout" }),

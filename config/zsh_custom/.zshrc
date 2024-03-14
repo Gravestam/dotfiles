@@ -48,17 +48,12 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias ..="cd .."
 
-alias pac="sudo pacman"
-alias search="pac -Ss"
-alias update="pac -Syu"
-alias install="pac -S"
-alias remove="pac -Rsn"
-
 alias update-mirrors="sudo reflector --verbose -c 'Sweden,Germany,Denmark' -l 40 -n 20  -p https --sort rate --save /etc/pacman.d/mirrorlist"
 
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 alias v="nvim"
+alias sv="sudo nvim"
 
 alias ff="fastfetch"
 alias clip="xclip -selection clipboard"
