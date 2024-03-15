@@ -12,7 +12,7 @@
     drac-red: #ff5555;
     drac-yel: #f1fa8c;
 
-    font: "Jetbrains Mono 12";
+    font: "Jetbrains Mono 13";
 
     foreground: @drac-fgd;
     background-color: @drac-bgd;
@@ -30,13 +30,13 @@
     background-color: @background-color;
     border:           2;
     border-radius: 3;
-	width: 30%;
+	width: 1200px;
     border-color: @bordercolor;
-    padding:          5;
+    padding:          15;
 }
 #mainbox {
     border:  0;
-    padding: 5;
+    padding: 5px;
 }
 #message {
     border:       1px dash 0px 0px ;
@@ -52,12 +52,12 @@
     border-color: @bordercolor;
     spacing:      2px ;
     scrollbar:    false;
-    padding:      2px 0px 0px ;
+    padding:      20px 0px 0px 0px;
 	lines: 10;
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 10px 5px 10px 5px;
 }
 #element.normal.normal {
     background-color: @background-color;

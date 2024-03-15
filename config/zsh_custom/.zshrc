@@ -36,6 +36,8 @@ setopt SHARE_HISTORY
 setopt histignorealldups
 setopt sharehistory
 
+export TERM="xterm-256color"
+
 # ALIASES
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
