@@ -176,6 +176,33 @@ install_packages() {
     echo "-- DONE"
 }
 
+# Function to start services
+start_services() {
+    echo "-- STARTING SERVICES"
+    for pkg in "${packages[@]}"; do
+        case $pkg in
+            lightdm)
+                sudo systemctl enable lightdm.service
+                sudo systemctl start lightdm.service
+                ;;
+            networkmanager)
+                sudo systemctl enable NetworkManager.service
+                sudo systemctl start NetworkManager.service
+                ;;
+            supergfxd)
+                sudo systemctl enable supergfxd.service
+                sudo systemctl start supergfxd.service
+                ;;
+            bluetooth)
+                sudo systemctl enable bluetooth.service
+                sudo systemctl start bluetooth.service
+                ;;
+            *) ;;
+        esac
+    done
+    echo "-- DONE"
+}
+
 # Function to create required directories
 create_directories() {
     echo "-- CREATING REQUIRED DIRECTORIES"
@@ -225,7 +252,6 @@ copy_files() {
     sudo cp "${PWD}/scripts/rofi-run" "/usr/local/bin/rofi-run" && sudo chmod +x "/usr/local/bin/rofi-run"
     sudo cp "${PWD}/scripts/lock-screen" "/usr/local/bin/lock-screen" && sudo chmod +x "/usr/local/bin/lock-screen"
     sudo cp "${PWD}/misc/pacman.conf" "/etc/pacman.conf"
-    cp -r "${PWD}/fonts/JetBrainsMono" "${HOME}/.fonts/"
     echo "-- DONE"
 }
 
@@ -238,19 +264,11 @@ change_shell() {
 
 # Function to display information about the script and packages
 show_info() {
-    echo "This script automates the setup of an Arch Linux-based system."
-    echo "It performs the following tasks:"
-    echo "1. Installs various packages."
-    echo "2. Creates required directories."
-    echo "3. Downloads Zsh extensions."
-    echo "4. Symlinks directories."
-    echo "5. Symlinks files."
-    echo "6. Copies files and directories."
-    echo "7. Changes default shell."
-    echo
+    echo "This script automates the setup of Arch and AwesomeWM on a ROG Zephyrus DUO"
+	echo "... And btw, i fucking hate Nvidia..."
+
     echo "The following packages will be installed:"
     printf "%s\n" "${packages[@]}"
-    echo
 }
 
 # Main menu
@@ -264,8 +282,9 @@ main_menu() {
     echo "5. Symlink files"
     echo "6. Copy files"
     echo "7. Change default shell"
-    echo "8. Show information"
-    echo "9. Exit"
+    echo "8. Start services"
+    echo "9. Show information"
+    echo "10. Exit"
 
     read -p "Enter your choice: " choice
     case $choice in
@@ -276,8 +295,9 @@ main_menu() {
         5) symlink_files ;;
         6) copy_files ;;
         7) change_shell ;;
-        8) show_info ;;
-        9) exit ;;
+        8) start_services ;;
+        9) show_info ;;
+        10) exit ;;
         *) echo "Invalid choice. Please enter a valid option." ;;
     esac
 }
