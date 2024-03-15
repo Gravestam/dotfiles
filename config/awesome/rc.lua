@@ -399,6 +399,7 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey }, "Tab", function() awful.spawn("rofi -show window") end, { description = "Show windows", group = "Launcher" }),
 	awful.key({ superkey, "Control" }, "Return", function() awful.spawn(terminal .. " --class customfloat") end, { description = "Terminal (floating)", group = "Launcher" }),
 	awful.key({}, "Print", function() awful.spawn("flameshot gui") end, { description = "Flameshot", group = "Launcher" }),
+	awful.key({ superkey }, "v", function() awful.spawn("cliphistory") end, { description = "Cliphist", group = "Launcher" }),
 
 	awful.key({ superkey }, "t", function() awful.tag.viewnext(awful.screen.focused())  end, { description = "Next tag", group = "Tag" }),
 	awful.key({ superkey }, "s", function() awful.tag.viewprev(awful.screen.focused())  end, { description = "Previous tag", group = "Tag" }),

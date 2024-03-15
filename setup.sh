@@ -250,6 +250,7 @@ symlink_files() {
 copy_files() {
     echo "-- COPYING FILES & DIRECTORIES"
     sudo cp "${PWD}/scripts/rofi-run" "/usr/local/bin/rofi-run" && sudo chmod +x "/usr/local/bin/rofi-run"
+    sudo cp "${PWD}/scripts/cliphistory " "/usr/local/bin/cliphistory" && sudo chmod +x "/usr/local/bin/cliphistory"
     sudo cp "${PWD}/scripts/lock-screen" "/usr/local/bin/lock-screen" && sudo chmod +x "/usr/local/bin/lock-screen"
     sudo cp "${PWD}/misc/pacman.conf" "/etc/pacman.conf"
     echo "-- DONE"

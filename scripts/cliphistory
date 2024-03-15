@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Location to store clipboard history file
+clipboard_history_file="$HOME/.clipboard_history"
+
+# Ensure clipboard history file exists
+touch "$clipboard_history_file"
+
+# Function to add current clipboard content to history, encoding newlines
+add_to_history() {
+    # Encode newlines as a unique string unlikely to be part of actual clipboard content
+    local encoded_entry=$(echo "$1" | sed ':a;N;$!ba;s/\n/\\n/g')
+
+    # Get the last entry from history
+    local last_entry=$(tail -n 1 "$clipboard_history_file")
+
+    # Only add to history if the current clipboard content is different from the last entry
+    if [[ "$encoded_entry" != "$last_entry" ]]; then
+        echo "$encoded_entry" >> "$clipboard_history_file"
+    fi
+}
+
+# Function to get clipboard history
+get_clipboard_history() {
+    # Display history with `rofi`, decoding the newline encoding for the selected entry
+    selected=$(tac "$clipboard_history_file" | rofi -dmenu -i -p "Clipboard History")
+    echo "$selected" | sed 's/\\n/\n/g'
+}
+
+# Function to set clipboard content
+set_clipboard() {
+    echo -n "$1" | xclip -selection c
+}
+
+# Add current clipboard content to history
+current_clipboard=$(xclip -o -selection clipboard)
+if [[ "$current_clipboard" ]]; then
+    add_to_history "$current_clipboard"
+fi
+
+# Get selected item from clipboard history and set it to clipboard
+selected_item=$(get_clipboard_history)
+if [[ "$selected_item" ]]; then
+    set_clipboard "$selected_item"
+fi
