@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Define your list of webapps with names and URLs
+webapps=(
+    "ChatGPT|󱋉|https://chat.openai.com/"
+    "Proton Mail||https://mail.proton.me/"
+)
+
+# Use Rofi to select a webapp, showing the icon and name
+selected=$(printf "%s\n" "${webapps[@]}" | awk -F '|' '{print $2 "  " $1}' | rofi -dmenu -p "Select Webapp: ")
+
+# Check if the selection is empty (i.e., user pressed Escape)
+if [ -z "$selected" ]; then
+    exit 0
+fi
+
+# Find the corresponding URL for the selected webapp
+for app in "${webapps[@]}"; do
+    name=$(echo "$app" | cut -d'|' -f1)
+    url=$(echo "$app" | cut -d'|' -f3)
+    icon=$(echo "$app" | cut -d'|' -f2)
+    if [ "$icon  $name" = "$selected" ]; then
+        selected_url="$url"
+        break
+    fi
+done
+
+# Launch the selected webapp
+brave --app="$selected_url" &

@@ -429,6 +429,7 @@ local globalkeys = gears.table.join(
 	awful.key({ superkey, "Control" }, "Tab", function() awful.layout.inc( 1) end, { description = "Cycle layout", group = "Layout" }),
 
 	awful.key({ superkey }, "space", function() awful.spawn("rofi-run") end, { description = "Prompt", group = "Launcher" }),
+	awful.key({ superkey, "Control" }, "space", function() awful.spawn("/home/master/dotfiles/scripts/rofi-webapps") end, { description = "Webapps", group = "Launcher" }),
 	awful.key({ superkey }, "Return", function() awful.spawn(terminal) end, { description = "Terminal", group = "Launcher" }),
 	awful.key({ superkey }, "Tab", function() awful.spawn("rofi -show window") end, { description = "Show windows", group = "Launcher" }),
 	awful.key({ superkey, "Control" }, "Return", function() awful.spawn(terminal .. " --class customfloat") end, { description = "Terminal (floating)", group = "Launcher" }),
