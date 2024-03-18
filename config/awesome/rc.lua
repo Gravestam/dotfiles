@@ -48,25 +48,59 @@ awful.layout.layouts = {
 	awful.layout.suit.tile.top
 }
 
--- Dracula
+-- Color    Use
+-- #f7768e	This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red
+-- #ff9e64	Number and Boolean constants, Language support constants
+-- #e0af68	Function parameters, Regex character sets, Terminal Yellow
+-- #9ece6a	Strings, CSS class names
+-- #73daca	Object literal keys, Markdown links, Terminal Green
+-- #b4f9f8	Regex literal strings
+-- #2ac3de	Language support functions, CSS HTML elements
+-- #7dcfff	Object properties, Regex quantifiers and flags, Markdown headings, Terminal Cyan, Markdown code, Import/export keywords
+-- #7aa2f7	Function names, CSS property names, Terminal Blue
+-- #bb9af7	Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta
+-- #c0caf5	Variables, Class names, Terminal White
+-- #a9b1d6	Editor Foreground
+-- #9aa5ce	Markdown Text, HTML Text
+-- #cfc9c2	Parameters inside functions (semantic highlighting only)
+-- #565f89	Comments
+-- #414868	Terminal Black
+-- #24283b	Editor Background (Storm)
+-- #1a1b26	Editor Background (Night)
+
+-- Tokyo night
 local colors = {
-	bg = '#282a36',
-	fg = '#f8f8f2',
-	_1 = '#6272a4',	-- bluegray
-	_2 = '#8be9fd', -- cyan
-	_3 = '#50fa7b', -- green
-	_4 = '#ffb86c',	-- orange
-	_5 = '#ff79c6',	-- pink
-	_6 = '#bd93f9',	-- purple
-	_7 = '#ff5555',	-- red
-	_8 = '#f1fa8c',	-- yellow
+	bg = '#1a1b26',
+	fg = '#c0caf5',
+	_1 = '#565f89',	-- lightblue
+	_2 = '#73daca',	-- cyan
+	_3 = '#9ece6a',	-- green
+	_4 = '#ff9e64', -- orange
+	_5 = '#7dcfff',	-- blue
+	_6 = '#b4f9f8',	-- lightcyan
+	_7 = '#f7768e',	-- red
+	_8 = '#e0af68', -- yellow
 }
+
+-- Dracula
+-- local colors = {
+-- 	bg = '#282a36',
+-- 	fg = '#f8f8f2',
+-- 	_1 = '#6272a4',	-- bluegray
+-- 	_2 = '#8be9fd', -- cyan
+-- 	_3 = '#50fa7b', -- green
+-- 	_4 = '#ffb86c',	-- orange
+-- 	_5 = '#ff79c6',	-- pink
+-- 	_6 = '#bd93f9',	-- purple
+-- 	_7 = '#ff5555',	-- red
+-- 	_8 = '#f1fa8c',	-- yellow
+-- }
 
 beautiful.font = "JetBrains Mono NF 12"
 
 beautiful.icon_theme = "Papirus"
 
-beautiful.useless_gap = dpi(3)
+beautiful.useless_gap = dpi(5)
 beautiful.gap_single_client = true
 
 beautiful.border_width = dpi(2)
@@ -230,32 +264,32 @@ local function createTags(s, type, sel)
 	end
 
 	if (type == "numbers_outline") then
-		tags.tag1.tagName = ""
-		tags.tag2.tagName = ""
-		tags.tag3.tagName = ""
-		tags.tag4.tagName = ""
-		tags.tag5.tagName = ""
-		tags.tag6.tagName = ""
-		tags.tag7.tagName = ""
-		tags.tag8.tagName = ""
+		tags.tag1.tagName = "󰎦 "
+		tags.tag2.tagName = "󰎩 "
+		tags.tag3.tagName = "󰎬 "
+		tags.tag4.tagName = "󰎮 "
+		tags.tag5.tagName = "󰎰 "
+		tags.tag6.tagName = "󰎵 "
+		tags.tag7.tagName = "󰎸 "
+		tags.tag8.tagName = "󰎻 "
 	elseif (type == "numbers_solid") then
-		tags.tag1.tagName = ""
-		tags.tag2.tagName = ""
-		tags.tag3.tagName = ""
-		tags.tag4.tagName = ""
-		tags.tag5.tagName = ""
-		tags.tag6.tagName = ""
-		tags.tag7.tagName = ""
-		tags.tag8.tagName = ""
+		tags.tag1.tagName = "󰎤 "
+		tags.tag2.tagName = "󰎧 "
+		tags.tag3.tagName = "󰎪 "
+		tags.tag4.tagName = "󰎭 "
+		tags.tag5.tagName = "󰎱 "
+		tags.tag6.tagName = "󰎳 "
+		tags.tag7.tagName = "󰎶 "
+		tags.tag8.tagName = "󰎹 "
 	elseif (type == "icons") then
-		tags.tag1.tagName = ""	-- Code
-		tags.tag2.tagName = ""	-- Browser
-		tags.tag3.tagName = ""	-- Terminal
-		tags.tag4.tagName = ""	-- Message
-		tags.tag5.tagName = ""	-- Database
-		tags.tag6.tagName = ""	-- Arch
-		tags.tag7.tagName = ""	-- Box
-		tags.tag8.tagName = ""	-- Controler
+		tags.tag1.tagName = " "	-- Code
+		tags.tag2.tagName = " "	-- Browser
+		tags.tag3.tagName = " "	-- Terminal
+		tags.tag4.tagName = "󰍡 "		-- Message
+		tags.tag5.tagName = " "		-- Database
+		tags.tag6.tagName = " "	-- Arch
+		tags.tag7.tagName = " "	-- Box
+		tags.tag8.tagName = "󰊴 "	-- Controler
 	end
 
 	awful.tag.add(tags.tag1.tagName, tags.tag1.options)
@@ -289,8 +323,8 @@ awful.screen.connect_for_each_screen(function(s)
 		screen  = s,
 		filter  = awful.widget.taglist.filter.all,
 		style   = {
-			spacing = dpi(3),
-			font = "JetBrains Mono NF 25",
+			spacing = dpi(0),
+			font = "JetBrains Mono NF 20",
 			fg_focus = colors._5,
 			bg_focus = colors.bg,
 			fg_urgent = colors._7,

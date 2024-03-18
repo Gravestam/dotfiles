@@ -10,4 +10,5 @@ configuration {
 	dpi: 192;
 }
 
-@theme "mg"
+// @theme "dracula"
+@theme "tokyo_night"

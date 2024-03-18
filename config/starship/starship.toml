@@ -2,8 +2,8 @@
 # ⊏ ⊐ ─ ■ ╭ ╰ ╼ ╾ ▶ ◀
 
 format = """
-[╭─](#bd93f9) $username$hostname [─](#bd93f9) $directory $git_branch $git_status$git_metrics
-[╰──](#bd93f9) $sudo$character 
+[╭─](#565f89) $username$hostname [─](#565f89) $directory $git_branch $git_status$git_metrics
+[╰──](#565f89) $sudo$character
 """
 
 right_format = """
@@ -17,9 +17,9 @@ add_newline = false
 disabled = false
 
 [character]
-success_symbol = "[ﬦ](bold #50fa7b)"
-error_symbol = "[ﬦ](bold #ff5555)"
-vimcmd_symbol = "[ﬦ](bold #50fa7b)"
+success_symbol = "[󰘧 ](bold #9ece6a)"
+error_symbol = "[󰘧 ](bold #f7768e)"
+vimcmd_symbol = "[󰘧 ](bold #e0af68)"
 format = "$symbol"
 
 [package]
@@ -27,15 +27,15 @@ disabled = true
 
 [username]
 disabled = false
-style_user = "bold #ff79c6"
-style_root = "bold #ff5555"
+style_user = "bold #9ece6a"
+style_root = "bold #9ece6a"
 format = "[$user]($style)"
 show_always = true
 
 [hostname]
 disabled = false
 ssh_only = true
-style = "bold #ffb86c"
+style = "bold #9ece6a"
 format = "@[$hostname]($style)"
 trim_at = ".companyname.com"
 
@@ -47,13 +47,13 @@ truncate_to_repo = false
 read_only = ""
 read_only_style = "red"
 home_symbol = "~"
-style = "#8be9fd"
+style = "#7aa2f7"
 format = "[$path]($style)[$read_only]($read_only_style)"
 
 [time]
 disabled = false
 use_12hr = false
-style = "bold #f1fa8c"
+style = "bold #565f89"
 format = '[$time]($style)'
 time_format = "%T"
 utc_time_offset = "local"
@@ -62,26 +62,26 @@ time_range = "-"
 [status]
 disabled = false
 style = "#f8f8f2"
-symbol = "[ $int](bold #ff5555)"
-success_symbol = "[](bold #50fa7b)"
-not_executable_symbol = "[ $int](bold #ff5555)"
-not_found_symbol = "[ $int](bold #ffb86c)"
-sigint_symbol = "[ $int](bold #ffb86c)"
-signal_symbol = "[ $int](bold #ffb86c)"
+symbol = "[ $int](bold #f7768e)"
+success_symbol = "[](bold #9ece6a)"
+not_executable_symbol = "[ $int](bold #f7768e)"
+not_found_symbol = "[ $int](bold #e0af68)"
+sigint_symbol = "[ $int](bold #e0af68)"
+signal_symbol = "[ $int](bold #e0af68)"
 format = '[$symbol]($style)'
 map_symbol = true
 recognize_signal_code = true
 
 [sudo]
 disabled = false
-style = "bold #ffb86c"
+style = "bold #ff9e64"
 symbol = ""
 format = "[$symbol]($style) "
 
 [git_branch]
 disabled = false
 symbol = ""
-style = "bold #bd93f9"
+style = "bold #bb9af7"
 truncation_length = 4
 truncation_symbol = "..."
 ignore_branches = []
@@ -94,22 +94,22 @@ tag_symbol = "🔖 "
 
 [git_status]
 disabled = false
-conflicted = "[ﲅ](#ff5555) "
-ahead = "[$count](#ffb86c) "
-diverged = "[${ahead_count}${behind_count}](#ffb86c) "
-behind = "[$count](#ffb86c) "
-up_to_date = "[](#50fa7b) "
-untracked = "[](#ffb86c) "
-stashed = "[](#ffb86c) "
-modified = "[](#ffb86c) "
-staged = '[$count](#50fa7b) '
-renamed = "[凜](#ffb86c) "
-deleted = "[](#ffb86c) "
-format = '[\[ ](#bd93f9)$all_status$ahead_behind[\]](#bd93f9)'
+conflicted = "[ﲅ](#f7768e) "
+ahead = "[$count](#ff9e64) "
+diverged = "[${ahead_count}${behind_count}](#ff9e64) "
+behind = "[$count](#ff9e64) "
+up_to_date = "[](#9ece6a) "
+untracked = "[](#ff9e64) "
+stashed = "[](#ff9e64) "
+modified = "[](#ff9e64) "
+staged = '[$count](#9ece6a) '
+renamed = "[凜](#ff9e64) "
+deleted = "[](#f7768e) "
+format = '[\[ ](#bb9af7)$all_status$ahead_behind[\]](#bb9af7)'
 
 [git_metrics]
 disabled = false
 only_nonzero_diffs = true
-added_style = "#50fa7b"
-deleted_style = "#ff5555"
-format = '[\[ ](#bd93f9)[$added]($added_style)/[$deleted]($deleted_style)[ \]](#bd93f9)'
+added_style = "#9ece6a"
+deleted_style = "#f7768e"
+format = '[\[ ](#bb9af7)[$added]($added_style)/[$deleted]($deleted_style)[ \]](#bb9af7)'

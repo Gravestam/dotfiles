@@ -110,67 +110,12 @@ packages=(
     "zsh"
 )
 
-# Function to check if yay is installed
-check_yay() {
-    if command -v yay &>/dev/null; then
-        echo "yay"
-    else
-        echo ""
-    fi
-}
-
-# Function to check if paru is installed
-check_paru() {
-    if command -v paru &>/dev/null; then
-        echo "paru"
-    else
-        echo ""
-    fi
-}
-
-install_aur_helper() {
-    echo "Neither yay nor paru is installed."
-    read -rp "Do you want to install yay or paru? [yay/paru]: " choice
-    case $choice in
-        yay)
-            sudo pacman -S --needed git base-devel
-            git clone https://aur.archlinux.org/yay.git /tmp/yay
-            (cd /tmp/yay && makepkg -si)
-            ;;
-        paru)
-            sudo pacman -S --needed git base-devel
-            git clone https://aur.archlinux.org/paru.git /tmp/paru
-            (cd /tmp/paru && makepkg -si)
-            ;;
-        *)
-            echo "Invalid choice. Please choose either yay or paru."
-            ;;
-    esac
-}
-
 install_packages() {
-    local aur_helper
-
-    if aur_helper=$(check_yay); then
-        echo "Using yay for package installation."
-    elif aur_helper=$(check_paru); then
-        echo "Using paru for package installation."
-    else
-        install_aur_helper
-        if aur_helper=$(check_yay); then
-            echo "Using yay for package installation."
-        elif aur_helper=$(check_paru); then
-            echo "Using paru for package installation."
-        else
-            echo "Failed to install an AUR helper. Exiting."
-            return 1
-        fi
-    fi
 
     echo "-- INSTALLING PACKAGES"
 
     for pkg in "${packages[@]}"; do
-        "$aur_helper" -Syu --noconfirm --needed --noedit --clean --removemake --sudoloop "$pkg" >/dev/null 2>&1
+        yay -S --needed "$pkg"
     done
 
     echo "-- DONE"

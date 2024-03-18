@@ -7,8 +7,8 @@ export PAGER="less"
 
 # EXTENSIONS (LOAD)
 source ~/.fzf.zsh
-source ~/zsh_extensions/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/zsh_extensions/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh_custom/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/zsh_custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # TAB COMPLETION
 autoload -Uz compinit
