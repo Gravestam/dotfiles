@@ -2,8 +2,12 @@
 
 # Define your list of webapps with names and URLs
 webapps=(
-    "ChatGPT|󱋉|https://chat.openai.com/"
-    "Proton Mail||https://mail.proton.me/"
+    "ChatGPT|󱚟|https://chat.openai.com/"
+    "Proton Mail|󰺻|https://mail.proton.me/"
+    "Proton Callendar||https://calendar.proton.me/"
+    "Proton Drive|󱘮|https://drive.proton.me/"
+    "Monkeytype|󰌌|https://monkeytype.com/"
+    "FB Messenger|󰈎|https://www.messenger.com/"
 )
 
 # Use Rofi to select a webapp, showing the icon and name
