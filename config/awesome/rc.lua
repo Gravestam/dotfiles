@@ -100,7 +100,7 @@ beautiful.font = "JetBrains Mono NF 12"
 
 beautiful.icon_theme = "Papirus"
 
-beautiful.useless_gap = dpi(5)
+beautiful.useless_gap = dpi(3)
 beautiful.gap_single_client = true
 
 beautiful.border_width = dpi(2)
