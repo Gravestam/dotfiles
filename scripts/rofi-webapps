@@ -8,6 +8,7 @@ webapps=(
     "Proton Drive|󱘮|https://drive.proton.me/"
     "Monkeytype|󰌌|https://monkeytype.com/"
     "FB Messenger|󰈎|https://www.messenger.com/"
+    "YouTube|󰑈|https://www.youtube.com/"
 )
 
 # Use Rofi to select a webapp, showing the icon and name

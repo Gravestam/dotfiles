@@ -74,6 +74,12 @@ alias ps="procs"
 alias cat="bat"
 alias bt="bluetoothctl"
 
+alias tm="tmux"
+alias tml="tmux ls"
+alias tma="tmux attach -t"
+alias tmk="tmux kill-session -t"
+alias tmka="tmux kill-server"
+
 [ -f "${HOME}/private_aliases/one" ] && source "${HOME}/private_aliases/one"
 
 # MISC
