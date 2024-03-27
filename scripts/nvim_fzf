@@ -1,23 +1,36 @@
 #!/bin/bash
 
-# Function to recursively list all files in a directory
-list_files() {
-    find "$1" -type f
-}
-
 # Main function
 main() {
-    # Check if at least one argument is provided
-    if [ $# -eq 0 ]; then
-        echo "Usage: $0 <directory>"
+    local dir omit_file omit_dirs
+    # Parse command-line arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            --od)
+            omit_dirs+=("$2")
+            shift 2
+            ;;
+            *)
+            dir="$1"
+            shift
+            ;;
+        esac
+    done
+
+    # Check if directory is provided
+    if [ -z "$dir" ]; then
+        echo "Usage: $0 [--od <omit_dir>] <directory>"
         exit 1
     fi
 
-    # Directory path
-    dir="$1"
+    # Construct find command to list files, omitting specified directories
+    find_cmd=(find "$dir" -type f)
+    for omit_dir in "${omit_dirs[@]}"; do
+        find_cmd+=( -not -path "*/$omit_dir/*" )
+    done
 
-    # List all files in the directory and its subdirectories
-    files=$(list_files "$dir")
+    # List files under the specified directory, omitting the specified directory
+    files=$( "${find_cmd[@]}" )
 
     # Use fzf to search through files
     selected_file=$(echo "$files" | fzf --prompt="Select a file: " --preview="cat {}")
@@ -34,3 +47,4 @@ main() {
 
 # Call the main function with command-line arguments
 main "$@"
+
