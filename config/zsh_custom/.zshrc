@@ -1,7 +1,7 @@
 
 # SHELL ENVIRONMENT
 export EDITOR="nvim"
-export VISUAL="code"
+export VISUAL="nvim"
 export BROWSER="firefox"
 export PAGER="less"
 
