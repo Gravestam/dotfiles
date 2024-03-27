@@ -38,9 +38,6 @@ setopt sharehistory
 
 export TERM="xterm-256color"
 
-# ALIASES
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
-
 alias l="exa -lhg --icons --time-style long-iso --sort=type -L2"
 alias ll="exa -lahg --icons --time-style long-iso --sort=type -L2"
 alias l.="ll -d .*"

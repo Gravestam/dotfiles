@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Function to recursively list all files in a directory
+list_files() {
+    find "$1" -type f
+}
+
+# Main function
+main() {
+    # Check if at least one argument is provided
+    if [ $# -eq 0 ]; then
+        echo "Usage: $0 <directory>"
+        exit 1
+    fi
+
+    # Directory path
+    dir="$1"
+
+    # List all files in the directory and its subdirectories
+    files=$(list_files "$dir")
+
+    # Use fzf to search through files
+    selected_file=$(echo "$files" | fzf --prompt="Select a file: " --preview="cat {}")
+
+    # Check if a file is selected
+    if [ -n "$selected_file" ]; then
+        # Extract directory of the selected file
+        selected_dir=$(dirname "$selected_file")
+
+        # Open the selected file with neovim and set path
+        nvim --cmd "cd $selected_dir" "$selected_file"
+    fi
+}
+
+# Call the main function with command-line arguments
+main "$@"
