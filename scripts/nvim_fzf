@@ -2,7 +2,7 @@
 
 # Main function
 main() {
-    local dir omit_file omit_dirs
+    local dir omit_dirs
     # Parse command-line arguments
     while [[ $# -gt 0 ]]; do
         case $1 in
@@ -33,7 +33,7 @@ main() {
     files=$( "${find_cmd[@]}" )
 
     # Use fzf to search through files
-    selected_file=$(echo "$files" | fzf --prompt="Select a file: " --preview="cat {}")
+    selected_file=$(echo "$files" | fzf --prompt="Select a file: " --preview="bat --style=plain --color=always {}")
 
     # Check if a file is selected
     if [ -n "$selected_file" ]; then
@@ -47,4 +47,3 @@ main() {
 
 # Call the main function with command-line arguments
 main "$@"
-
