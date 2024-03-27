@@ -1,4 +1,7 @@
 
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 # SHELL ENVIRONMENT
 export EDITOR="nvim"
 export VISUAL="nvim"
