@@ -82,6 +82,8 @@ alias tmka="tmux kill-server"
 
 alias nf="nvim_fzf --od node_modules --od .git"
 
+alias ai="${HOME}/projects/others/yolo-ai-cmdbot/yolo.mod.py"
+
 [ -f "${HOME}/private_aliases/one" ] && source "${HOME}/private_aliases/one"
 
 # MISC
