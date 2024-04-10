@@ -9,6 +9,7 @@ webapps=(
     "Monkeytype|󰌌|https://monkeytype.com/"
     "FB Messenger|󰈎|https://www.messenger.com/"
     "YouTube|󰑈|https://www.youtube.com/"
+    "Bredbandskollen|󰓅|https://www.bredbandskollen.se"
 )
 
 # Use Rofi to select a webapp, showing the icon and name
