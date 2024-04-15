@@ -54,7 +54,7 @@ family = "JetBrains Mono Nerd Font Mono"
 style = "Regular"
 
 [window]
-opacity = 0.90
+opacity = 1
 
 [window.dimensions]
 columns = 110
