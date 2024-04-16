@@ -45,7 +45,34 @@ return {
 			end,
 		})
 
+		local tsMessagesToFilter = {
+			"File is a CommonJS module; it may be converted to an ES module.",
+			"Could not find a declaration file for module",
+		}
+
+		local function tsServerFilterMessagesOverride(_, result, ctx, config)
+			local filteredDiagnostics = {}
+
+			for _, diagnostic in ipairs(result.diagnostics) do
+				local found = false
+				for _, m in ipairs(tsMessagesToFilter) do
+					if string.find(diagnostic.message, m, 1, true) then
+						found = true
+						break
+					end
+				end
+				if not found then
+					table.insert(filteredDiagnostics, diagnostic)
+				end
+			end
+
+			result.diagnostics = filteredDiagnostics
+
+			vim.lsp.diagnostic.on_publish_diagnostics(_, result, ctx, config)
+		end
+
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -55,6 +82,14 @@ return {
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
+				})
+			end,
+			["tsserver"] = function(server_name)
+				lspconfig[server_name].setup({
+					capabilities = capabilities,
+					on_attach = function(client)
+						client.handlers["textDocument/publishDiagnostics"] = tsServerFilterMessagesOverride
+					end,
 				})
 			end,
 		})
