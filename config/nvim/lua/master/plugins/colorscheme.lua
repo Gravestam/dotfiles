@@ -1,13 +1,11 @@
-
 return {
-    'folke/tokyonight.nvim',
-    priority = 1000, -- make sure this loads asap...
-    config = function()
+	"folke/tokyonight.nvim",
+	priority = 1000, -- make sure this loads asap...
+	config = function()
+		require("tokyonight").setup({
+			style = "night",
+		})
 
-        require('tokyonight').setup({
-            style = 'night'
-        })
-
-        vim.cmd('colorscheme tokyonight')
-    end
+		vim.cmd("colorscheme tokyonight")
+	end,
 }

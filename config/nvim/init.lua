@@ -1,3 +1,2 @@
-
-require('master.core')
-require('master.lazy')
+require("master.core")
+require("master.lazy")

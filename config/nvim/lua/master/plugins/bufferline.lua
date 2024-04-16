@@ -1,11 +1,10 @@
-
 return {
-    'akinsho/bufferline.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    versio = '*',
-    opts = {
-        options = {
-            mode = 'tabs'
-        }
-    }
+	"akinsho/bufferline.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	versio = "*",
+	opts = {
+		options = {
+			mode = "tabs",
+		},
+	},
 }
