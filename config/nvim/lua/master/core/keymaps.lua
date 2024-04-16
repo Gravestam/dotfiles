@@ -1,4 +1,5 @@
 vim.g.mapleader = " " -- set <leader> to space
+vim.g.maplocalleader = " " -- set <localleader> to space
 
 local keymap = vim.keymap
 

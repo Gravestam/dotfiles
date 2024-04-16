@@ -2,15 +2,20 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
+local global = vim.g
+
+opt.showmode = false -- do not show insert|virual|normal etc, this is reduntant because of lualine
 
 opt.relativenumber = true -- set numbers to appear in the gutter
 opt.number = true -- show the actual line number where the cursor is
 
 opt.cursorline = true -- highlights the line where the cursor is
 
+opt.scrolloff = 10 -- keep n lines above and below the cursor when scrolling
+
 opt.tabstop = 4 -- n spaces for tabs
 opt.shiftwidth = 4 -- n spaces for indent width
-opt.expandtab = true -- expand tab to spaces
+opt.expandtab = false -- keep using tabs
 opt.autoindent = true -- copy indent from current line when starting new one
 
 opt.wrap = false -- disable linewrapping
@@ -28,3 +33,7 @@ opt.clipboard:append("unnamedplus") -- use system clipboaard as default register
 
 opt.splitright = true -- split vertical windows to the right
 opt.splitbelow = true -- split horizontal windows to the bottom
+
+opt.undofile = true -- save undo history to a file
+
+global.have_nerd_fonts = true -- enable nerd fonts
