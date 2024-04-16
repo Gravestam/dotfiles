@@ -1,7 +1,8 @@
-vim.g.mapleader = " " -- set <leader> to space
-vim.g.maplocalleader = " " -- set <localleader> to space
-
 local keymap = vim.keymap
+local global = vim.g
+
+global.mapleader = " " -- set <leader> to space
+global.maplocalleader = " " -- set <localleader> to space
 
 keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlights" })
 
@@ -17,3 +18,6 @@ keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "[t]ab [c]lose" })
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "[t]ab [n]ext" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "[t]ab [p]revious" })
 keymap.set("n", "<leader>tb", "<cmd>tabnew %<CR>", { desc = "Open [t]ab with the current [b]uffer" })
+
+keymap.set("n", "<C-right>", "<cmd>tabnext<CR>", { desc = "Next tab" })
+keymap.set("n", "<C-left>", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
