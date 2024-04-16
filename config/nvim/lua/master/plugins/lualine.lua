@@ -4,6 +4,13 @@ return {
 	config = function()
 		local lualine = require("lualine")
 
-		lualine.setup()
+		lualine.setup({
+			options = {
+				theme = "tokyonight",
+				section_separators = { left = "", right = "" },
+				component_separators = { left = "", right = "" },
+				globalstatus = true,
+			},
+		})
 	end,
 }
