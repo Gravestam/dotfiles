@@ -34,6 +34,8 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"pylint",
+				"eslint_d",
 				"prettier",
 				"stylua",
 				"isort",

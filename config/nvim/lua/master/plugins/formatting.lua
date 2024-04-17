@@ -24,8 +24,7 @@ return {
 				less = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
-			},
-			format_on_save = formatOptions,
+			}
 		})
 
 		local keymap = vim.keymap
