@@ -38,7 +38,11 @@ return {
 				{ name = "luasnip", max_item_count = 3 },
 			}),
 			formatting = {
-				format = lspkind.cmp_format({ maxwidth = 50, ellipsis_char = "..." }),
+				format = lspkind.cmp_format({
+					maxwidth = 50,
+					ellipsis_char = "...",
+					symbol_map = { Copilot = "" },
+				}),
 			},
 		})
 	end,
