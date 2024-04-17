@@ -49,5 +49,9 @@ return {
 				layout_config = { width = 0.65, height = 0.5 },
 			}))
 		end, { desc = "[/] Fuzzily search in current buffer" })
+
+		keymap.set("n", "<leader>sn", function()
+			tsb.find_files({ cwd = vim.fn.stdpath("config") })
+		end, { desc = "[S]earch [N]eovim files" })
 	end,
 }
