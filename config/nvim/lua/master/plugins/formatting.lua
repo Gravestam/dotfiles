@@ -7,7 +7,7 @@ return {
 		local formatOptions = {
 			lsp_fallback = true,
 			async = false,
-			timeout_ms = 1000,
+			timeout_ms = 5000,
 		}
 
 		conform.setup({
