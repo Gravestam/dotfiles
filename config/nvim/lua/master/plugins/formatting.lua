@@ -24,13 +24,13 @@ return {
 				less = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
-			}
+			},
 		})
 
 		local keymap = vim.keymap
 
-		keymap.set({ "n", "v" }, "<leader>cf", function()
+		keymap.set({ "n", "v" }, "<leader>f", function()
 			conform.format(formatOptions)
-		end, { desc = "[c]hange [f]ormat using conform" })
+		end, { desc = "[f]ormat using conform" })
 	end,
 }
