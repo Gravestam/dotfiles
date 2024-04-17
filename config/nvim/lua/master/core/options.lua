@@ -18,6 +18,9 @@ opt.shiftwidth = 4 -- n spaces for indent width
 opt.expandtab = false -- keep using tabs
 opt.autoindent = true -- copy indent from current line when starting new one
 
+opt.list = true -- show listchars
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" } -- custom characters for listchar representation
+
 opt.wrap = false -- disable linewrapping
 
 opt.ignorecase = true -- make search case insensitive
