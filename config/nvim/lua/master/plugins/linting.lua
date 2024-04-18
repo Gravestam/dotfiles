@@ -22,6 +22,6 @@ return {
 
 		local keymap = vim.keymap
 
-		keymap.set("n", "<leader>l", lint.try_lint, { desc = "Trigger lint for current file" })
+		keymap.set("n", "<leader>l", lint.try_lint, { desc = "[L]int current file" })
 	end,
 }

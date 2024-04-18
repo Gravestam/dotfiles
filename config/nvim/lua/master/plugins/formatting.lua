@@ -29,8 +29,8 @@ return {
 
 		local keymap = vim.keymap
 
-		keymap.set({ "n", "v" }, "<leader>f", function()
+		keymap.set({ "n", "v" }, "<leader><leader>f", function()
 			conform.format(formatOptions)
-		end, { desc = "[f]ormat using conform" })
+		end, { desc = "[F]ormat using conform" })
 	end,
 }

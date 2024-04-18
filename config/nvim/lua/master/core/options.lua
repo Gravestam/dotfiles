@@ -21,6 +21,9 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.list = true -- show listchars
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" } -- custom characters for listchar representation
 
+opt.timeout = true -- enable timeout
+opt.timeoutlen = 500 -- timeout length in milliseconds (will affect plugins like which-key)
+
 opt.wrap = false -- disable linewrapping
 
 opt.ignorecase = true -- make search case insensitive

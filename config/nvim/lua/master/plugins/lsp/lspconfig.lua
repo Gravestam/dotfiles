@@ -34,10 +34,10 @@ return {
 				opts.desc = "Show LSP type definitions"
 				keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
-				opts.desc = "See available code actions"
+				opts.desc = "See available [C]ode [A]ctions"
 				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
-				opts.desc = "Smart rename"
+				opts.desc = "LSP [R]e[N]ame"
 				keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
 				opts.desc = "Show LSP docs for what is under cursor"

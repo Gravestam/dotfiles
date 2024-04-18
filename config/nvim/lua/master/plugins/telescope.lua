@@ -35,12 +35,12 @@ return {
 		local keymap = vim.keymap
 		local tsb = require("telescope.builtin")
 
-		keymap.set("n", "<leader>sf", tsb.find_files, { desc = "Telescope [s]earch [f]iles in cwd" })
-		keymap.set("n", "<leader>sr", tsb.oldfiles, { desc = "Telescope [s]earch [r]ecent files" })
-		keymap.set("n", "<leader>ss", tsb.live_grep, { desc = "Telescope [s]earch [s]tring in cwd" })
-		keymap.set("n", "<leader>sc", tsb.grep_string, { desc = "Telescope [s]earch [c]ursor in cwd" })
-		keymap.set("n", "<leader>sb", tsb.buffers, { desc = "Telescope [s]earch [b]uffers" })
-		keymap.set("n", "<leader>sk", tsb.keymaps, { desc = "Telescope [s]earch [k]eymaps" })
+		keymap.set("n", "<leader>ff", tsb.find_files, { desc = "Telescope [F]ind [F]iles in cwd" })
+		keymap.set("n", "<leader>fr", tsb.oldfiles, { desc = "Telescope [F]ind [R]ecent files" })
+		keymap.set("n", "<leader>fs", tsb.live_grep, { desc = "Telescope [F]ind [S]tring in cwd" })
+		keymap.set("n", "<leader>fc", tsb.grep_string, { desc = "Telescope [F]ind [C]ursor in cwd" })
+		keymap.set("n", "<leader>fb", tsb.buffers, { desc = "Telescope [F]ind [B]uffers" })
+		keymap.set("n", "<leader>fk", tsb.keymaps, { desc = "Telescope [F]ind [K]eymaps" })
 
 		keymap.set("n", "<leader>/", function()
 			tsb.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
@@ -50,8 +50,8 @@ return {
 			}))
 		end, { desc = "[/] Fuzzily search in current buffer" })
 
-		keymap.set("n", "<leader>sn", function()
+		keymap.set("n", "<leader>fn", function()
 			tsb.find_files({ cwd = vim.fn.stdpath("config") })
-		end, { desc = "[S]earch [N]eovim files" })
+		end, { desc = "[F]ind [N]eovim files" })
 	end,
 }
