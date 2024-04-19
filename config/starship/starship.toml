@@ -3,7 +3,7 @@
 
 format = """
 [╭─](#565f89) $username$hostname [─](#565f89) $directory $git_branch $git_status$git_metrics
-[╰──](#565f89) $sudo$character
+[╰─](#565f89) $sudo$character
 """
 
 right_format = """

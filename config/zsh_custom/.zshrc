@@ -43,7 +43,7 @@ setopt SHARE_HISTORY
 setopt histignorealldups
 setopt sharehistory
 
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 
 alias l="exa -lhg --icons --time-style long-iso --sort=type -L2"
 alias ll="exa -lahg --icons --time-style long-iso --sort=type -L2"
@@ -253,7 +253,7 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
 
 #FZF
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
 
 # INITIAL COMMANDS
 #fastfetch

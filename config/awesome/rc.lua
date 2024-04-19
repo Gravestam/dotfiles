@@ -34,7 +34,8 @@ end
 
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
-local terminal = "alacritty"
+-- local terminal = "alacritty"
+local terminal = "wezterm start --always-new-process"
 
 local superkey = "Mod4"
 
@@ -463,20 +464,17 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 
 local globalkeys = gears.table.join(
-
 	awful.key({ superkey }, "h", hotkeys_popup.show_help, { description = "Show help", group = "Settings" }),
 	awful.key({ superkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "Settings" }),
 	awful.key({ superkey }, "BackSpace", function()
 		kbd.switch()
 	end, { description = "Switch keyboard layout", group = "Settings" }),
-
 	awful.key({}, "XF86MonBrightnessDown", function()
 		awful.spawn("xbacklight -dec 5")
 	end, { description = "Decrease screen backlight", group = "Settings" }),
 	awful.key({}, "XF86MonBrightnessUp", function()
 		awful.spawn("xbacklight -inc 5")
 	end, { description = "Increase screen backlight", group = "Settings" }),
-
 	awful.key({}, "XF86AudioLowerVolume", function()
 		awful.spawn("amixer set Master playback 2%-")
 	end, { description = "Decrease sound volume", group = "Settings" }),
@@ -625,7 +623,6 @@ for i = 1, 9 do
 				tag:view_only()
 			end
 		end, { description = "View tag #" .. i, group = "Tag" }),
-
 		awful.key({ superkey, "Shift" }, "#" .. i + 9, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
@@ -634,7 +631,6 @@ for i = 1, 9 do
 				end
 			end
 		end, { description = "Move focused client to tag #" .. i, group = "Tag" }),
-
 		awful.key({ superkey, "Control" }, "#" .. i + 9, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
