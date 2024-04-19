@@ -41,6 +41,7 @@ return {
 				"black",
 				"flake8",
 				"shfmt",
+				"beautysh",
 			},
 		})
 	end,

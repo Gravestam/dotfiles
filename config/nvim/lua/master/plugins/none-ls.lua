@@ -17,7 +17,7 @@ return {
 				null_ls.builtins.formatting.black, -- Python formatter
 				require("none-ls.diagnostics.flake8"), -- Python linter
 
-				null_ls.builtins.formatting.shfmt, -- Shell script formatter
+				require("none-ls.formatting.beautysh"), -- Shell script formatter
 			},
 		})
 

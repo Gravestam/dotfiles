@@ -220,19 +220,19 @@ ghce() {
 
 # FZF Ripgrep && open with editor
 fzf-ripgrep-widget(){
-  setopt localoptions pipefail no_aliases 2> /dev/null
-  local initial_query=""
-  local rg_command="rg --hidden --column --line-number --no-heading --color=always --smart-case "
-  local out="$(eval "$rg_command '$initial_query'" | FZF_DEFAULT_OPTS="--bind 'change:reload:$rg_command {q}' --ansi -d : --preview='[[ \$(file --mime {1}) =~ binary ]] && echo {1} is a binary file || (bat --style=numbers --color=always --highlight-line {2} {1} || cat {1}) 2> /dev/null | head -300' --disabled --query '$initial_query' --preview-window='+{2}+3/2' --layout=reverse" $(__fzfcmd))"
-  if [[ -z "$out" ]]; then
-    zle redisplay
-    return 0
-  fi
-  local file_name="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==1{print $1}')"
-  local row="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==2{print $1}')"
-  local col="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==3{print $1}')"
-  nvim +"$row" "$file_name"
-  zle redisplay
+	setopt localoptions pipefail no_aliases 2> /dev/null
+	local initial_query=""
+	local rg_command="rg --hidden --column --line-number --no-heading --color=always --smart-case "
+	local out="$(eval "$rg_command '$initial_query'" | FZF_DEFAULT_OPTS="--bind 'change:reload:$rg_command {q}' --ansi -d : --preview='[[ \$(file --mime {1}) =~ binary ]] && echo {1} is a binary file || (bat --style=numbers --color=always --highlight-line {2} {1} || cat {1}) 2> /dev/null | head -300' --disabled --query '$initial_query' --preview-window='+{2}+3/2' --layout=reverse" $(__fzfcmd))"
+	if [[ -z "$out" ]]; then
+    	zle redisplay
+    	return 0
+  	fi
+	local file_name="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==1{print $1}')"
+	local row="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==2{print $1}')"
+	local col="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==3{print $1}')"
+	nvim +"$row" "$file_name"
+	zle redisplay
 }
 
 zle -N fzf-ripgrep-widget
