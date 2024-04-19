@@ -1,6 +1,9 @@
 return {
 	"nvimtools/none-ls.nvim",
 	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		"nvimtools/none-ls-extras.nvim",
+	},
 	config = function()
 		local null_ls = require("null-ls")
 
@@ -9,10 +12,10 @@ return {
 				null_ls.builtins.formatting.stylua, -- Lua formatting
 
 				null_ls.builtins.formatting.prettier, -- javascript, typescript, json, etc formatter
-				null_ls.builtins.diagnostic.eslint_d, -- javascript, typescript, etc linter
+				require("none-ls.diagnostics.eslint_d"), -- javascript, typescript, etc linter
 
 				null_ls.builtins.formatting.black, -- Python formatter
-				null_ls.builtins.diagnostic.flake8, -- Python linter
+				require("none-ls.diagnostics.flake8"), -- Python linter
 
 				null_ls.builtins.formatting.shfmt, -- Shell script formatter
 			},
