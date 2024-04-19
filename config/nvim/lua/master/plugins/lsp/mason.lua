@@ -38,8 +38,9 @@ return {
 				"eslint_d",
 				"prettier",
 				"stylua",
-				"isort",
 				"black",
+				"flake8",
+				"shfmt",
 			},
 		})
 	end,
