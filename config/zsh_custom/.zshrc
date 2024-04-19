@@ -227,7 +227,7 @@ fzf-ripgrep-widget(){
 	if [[ -z "$out" ]]; then
     	zle redisplay
     	return 0
-  	fi
+	fi
 	local file_name="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==1{print $1}')"
 	local row="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==2{print $1}')"
 	local col="$(echo "$out" | sed 's/:/\n/g' | awk 'NR==3{print $1}')"
@@ -251,9 +251,6 @@ bindkey "^[[F" end-of-line
 # PROMPT
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
-
-#FZF
-# eval "$(fzf --zsh)"
 
 # INITIAL COMMANDS
 #fastfetch
