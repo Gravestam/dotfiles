@@ -5,8 +5,19 @@ export PATH="$HOME/.local/bin:$PATH"
 # SHELL ENVIRONMENT
 export EDITOR="nvim"
 export VISUAL="nvim"
-export BROWSER="firefox"
+export BROWSER="brave"
 export PAGER="less"
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=header,grid --line-range :500 {}' --preview-window=right:60%:wrap"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_OPTS='
+--color=fg:#c0caf5,bg:#1a1b26,hl:#ff79c6
+--color=fg+:#c0caf5,bg+:#343746,hl+:#ff79c6
+--color=info:#bd93f9,prompt:#6272a4,spinner:#bd93f9,pointer:#ff79c6
+--color=marker:#6272a4,header:#ff79c6
+'
 
 # EXTENSIONS (LOAD)
 source ~/.fzf.zsh
@@ -20,13 +31,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
 _comp_options+=(globdots)
-
-# VIM MODE
-# bindkey -v
-# export KEYTIMEOUT=1
-	# Forces VIM MODE to start in normal mode (default is insert)
-	# autoload -Uz add-zle-hook-widget
-	# add-zle-hook-widget line-init vi-cmd-mode
 
 # HISTORY
 HISTFILE=~/.zsh_history
@@ -64,11 +68,6 @@ alias pic="nsxiv"
 alias clock="tty-clock -c -C 4"
 alias fixfile="sudo sed -i -e 's/\r$//'"
 
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
-alias gp="git push"
-
 alias grep="rg"
 alias ps="procs"
 alias cat="bat"
@@ -84,6 +83,7 @@ alias nf="nvim_fzf --od node_modules --od .git"
 
 alias ai="${HOME}/projects/others/yolo-ai-cmdbot/yolo.mod.py"
 
+# GH CLI Copilot
 ghcs() {
 	FUNCNAME="$funcstack[1]"
 	TARGET="shell"
@@ -165,6 +165,7 @@ ghcs() {
 	fi
 }
 
+# GH CLI Copilot
 ghce() {
 	FUNCNAME="$funcstack[1]"
 	local GH_DEBUG="$GH_DEBUG"
@@ -229,6 +230,9 @@ bindkey "^[[F" end-of-line
 # PROMPT
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+
+#FZF
+eval "$(fzf --zsh)"
 
 # INITIAL COMMANDS
 #fastfetch
