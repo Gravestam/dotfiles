@@ -2,11 +2,11 @@
 configuration {
 	modi: "drun,run,window";
 	show-icons: true;
-	terminal: "alacritty";
+	terminal: "wezterm";
 	icon-theme: "Papirus-Dark";
 	matching: "fuzzy";
 	click-to-exit: true;
-	font: "JetBrains Mono NF 12";
+	font: "JetBrains Mono NF 11";
 }
 
 // @theme "dracula"
