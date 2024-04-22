@@ -46,6 +46,7 @@ setopt sharehistory
 # export TERM="xterm-256color"
 
 alias system_rebuild="sudo nixos-rebuild switch --flake ~/.system-dotfiles"
+alias system_update="sudo nix flake update ~/.system-dotfiles"
 
 alias l="exa -lhg --icons --time-style long-iso --sort=type -L2"
 alias ll="exa -lahg --icons --time-style long-iso --sort=type -L2"
