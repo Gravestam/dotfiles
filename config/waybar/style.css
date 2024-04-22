@@ -1,0 +1,246 @@
+
+ /*
+    Dracula Theme
+    background: #282A36;
+    foreground: #F8F8F2;
+    selection: #44475A;
+    comment: #6272A4;
+    cyan: #8BE9FD;
+    green: #50FA7B;
+    orange: #FFB86C;
+    pink: #FF79C6;
+    purple: #BD93F9;
+    red: #FF5555;
+    yellow: #F1FA8C;
+*/
+
+@define-color background #282A36;
+@define-color foreground #F8F8F2;
+@define-color selection #44475A;
+@define-color comment #6272A4;
+@define-color cyan #8BE9FD;
+@define-color green #50FA7B;
+@define-color orange #FFB86C;
+@define-color pink #FF79C6;
+@define-color purple #BD93F9;
+@define-color red #FF5555;
+@define-color yellow #F1FA8C;
+
+
+ * {
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 0px solid #ffffff;
+    background: @background;
+    transition-property: background-color;
+    transition-duration: .5s;
+    opacity: 0.85;
+}
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+
+#workspaces {
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    color: @foreground;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 5px;
+    border: 0px;
+    color: @foreground;
+    background-color: @background;
+    transition: all 0.15s ease-in-out;
+    opacity: 0.6;
+    border: solid 1px @comment;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    border-color: @green;
+    min-width: 40px;
+    transition: all 0.15s ease-in-out;
+    opacity: 1;
+}
+
+#workspaces button:hover {
+    opacity:0.95;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 5px;
+    background-color: @background;
+    opacity:0.85;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @foreground;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    background: @background;
+    padding: 2px 10px 0px 10px;
+    border-radius: 5px;
+    color:@foreground;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    padding:0px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#taskbar button {
+    margin:0;
+    padding: 0px 5px 0px 5px;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    font-size: 16px;
+    color: @foreground;
+    padding: 1px 10px 0px 10px;
+}
+
+/* -----------------------------------------------------
+ * Language layout
+ * ----------------------------------------------------- */
+#language {
+    font-size: 16px;
+    color: @foreground;
+    padding: 1px 10px 0px 10px;
+}
+
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+
+#pulseaudio {
+    font-size: 16px;
+    color: @foreground;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+}
+
+#pulseaudio.muted {
+    color: @foreground;
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+#network {
+    font-size: 16px;
+    color: @foreground;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+}
+
+#network.ethernet {
+    color: @foreground;
+}
+
+#network.wifi {
+    color: @foreground;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+#bluetooth, #bluetooth.on, #bluetooth.connected {
+    font-size: 16px;
+    color: @foreground;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery {
+    font-size: 16px;
+    color: @foreground;
+    border-radius: 15px;
+    padding: 2px 15px 0px 10px;
+}
+
+#battery.charging, #battery.plugged {
+    color: @foreground;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    padding: 0px 15px 0px 0px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}

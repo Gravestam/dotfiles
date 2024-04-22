@@ -1,6 +1,6 @@
 
 # PATH
-export PATH="$HOME/.local/bin:$PATH"
+#export PATH="$HOME/.local/bin:$PATH"
 
 # SHELL ENVIRONMENT
 export EDITOR="nvim"
@@ -20,9 +20,9 @@ export FZF_DEFAULT_OPTS='
 '
 
 # EXTENSIONS (LOAD)
-source ~/.fzf.zsh
-source ~/zsh_custom/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/zsh_custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.fzf.zsh
+#source ~/zsh_custom/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/zsh_custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # TAB COMPLETION
 autoload -Uz compinit
@@ -54,19 +54,11 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias ..="cd .."
 
-alias update-mirrors="sudo reflector --verbose -c 'Sweden,Germany,Denmark' -l 40 -n 20  -p https --sort rate --save /etc/pacman.d/mirrorlist"
-
-alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
 alias v="nvim"
 alias sv="sudo nvim"
 
 alias ff="fastfetch"
-alias clip="xclip -selection clipboard"
 alias fm="ranger"
-alias pic="nsxiv"
-alias clock="tty-clock -c -C 4"
-alias fixfile="sudo sed -i -e 's/\r$//'"
 
 alias grep="rg"
 alias ps="procs"
@@ -78,8 +70,6 @@ alias tml="tmux ls"
 alias tma="tmux attach -t"
 alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
-
-alias nf="nvim_fzf --od node_modules --od .git"
 
 alias ai="${HOME}/projects/others/yolo-ai-cmdbot/yolo.mod.py"
 
@@ -251,6 +241,17 @@ bindkey "^[[F" end-of-line
 # PROMPT
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
+
+# Make a functions that starts Hyprland on tty5
+function startHyprland {
+	
+	dbus-run-session Hyprland
+}
 
 # INITIAL COMMANDS
 #fastfetch

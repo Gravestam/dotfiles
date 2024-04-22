@@ -1,13 +1,12 @@
 
 configuration {
-	modi: "drun,run,window,power:rofi-power-menu --choices=shutdown/reboot/logout --no-symbols";
+	modi: "drun,run,window";
 	show-icons: true;
 	terminal: "alacritty";
 	icon-theme: "Papirus-Dark";
 	matching: "fuzzy";
 	click-to-exit: true;
 	font: "JetBrains Mono NF 12";
-	dpi: 168;
 }
 
 // @theme "dracula"

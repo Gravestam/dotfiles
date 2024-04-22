@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# Enable associative array support
+declare -A window_map
+
+# Fetch the full state of all clients and the currently active window in JSON format
+state="$(hyprctl -j clients)"
+active_window="$(hyprctl -j activewindow)"
+
+# Extract the address of the currently active window for marking it in the list
+current_addr="$(echo "$active_window" | jq -r '.address')"
+
+# Prepare the list of windows and fill the associative array
+selection_list=""
+while IFS= read -r line; do
+    # Extract workspace name, class, and address
+    workspace=$(echo "$line" | jq -r '.workspace.name')
+    class=$(echo "$line" | jq -r '.class')
+    address=$(echo "$line" | jq -r '.address')
+
+    # Skip windows not on a monitor
+    [ "$(echo "$line" | jq '.monitor')" == "-1" ] && continue
+
+    # Create a user-friendly string and use it as a key in the map
+    display_string="[ $workspace ]    $class"
+    [[ "$address" == "$current_addr" ]] && display_string="- $display_string"
+
+    # Add the mapping from display string to address
+    window_map["$display_string"]="$address"
+
+    # Append the display string to the list for selection
+    selection_list+="$display_string\n"
+done <<< "$(echo "$state" | jq -c '.[]')"
+
+# Use `rofi` to let the user select a window
+selected_display_string=$(echo -e "$selection_list" | rofi show -dmenu -i -p "Select window:" | sed 's/- //')
+
+# Retrieve the address from the map using the selected display string
+selected_address="${window_map["$selected_display_string"]}"
+
+# Focus the selected window if one is selected
+if [[ -n "$selected_address" ]]; then
+    hyprctl dispatch focuswindow address:${selected_address}
+fi
