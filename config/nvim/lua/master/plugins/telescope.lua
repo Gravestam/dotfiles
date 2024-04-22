@@ -53,5 +53,9 @@ return {
 		keymap.set("n", "<leader>fn", function()
 			tsb.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[F]ind [N]eovim files" })
+
+		keymap.set("n", "<leader>f.", function()
+			tsb.find_files({ cwd = "~/.system-dotfiles/" })
+		end, { desc = "[F]ind [.]System files" })
 	end,
 }
