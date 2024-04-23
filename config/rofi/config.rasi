@@ -1,6 +1,6 @@
 
 configuration {
-	modi: "drun,run,window";
+	modi: "drun,run,window,power:rofi-power-menu --choices=shutdown/reboot/logout";
 	show-icons: true;
 	terminal: "wezterm";
 	icon-theme: "Papirus-Dark";
