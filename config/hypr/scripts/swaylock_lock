@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Define colors (Tokyo Night - Night)
+background="1a1b26"
+foreground="c0caf5"
+cursor="c0caf5"
+cursor_line="c0caf5"
+selection="4b5263"
+black="1a1b26"
+red="ee617e"
+green="7bc275"
+yellow="e0af68"
+blue="7aa2f7"
+magenta="bb9af7"
+cyan="7dcfff"
+white="c0caf5"
+
+swaylock \
+    --screenshots \
+    --clock \
+    --indicator \
+    --indicator-radius 150 \
+    --indicator-thickness 10 \
+    --effect-blur 7x5 \
+    --effect-vignette 0.5:0.5 \
+    --key-hl-color "$green" \
+    --text-color "$foreground" \
+    --text-clear-color "$black" \
+    --text-ver-color "$black" \
+    --text-wrong-color "$black" \
+    --ring-color "$selection" \
+	--ring-clear-color "$selection" \
+    --ring-ver-color "$selection" \
+    --ring-wrong-color "$selection" \
+    --line-color "$black" \
+	--line-clear-color "$black" \
+    --line-ver-color "$black" \
+    --line-wrong-color "$black" \
+    --inside-color "$black" \
+    --inside-clear-color "$yellow" \
+    --inside-ver-color "$magenta" \
+    --inside-wrong-color "$red" \
+    --fade-in 0.1 \
+    --hide-keyboard-layout \
+	--ignore-empty-password \
+	--font-size 46 \
+	--timestr="You shall not pass!" \
+	--datestr=""
