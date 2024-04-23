@@ -69,7 +69,7 @@ alias tma="tmux attach -t"
 alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
 
-alias startHyperland="dbus-run-session Hyprland";
+alias startHyprland="dbus-run-session Hyprland";
 
 alias ai="${HOME}/projects/others/yolo-ai-cmdbot/yolo.mod.py"
 
