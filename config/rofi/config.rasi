@@ -2,7 +2,7 @@
 configuration {
 	modi: "drun,run,window,power:rofi-power-menu --choices=shutdown/reboot/logout";
 	show-icons: true;
-	terminal: "alacritty";
+	terminal: "wezterm";
 	icon-theme: "Papirus-Dark";
 	matching: "fuzzy";
 	click-to-exit: true;
