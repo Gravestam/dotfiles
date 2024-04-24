@@ -11,8 +11,8 @@
 #     SDDM    - /usr/share/sddm/scripts/Xsession
 #
 # More in https://wiki.archlinux.org/index.php/Autostarting
-bash ~/dotfiles/misc/setup_monitors &
-nm-applet &
-pasystray &
-cbatticon &
-udiskie -A -t &
+bash ~/.user-dotfiles/misc/setup_monitors &
+# nm-applet &
+# pasystray &
+# cbatticon &
+# udiskie -A -t &
