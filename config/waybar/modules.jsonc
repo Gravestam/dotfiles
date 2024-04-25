@@ -1,146 +1,149 @@
-
 {
-    // Workspaces
-    "hyprland/workspaces" : {
-        "on-click": "activate",
-        "active-only": false,
-        "all-outputs": true,
-        "format": "{}",
-        "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
-        },
-        "persistent-workspaces": {}
+  // Workspaces
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{name}",
+    "format-icons": {
+      "default": " ",
+      "active": " ",
+      "urgent": " ",
     },
+    "persistent-workspaces": {},
+  },
 
-    // Taskbar
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 18,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "ignore-list": [
-        ],
-        "app_ids-mapping": {
-            "firefoxdeveloperedition": "firefox-developer-edition"
-        },
-        "rewrite": {
-            "Firefox Web Browser": "Firefox",
-            "Foot Server": "Terminal"
-        }
+  // Taskbar
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition",
     },
-
-    // Hyprland Window
-    "hyprland/window": {
-        "rewrite": {
-        },
-        "separate-outputs": true
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal",
     },
+  },
 
-    // Keyboard State
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+  // Hyprland Window
+  "hyprland/window": {
+    "max-length": 25,
+    "rewrite": { "": "Do shit..." },
+    "separate-outputs": false,
+  },
+
+  // System tray
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 12,
+  },
+
+  // Clock
+  "clock": {
+    "format": "󰥔 {:%H:%M}",
+    "tooltip": true,
+    "tooltip-format": "{:%A, %d %B %Y }",
+  },
+
+  // CPU
+  "cpu": {
+    "interval": 5,
+    "format": " {usage:2}%",
+    "tooltip": true,
+  },
+
+  // Memory
+  "memory": {
+    "interval": 5,
+    "format": "  {}%",
+    "tooltip": true,
+    // "format": "/ M {}% ",
+    // "on-click": "alacritty -e btop"
+  },
+
+  // Harddisc space used
+  "disk": {
+    "interval": 30,
+    "format": "󰋊 {percentage_used}%",
+    "tooltip": true,
+    "path": "/",
+  },
+
+  "hyprland/language": {
+    "format": " {}",
+		"format-en": "ANSI",
+		"format-sv": "ISO"
+  },
+
+  // Network
+  "network": {
+    "format": "󰩠 {ipaddr}",
+    "format-wifi": "󰘊 {signalStrength}%",
+    "format-ethernet": "<big>󰩠</big> {ipaddr}",
+    "format-disconnected": "<big>󰅛</big> DC",
+    "tooltip-format": "{ifname} via {gwaddri}",
+    "tooltip-format-wifi": "{ifname} @ {essid}\n<big>󰩠</big> {ipaddr}\n<big>󰣾</big> {signalStrength}%\n<big>󰀂</big> {frequency}MHz\n<big>󰛶</big> {bandwidthUpBits}\n<big>󰛴</big> {bandwidthDownBits}",
+    "tooltip-format-ethernet": "{ifname}\n<big>󰩠</big> {ipaddr}\n<big>󰛶</big> {bandwidthUpBits}\n<big>󰛴</big> {bandwidthDownBits}",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 50,
+    "on-click": "nm-connection-editor",
+  },
+
+  // Battery
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
     },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["", "", "", "", ""],
+  },
 
-    // System tray
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
+  // Pulseaudio
+  "pulseaudio": {
+    "scroll-step": 1, // %, can be a float
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", " ", " "],
     },
+    "on-click": "sleep 0.1 && pavucontrol",
+  },
 
-    // Clock
-    "clock": {
-		"format": "{:%H:%M - %a %d/%m/%Y}",
-	},
+  // Bluetooth
+  "bluetooth": {
+    "format": "󰂰",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-no-controller": "󰂲",
+    "interval": 30,
+    "tooltip": true,
+  },
 
-    // CPU
-    "cpu": {
-        "format": "/ C {usage}% ",
-        "on-click": "alacritty -e btop"
-    },
+  // Custom
+  "custom/spacing": {
+    "format": " ",
+  },
 
-    // Memory
-    "memory": {
-        "format": "/ M {}% ",
-        "on-click": "alacritty -e btop"
-    },
-
-    // Harddisc space used
-    "disk": {
-        "interval": 30,
-        "format": "D {percentage_used}% ",
-        "path": "/",
-        "on-click": "alacritty -e btop"
-    },
-
-    "hyprland/language": {
-        "format": "{short}"
-    },
-
-    // Network
-    "network": {
-        "format": "{ipaddr}",
-        "format-wifi": "{signalStrength}%",
-        "format-ethernet": "{ipaddr}",
-        "format-disconnected": "Disconnected",
-        "tooltip-format": "{ifname} via {gwaddri}",
-        "tooltip-format-wifi": "{ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-        "tooltip-format-ethernet": "{ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50,
-        "on-click": "nm-connection-editor"
-    },
-
-    // Battery
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  - {capacity}%",
-        "format-charging": "  - {capacity}%",
-        "format-plugged": "  - {capacity}%",
-        "format-alt": "{icon}  - {time}",
-        "format-icons": [" ", " ", " ", " ", " "]
-    },
-
-    // Pulseaudio
-    "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
-        "format": "{icon}  - {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", " ", " "]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    // Bluetooth
-    "bluetooth": {
-        "format": "  - {status}",
-        "format-disabled": "",
-        "format-off": "",
-        "interval": 30,
-        // "on-click": "blueman-manager",
-        "format-no-controller": ""
-    }
-
+  "custom/distro": {
+    "format": "",
+  },
 }

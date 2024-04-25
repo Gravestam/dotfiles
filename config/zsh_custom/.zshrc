@@ -71,7 +71,7 @@ alias tmka="tmux kill-server"
 
 alias startHyprland="dbus-run-session Hyprland";
 
-alias ai="${HOME}/projects/others/yolo-ai-cmdbot/yolo.mod.py"
+alias ai="${HOME}/projects/node-ai/main.js shell"
 
 # FZF Ripgrep && open with editor
 fzf-ripgrep-widget(){

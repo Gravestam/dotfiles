@@ -1,5 +1,6 @@
 {
     "position": "top",
+    "layer": "top",
 	"margin-top": 0,
 	"margin-bottom": 0,
 	"margin-left": 0,
@@ -8,13 +9,15 @@
     "height": 20,
 	"spacing": 0,
 
-    "layer": "top",
-
 	"include": ["~/.config/waybar/modules.jsonc"],
 
     "modules-left": [
-		"wlr/taskbar",
-		"hyprland/window"
+		"custom/distro",
+		"battery",
+		"disk",
+		"cpu",
+		"memory",
+		"hyprland/window",
     ],
 
     "modules-center": [
@@ -22,12 +25,11 @@
     ],
 
     "modules-right": [
-		"pulseaudio",
-		"bluetooth",
-		"battery",
-		"network",
 		"tray",
+		"bluetooth",
+		"pulseaudio",
 		"hyprland/language",
+		"network",
 		"clock"
     ]
 }
