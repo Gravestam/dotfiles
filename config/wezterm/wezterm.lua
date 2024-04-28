@@ -28,6 +28,9 @@ config.enable_scroll_bar = false
 
 config.enable_wayland = false
 
+-- opacity
+config.window_background_opacity = 1
+
 config.front_end = "WebGpu"
 -- config.webgpu_power_preference = "HighPerformance"
 -- config.webgpu_preferred_adapter = getDiscreteGpu()

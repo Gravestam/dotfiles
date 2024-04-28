@@ -1,4 +1,25 @@
 * {
+	
+	//scheme: "Tokyo Night Dark"
+	base00: #1A1B26;
+	base01: #16161E;
+	base02: #2F3549;
+	base03: #444B6A;
+	base04: #787C99;
+	base05: #A9B1D6;
+	base06: #CBCCD1;
+	base07: #D5D6DB;
+	base08: #C0CAF5;
+	base09: #A9B1D6;
+	base0A: #0DB9D7;
+	base0B: #9ECE6A;
+	base0C: #B4F9F8;
+	base0D: #2AC3DE;
+	base0E: #BB9AF7;
+	base0F: #F7768E;
+
+	borderRadius: 5px;
+
     bg: rgba(36, 40, 59, 0.5);
     hv: rgba(146, 116, 202, 1);
     primary: rgba(197, 200, 198, 1);
@@ -13,21 +34,16 @@
     transparent: rgba(46,52,64,0);
 }
 
-// defines different aspects of the window
 window {
     width: 800px;
-    /*since line wont work with height, i comment it out
-    if you rather control the size via height
-    just comment it out */
-    // height: 500;
 
     orientation: horizontal;
     location: center;
     anchor: center;
     transparency: "screenshot";
-    border-color: @transparent;
-    border: 0px;
-    border-radius: 6px;
+    border-color: @base0D;
+    border: 2px;
+    border-radius: @borderRadius;
     spacing: 0;
     children: [ mainbox ];
 }
@@ -38,26 +54,18 @@ mainbox {
 }
 
 inputbar {
-    color: @kl;
-    padding: 5px;
-    border: 1px 1px 1px 1px;
-    border-color: @border-c;
-    border-radius: 6px 6px 0px 0px;
+    padding: 10px;
+    border-radius: @borderRadius;
 }
 
-message {
-    padding: 0;
-    border-color: @border-c;
-    border: 0px 1px 1px 1px;
-}
-
-entry, prompt, case-indicator {
-    text-font: inherit;
-    text-color: inherit;
+prompt {
+	color: @base0F;
 }
 
 entry {
-    cursor: pointer;
+	color: @base09;
+	cursor: text;
+	cursor-width: 3px;
 }
 
 prompt {
@@ -66,37 +74,20 @@ prompt {
 
 listview {
     layout: vertical;
-    //spacing: 5px;
-    padding: 5px;
+    padding: 0px 10px 10px 10px;
     lines: 8;
     columns: 1;
-    border: 0px 1px 1px 1px;
-    border-radius: 0px 0px 6px 6px;
-    border-color: @border-c;
     dynamic: false;
 }
 
 element {
-    padding: 1px;
+    padding: 2px 5px 2px 5px;
     vertical-align: 1;
-    color: @kl;
+    color: @base09;
     font: inherit;
-}
+	border-radius: @borderRadius;
 
-element-text {
-    background-color: inherit;
-    text-color: inherit;
-    vertical-align: 0.5;
-}
-
-element selected.normal {
-    color: @black;
-    background-color: @hv;
-}
-
-element normal active {
-    background-color: @hv;
-    color: @black;
+	children: [ element-text, element-icon ];
 }
 
 element-icon {
@@ -105,26 +96,28 @@ element-icon {
     size: 1.3em;
 }
 
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+	highlight: bold underline italic;
+}
+
+element normal active {
+    background-color: @base0F;
+    color: @base01;
+}
+
 element normal urgent {
-    background-color: @primary;
+    background-color: @base0F;
 }
 
-element selected active {
-    background: @hv;
-    foreground: @bg;
+element selected.normal {
+    color: @base01;
+    background-color: @base04;
 }
 
-button {
-    padding: 5px;
-    color: @primary;
-    horizonatal-align: 0.5;
-
-    border: 1px 0px 1px 1px;
-    border-radius: 4px 0px 0px 4px;
-    border-color: @primary;
-}
-
-button selected normal {
-    border: 1px 0px 1px 1px;
-    border-color: @primary;
+element selected.active {
+    color: @base01;
+    background-color: @base09;
 }
