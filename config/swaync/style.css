@@ -34,7 +34,7 @@
 @define-color base0F #F7768E;
 
 @define-color cc-bg @base00;
-@define-color noti-border-color @base0D;
+@define-color noti-border-color @base0E;
 @define-color noti-bg @base00;
 @define-color noti-bg-opaque @base00;
 @define-color noti-bg-darker @base00;
@@ -406,7 +406,7 @@
   background: @cc-bg;
   color: @text-color;
   border-radius: 5px;
-  border: 1px solid @base0D;
+  border: 1px solid @base0E;
   margin-bottom: 5px;
   margin-top: 5px;
   margin-right: 5px;

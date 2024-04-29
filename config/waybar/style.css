@@ -222,7 +222,7 @@ window#waybar {
 }
 
 #custom-distro {
-	color: @base07;
+	color: @base0E;
 
 	/* background: @base01; */
 	border-radius: 5px;
@@ -231,7 +231,7 @@ window#waybar {
 }
 
 #custom-notification {
-	color: @base0D;
+	color: @base0E;
 	background: @base01;
 	border-radius: 5px;
 	margin: 4px;
