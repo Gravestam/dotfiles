@@ -32,4 +32,5 @@ for app in "${webapps[@]}"; do
 done
 
 # Launch the selected webapp
-brave --app="$selected_url" &
+# brave --app="$selected_url" &
+firefox --app="$selected_url" &
