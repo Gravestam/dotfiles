@@ -59,7 +59,6 @@ alias ff="fastfetch"
 alias fm="ranger"
 
 alias grep="rg"
-alias ps="procs"
 alias cat="bat"
 alias bt="bluetoothctl"
 

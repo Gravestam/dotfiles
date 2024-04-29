@@ -1,0 +1,343 @@
+/* base00 - Default Background */
+/* base01 - Lighter Background (Used for status bars, line number and folding marks) */
+/* base02 - Selection Background */
+/* base03 - Comments, Invisibles, Line Highlighting */
+/* base04 - Dark Foreground (Used for status bars) */
+/* base05 - Default Foreground, Caret, Delimiters, Operators */
+/* base06 - Light Foreground (Not often used) */
+/* base07 - Light Background (Not often used) */
+/* base08 - Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
+/* base09 - Integers, Boolean, Constants, XML Attributes, Markup Link Url */
+/* base0A - Classes, Markup Bold, Search Text Background */
+/* base0B - Strings, Inherited Class, Markup Code, Diff Inserted */
+/* base0C - Support, Regular Expressions, Escape Characters, Markup Quotes */
+/* base0D - Functions, Methods, Attribute IDs, Headings */
+/* base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed */
+/* base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?> */
+
+/* scheme: "Tokyo Night Dark" */
+@define-color base00 #1A1B26;
+@define-color base01 #16161E;
+@define-color base02 #2F3549;
+@define-color base03 #444B6A;
+@define-color base04 #787C99;
+@define-color base05 #A9B1D6;
+@define-color base06 #CBCCD1;
+@define-color base07 #D5D6DB;
+@define-color base08 #C0CAF5;
+@define-color base09 #A9B1D6;
+@define-color base0A #0DB9D7;
+@define-color base0B #9ECE6A;
+@define-color base0C #B4F9F8;
+@define-color base0D #2AC3DE;
+@define-color base0E #BB9AF7;
+@define-color base0F #F7768E;
+
+* {
+	font-size: 14px;
+	font-family: "JetBrainsMono Nerd Font";
+	transition: 50ms;
+	box-shadow: unset;
+	outline: none;
+	border: none;
+	padding: unset;
+	margin: unset;
+	background-color: unset;
+	color: @base09;
+}
+
+.control-center {
+	background-color: @base00;
+
+	padding: 10px;
+
+	margin-top: 5px;
+	margin-right: 5px;
+
+	border: 2px solid @base0D;
+	border-radius: 5px;
+}
+
+.floating-notifications .notification-row {
+	background-color: @base00;
+
+	padding: 5px;
+
+	margin-top: 5px;
+	margin-right: 5px;
+
+	border: 2px solid @base03;
+	border-radius: 5px;
+}
+
+.floating-notifications .notification-row .notification {
+
+	/* background-color: @base00; */
+	/* border: 5px solid red; */
+}
+
+.control-center .notification-row .notification-background .notification,
+.control-center .notification-row .notification-background .notification .notification-content,
+.floating-notifications .notification-row .notification-background .notification,
+.floating-notifications.background .notification-background .notification .notification-content {
+	/* margin-bottom: unset; */
+}
+
+.control-center .notification-row .notification-background .notification {
+	/* margin-top: 10px; */
+}
+
+.control-center .notification-row .notification-background .notification box,
+.control-center .notification-row .notification-background .notification widget,
+.control-center .notification-row .notification-background .notification .notification-content,
+.floating-notifications .notification-row .notification-background .notification box,
+.floating-notifications .notification-row .notification-background .notification widget,
+.floating-notifications.background .notification-background .notification .notification-content {
+	/* border: none; */
+	/* box-shadow: none; */
+	/* outline: none; */
+}
+
+.control-center .notification-row .notification-background .notification .notification-content,
+.floating-notifications .notification-row .notification-background .notification .notification-content {
+	/* border: 1px solid @base00; */
+	/* border-radius: 5px; */
+}
+
+.floating-notifications.background .notification-background .notification .notification-content,
+.control-center .notification-background .notification .notification-content {
+	/* background-color: @base00; */
+	/* padding: 10px; */
+	/* padding: unset; */
+}
+
+.control-center .notification-row .notification-background .notification.low .notification-content label,
+.control-center .notification-row .notification-background .notification.normal .notification-content label,
+.floating-notifications.background .notification-background .notification.low .notification-content label,
+.floating-notifications.background .notification-background .notification.normal .notification-content label {
+	/* color: @base0D; */
+}
+
+.control-center .notification-row .notification-background .notification..notification-content image,
+.control-center .notification-row .notification-background .notification.normal .notification-content image,
+.floating-notifications.background .notification-background .notification.low .notification-content image,
+.floating-notifications.background .notification-background .notification.normal .notification-content image {
+	/* background-color: unset; */
+	/* color: @base0D; */
+}
+
+.control-center .notification-row .notification-background .notification.low .notification-content .body,
+.control-center .notification-row .notification-background .notification.normal .notification-content .body,
+.floating-notifications.background .notification-background .notification.low .notification-content .body,
+.floating-notifications.background .notification-background .notification.normal .notification-content .body {
+	/* color: @base09; */
+}
+
+.control-center .notification-row .notification-background .notification.critical .notification-content,
+.floating-notifications.background .notification-background .notification.critical .notification-content {
+	/* background-color: @base00; */
+}
+
+.control-center .notification-row .notification-background .notification.critical .notification-content image,
+.floating-notifications.background .notification-background .notification.critical .notification-content image {
+	/* background-color: unset; */
+	/* color: @base0D; */
+}
+
+.control-center .notification-row .notification-background .notification.critical .notification-content label,
+.floating-notifications.background .notification-background .notification.critical .notification-content label {
+	/* color: @base0F; */
+}
+
+.control-center .notification-row .notification-background .notification .notification-content .summary,
+.floating-notifications.background .notification-background .notification .notification-content .summary {
+	/* font-weight: 600; */
+}
+
+.control-center .notification-row .notification-background .notification .notification-content .time,
+.floating-notifications.background .notification-background .notification .notification-content .time {
+	/* font-weight: 600; */
+	/* margin-right: 10px; */
+	/* padding-right: unset; */
+}
+
+.control-center .notification-row .notification-background .notification .notification-content .body,
+.floating-notifications.background .notification-background .notification .notification-content .body {
+	/* font-weight: 400; */
+	/* margin-top: 10px; */
+	/* padding-right: unset; */
+	/* margin-right: unset; */
+}
+
+.control-center .notification-row .close-button,
+.floating-notifications.background .close-button {
+	/* background-color: unset; */
+	/* margin: unset; */
+	/* padding: unset; */
+	/* border: none; */
+	/* box-shadow: none; */
+	/* border-radius: 100%; */
+	/* min-height: 10px; */
+	/* min-width: 10px; */
+	/* text-shadow: none; */
+}
+
+.control-center .notification-row .close-button:hover,
+.floating-notifications.background .close-button:hover {
+	/* background-color: @base0F; */
+	color: @base0F;
+}
+
+.control-center {
+	/* border-radius: 5px; */
+	/* -gtk-outline-radius: 5px; */
+	/* border: 1px solid @base0D; */
+	/* box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.45); */
+	/* margin: 10px; */
+	/* background-color: @base00; */
+	/* padding: 10px; */
+}
+
+.control-center trough {
+	/* background-color: transparent; */
+}
+
+.control-center slider {
+	/* border-radius: 9999px; */
+	/* -gtk-outline-radius: 9999px; */
+	/* min-width: 5px; */
+	/* min-height: 10px; */
+	/* background-color: rgba(199, 197, 208, 0.31); */
+}
+
+.control-center slider:hover {
+	/* background-color: rgba(128, 128, 128, 0.1); */
+}
+
+.control-center slider:active {
+	/* background-color: red; */
+}
+
+/* title widget */
+
+.widget-title {
+	/* padding: 10px; */
+	/* margin: unset; */
+}
+
+.widget-title label {
+	/* color: #e4e1e6; */
+	/* margin-left: 10px; */
+}
+
+.widget-title button {
+	/* border: unset; */
+	/* background-color: unset; */
+	/* border-radius: 5px; */
+	/* -gtk-outline-radius: 5px; */
+	/* padding: 10px; */
+	/* margin-right: 10px; */
+}
+
+.widget-title button label {
+	/* color: #e4e1e6; */
+	/* margin-right: 10px; */
+}
+
+.widget-title button:hover {
+	/* background-color: rgba(128, 128, 128, 0.3); */
+}
+
+.widget-title button:active {
+	/* background-color: rgba(128, 128, 128, 0.7); */
+}
+
+/* Buttons widget */
+
+.widget-buttons-grid {
+	/* border-radius: 5px; */
+	/* -gtk-outline-radius: 5px; */
+	/* padding: 0.341rem; */
+	/* background-color: rgba(28, 28, 34, 0.35); */
+	/* padding: unset; */
+}
+
+.widget-buttons-grid>flowbox {
+	/* padding: unset; */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:first-child {
+	/* margin-left: unset; */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+	/* border: none; */
+	/* background-color: unset; */
+	/* border-radius: 9999px; */
+	/* min-width: 5.522rem; */
+	/* min-height: 2.927rem; */
+	/* padding: unset; */
+	/* margin: unset; */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button label {
+	/* color: #e4e1e6; */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+	/* background-color: rgba(128, 128, 128, 0.3); */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+	/* OnePlus McClaren edition Orange accent */
+	/* background-color: #ff9f34; */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked label {
+	/* color: #14141b; */
+}
+
+/* Volume widget */
+
+.widget-volume {
+	/* background-color: rgba(28, 28, 34, 0.35); */
+	/* padding: 8px; */
+	/* margin: 8px; */
+	/* -gtk-outline-radius: 1.159rem; */
+	/* -gtk-outline-radius: 1.159rem; */
+}
+
+.widget-volume trough {
+	/* OnePlus McClaren edition Orange accent */
+	/* border: unset; */
+	/* background-color: rgba(128, 128, 128, 0.4); */
+}
+
+.widget-volume trough slider {
+	/* OnePlus McClaren edition Orange accent */
+	/* color: unset; */
+	/* background-color: #ff9f34; */
+	/* border-radius: 100%; */
+	/* min-height: 1.25rem; */
+}
+
+/* Mpris widget */
+
+.widget-mpris {
+	/* background-color: rgba(28, 28, 34, 0.35); */
+	/* padding: 8px; */
+	/* margin: 8px; */
+	/* border-radius: 5px; */
+	/* -gtk-outline-radius: 5px; */
+}
+
+.widget-mpris-player {
+	/* padding: 8px; */
+	/* margin: 8px; */
+}
+
+.widget-mpris-title {
+	/* font-weight: bold; */
+}
+
+.widget-mpris-subtitle {}

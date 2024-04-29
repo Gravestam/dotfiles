@@ -1,6 +1,9 @@
 
 configuration {
 	modi: "drun,run,window,power:rofi-power-menu --choices=shutdown/reboot/logout";
+	display-drun: "Run shit...";
+	display-run: "All the things";
+	display-window: "Shit opened...";
 	show-icons: true;
 	terminal: "wezterm";
 	icon-theme: "Papirus-Dark";

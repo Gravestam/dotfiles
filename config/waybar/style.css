@@ -221,6 +221,14 @@ window#waybar {
 	padding: 2px 5px 2px 5px;
 }
 
+#custom-notification {
+	color: @base0F;
+	background: @base01;
+	border-radius: 5px;
+	margin: 4px;
+	padding: 2px 5px 2px 5px;
+}
+
 tooltip {
 	background: @base00;
 

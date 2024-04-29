@@ -20,7 +20,8 @@
 
 	borderRadius: 5px;
 
-    bg: rgba(36, 40, 59, 0.5);
+    //bg: rgba(36, 40, 59, 0.5);
+    bg: @base00;
     hv: rgba(146, 116, 202, 1);
     primary: rgba(197, 200, 198, 1);
     ug: rgba(11, 36, 71, 1);
