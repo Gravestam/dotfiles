@@ -3,10 +3,8 @@
 
 # Define your list of webapps with names, icons, and URLs
 webapps=(
-    "Nix Packages	 Unstable|󱄅|https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
-    "Nix Packages	 Stable|󱄅|https://search.nixos.org/packages?from=0&size=50&sort=relevance&type=packages&query="
-    "Nix Options	 Unstable|󱄅|https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
-    "Nix Options	 Stable|󱄅|https://search.nixos.org/options?from=0&size=50&sort=relevance&type=packages&query="
+    "Nix Packages|󱄅|https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
+    "Nix Options|󱄅|https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
     "Kagi|󰜏|https://kagi.com/search?q="
     "Arch Wiki|󰣇|https://wiki.archlinux.org/title/?search="
 )
@@ -19,20 +17,22 @@ if [ -z "$selected" ]; then
     exit 0
 fi
 
-# Extract the selected webapp's URL
 selected_url=""
+selected_name=""
 for app in "${webapps[@]}"; do
     name=$(echo "$app" | cut -d'|' -f1)
     url=$(echo "$app" | cut -d'|' -f3)
     icon=$(echo "$app" | cut -d'|' -f2)
     if [ "$icon  $name" = "$selected" ]; then
         selected_url="$url"
+		selected_name="$name"
         break
     fi
 done
 
+
 # Prompt the user to enter a search query
-query=$(echo "" | rofi -dmenu -p "Enter search query: ")
+query=$(echo "" | rofi -dmenu -p "Enter search query for ${selected_name}: ")
 
 # Check if the query is empty (i.e., user pressed Escape)
 if [ -z "$query" ]; then
