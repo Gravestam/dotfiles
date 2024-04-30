@@ -1,0 +1,45 @@
+
+#!/usr/bin/env bash
+
+# Define your list of webapps with names, icons, and URLs
+webapps=(
+    "Arch Wiki|󱚟|https://wiki.archlinux.org/title/?search="
+    "Nix Packages (Unstable)|󱚟|https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
+)
+
+# Use Rofi to select a webapp, showing the icon and name
+selected=$(printf "%s\n" "${webapps[@]}" | awk -F '|' '{print $2 "  " $1}' | rofi -dmenu -p "The fuck you need?: ")
+
+# Check if the selection is empty (i.e., user pressed Escape)
+if [ -z "$selected" ]; then
+    exit 0
+fi
+
+# Extract the selected webapp's URL
+selected_url=""
+for app in "${webapps[@]}"; do
+    name=$(echo "$app" | cut -d'|' -f1)
+    url=$(echo "$app" | cut -d'|' -f3)
+    icon=$(echo "$app" | cut -d'|' -f2)
+    if [ "$icon  $name" = "$selected" ]; then
+        selected_url="$url"
+        break
+    fi
+done
+
+# Prompt the user to enter a search query
+query=$(echo "" | rofi -dmenu -p "Enter search query: ")
+
+# Check if the query is empty (i.e., user pressed Escape)
+if [ -z "$query" ]; then
+    exit 0
+fi
+
+# Encode the query for the URL
+encoded_query=$(echo "$query" | sed 's/ /+/g')
+
+# Combine the selected webapp's URL and the search query
+combined_url="${selected_url}${encoded_query}"
+
+# Launch the browser with the combined URL
+brave "$combined_url" &
