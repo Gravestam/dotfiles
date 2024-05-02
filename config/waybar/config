@@ -47,7 +47,7 @@
 		"margin-left": 0,
 		"margin-right": 0,
 
-		"height": 0,
+		"height": 20,
 		"spacing": 0,
 
 		"include": ["~/.config/waybar/modules.jsonc"],
@@ -56,6 +56,7 @@
 		],
 
 		"modules-center": [
+			"hyprland/workspaces"
 		],
 
 		"modules-right": [

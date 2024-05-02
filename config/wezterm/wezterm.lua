@@ -22,6 +22,9 @@ config.window_padding = {
 	bottom = "10px",
 }
 
+config.initial_cols = 125
+config.initial_rows = 33
+
 config.enable_tab_bar = false
 -- config.window_decorations = "RESIZE"
 config.enable_scroll_bar = false

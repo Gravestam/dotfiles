@@ -65,18 +65,30 @@ window#waybar {
 	padding: 0px 5px;
 	margin: 4px 3px;
 	border-radius: 5px;
-	border: 0px;
+	border: none;
+
+	min-width: 25px;
 
 	color: @base00;
 
-	background: linear-gradient(45deg, @base0D, @base0F, @base0D);
+	background: linear-gradient(45deg, @base09, @base0B, @base09);
 	background-size: 300% 300%;
 
 	animation: gradient_horizontal 15s ease infinite;
 
-	opacity: 0.3;
+	opacity: 0.5;
 
 	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.urgent {
+	color: @base0F;
+}
+
+#workspaces button:not(.empty) {
+	/* min-width: 20px; */
+
+	background: linear-gradient(45deg, @base09, @base0F, @base09);
 }
 
 #workspaces button.active {
