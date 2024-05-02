@@ -39,6 +39,7 @@
     "rewrite": {
       "": "Do shit...",
       "zsh": "Terminal",
+      "wezterm": "Terminal",
       "nvim": "NeoVim",
     },
     "separate-outputs": false,
