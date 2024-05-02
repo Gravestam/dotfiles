@@ -11,9 +11,9 @@
       "urgent": " ",
     },
     "persistent-workspaces": {
-		"eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-		"DP-2": [10,11,12,13,14,15]
-	},
+      "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "DP-2": [10, 11, 12, 13, 14, 15],
+    },
   },
 
   // Taskbar
@@ -36,11 +36,11 @@
   // Hyprland Window
   "hyprland/window": {
     "max-length": 25,
-    "rewrite": { 
-		"": "Do shit...",
-		"zsh": "Terminal",
-		"nvim": "NeoVim"
-	},
+    "rewrite": {
+      "": "Do shit...",
+      "zsh": "Terminal",
+      "nvim": "NeoVim",
+    },
     "separate-outputs": false,
   },
 
@@ -173,13 +173,9 @@
     "tooltip": true,
   },
 
-  // Custom
-  "custom/spacing": {
-    "format": " ",
-  },
-
   "custom/distro": {
     "format": "",
+    "tooltip": false,
   },
 
   "custom/notification": {

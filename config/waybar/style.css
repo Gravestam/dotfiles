@@ -34,264 +34,210 @@
 @define-color base0F #F7768E;
 
 * {
+	all: unset;
+
 	font-size: 15px;
 	font-family:
 		JetBrainsMono Nerd Font,
 		Font Awesome,
 		sans-serif;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 window#waybar {
-	background-color: @base00;
-	border-bottom: 1px solid rgba(26, 27, 38, 0);
-	border-radius: 0px;
+	background: @base01;
 
-	color: @base0F;
+	border-radius: 0px;
 }
 
 #workspaces {
-	background: @base01;
-	margin: 2px;
-	padding: 0px 1px;
-	border-radius: 15px;
-	border: 0px;
-	font-style: normal;
+	background: @base00;
 
-	color: @base00;
+	margin: 5px;
+	padding: 0px 5px;
+	border-radius: 5px;
+	border: none;
+}
+
+window.left #workspaces {
+	background: @base00;
+
+	padding: 5px 0px;
 }
 
 #workspaces button {
-	padding: 0px 5px;
+	color: @base01;
+	background: @base04;
+
 	margin: 4px 3px;
+	padding: 0px 5px;
 	border-radius: 5px;
 	border: none;
 
+	opacity: 0.45;
 	min-width: 25px;
-
-	color: @base00;
-
-	background: linear-gradient(45deg, @base09, @base0B, @base09);
-	background-size: 300% 300%;
-
-	animation: gradient_horizontal 15s ease infinite;
-
-	opacity: 0.5;
 
 	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 window.left #workspaces button {
-
-	min-height: 25px;
+	min-height: 30px;
 	min-width: unset;
 }
 
 #workspaces button.urgent {
-	color: @base0F;
+	background: @base0F;
 }
 
 #workspaces button:not(.empty) {
-	/* min-width: 20px; */
-
-	background: linear-gradient(45deg, @base09, @base0F, @base09);
+	background: @base0D;
 }
 
 #workspaces button.active {
-	padding: 0px 5px;
-	margin: 4px 3px;
-	border-radius: 5px;
-	border: 0px;
-
-	color: @base00;
-
-	background: linear-gradient(45deg, @base0D, @base07, @base0D);
-	background-size: 300% 300%;
-
-	animation: gradient_horizontal 15s ease infinite;
-
-	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-
 	opacity: 1;
 	min-width: 50px;
 }
 
 window.left #workspaces button.active {
-
-	min-height: 35px;
+	min-height: 45px;
 }
 
 #workspaces button:hover {
-	border-radius: 5px;
-
-	color: @base00;
-
-	background: linear-gradient(45deg, @base0E, @base0F, @base0D, @base09);
-	background-size: 300% 300%;
-
-	animation: gradient_horizontal 15s ease infinite;
-
-	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-	opacity: 0.8;
+	opacity: 1;
 }
 
 #window {
 	color: @base0F;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #memory {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #language {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #clock {
 	color: @base0F;
+	background: @base00;
 
-	background: @base01;
-
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #cpu {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #disk {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #battery {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #network {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #tray {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #pulseaudio {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #pulseaudio.microphone {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #bluetooth {
 	color: @base0D;
+	background: @base00;
 
-	background: @base01;
-	margin: 4px;
+	margin: 5px;
 	padding: 2px 10px;
 	border-radius: 5px;
 }
 
 #custom-distro {
-	color: @base0E;
+	color: @base09;
 
-	/* background: @base01; */
+	margin: 5px;
+	padding: 3px 16px 2px 10px;
 	border-radius: 5px;
-	margin: 4px;
-	padding: 2px 5px 2px 5px;
 }
 
 #custom-notification {
 	color: @base0E;
-	background: @base01;
+	background: @base00;
+
+	margin: 5px;
+	padding: 2px 10px 2px 5px;
 	border-radius: 5px;
-	margin: 4px;
-	padding: 2px 5px 2px 5px;
 }
 
 tooltip {
 	background: @base00;
 
-	border: 1px solid @base0E;
+	border: 1px solid @base03;
 	border-radius: 5px;
 }
 
 tooltip label {
 	color: @base07;
-}
-
-@keyframes gradient_horizontal {
-	0% {
-		background-position: 0% 50%;
-	}
-
-	50% {
-		background-position: 100% 50%;
-	}
-
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-@keyframes swiping {
-	0% {
-		background-position: 0% 200%;
-	}
-
-	100% {
-		background-position: 200% 200%;
-	}
 }
