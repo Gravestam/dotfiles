@@ -81,6 +81,12 @@ window#waybar {
 	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
+window.left #workspaces button {
+
+	min-height: 25px;
+	min-width: unset;
+}
+
 #workspaces button.urgent {
 	color: @base0F;
 }
@@ -108,6 +114,11 @@ window#waybar {
 
 	opacity: 1;
 	min-width: 50px;
+}
+
+window.left #workspaces button.active {
+
+	min-height: 35px;
 }
 
 #workspaces button:hover {

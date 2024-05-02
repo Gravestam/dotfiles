@@ -39,15 +39,17 @@
 		]
 	}, 
 	{
+		"name": "left",
 		"output": "DP-2",
-		"position": "top",
+		"position": "left",
 		"layer": "top",
 		"margin-top": 0,
 		"margin-bottom": 0,
 		"margin-left": 0,
 		"margin-right": 0,
 
-		"height": 20,
+		"height": 0,
+		"width": 20,
 		"spacing": 0,
 
 		"include": ["~/.config/waybar/modules.jsonc"],
