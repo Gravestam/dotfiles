@@ -182,6 +182,24 @@ window.left #workspaces button.active {
 	border-radius: 5px;
 }
 
+#tray menu {
+	color: @base09;
+	background: @base01;
+
+	border: 1px solid @base03;
+
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#tray menu menuitem {
+	padding: 0px 5px 0px 5px;
+}
+#tray menu menuitem:hover {
+	color: @base01;
+	background: @base09;
+}
+
 #pulseaudio {
 	color: @base0D;
 	background: @base01;
@@ -234,5 +252,6 @@ tooltip {
 }
 
 tooltip label {
-	color: @base07;
+	color: @base09;
+	padding: 5px;
 }
