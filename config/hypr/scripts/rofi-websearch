@@ -46,4 +46,4 @@ encoded_query=$(echo "$query" | sed 's/ /+/g')
 combined_url="${selected_url}${encoded_query}"
 
 # Launch the browser with the combined URL
-brave "$combined_url" &
+firefox "$combined_url" &
