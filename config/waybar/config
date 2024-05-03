@@ -17,9 +17,7 @@
 		"modules-left": [
 			"custom/distro",
 			"battery",
-			"disk",
-			"cpu",
-			"memory",
+			"group/performance",
 			"hyprland/window",
 		],
 
@@ -30,8 +28,7 @@
 		"modules-right": [
 			"tray",
 			"bluetooth",
-			"pulseaudio",
-			"pulseaudio#microphone",
+			"group/sound",
 			"hyprland/language",
 			"network",
 			"custom/notification",
