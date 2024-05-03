@@ -6,12 +6,12 @@
 	--padding: 3px;
 	--shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
-	--fg: #F8F8F2;
-	--bg: #272822;
-	--bg-dark: #464646;
-	--border: #cbcccc;
-	--main-fg: #e2e2e2;
-	--accent-fg: #E6DB74;
+	--fg: #A9B1D6;
+	--bg: #1A1B26;
+	--bg-dark: #16161E;
+	--border: #0DB9D7;
+	--main-fg: #A9B1D6;
+	--accent-fg: #BB9AF7;
   }
 
   /* -------- HINTS -------- */
