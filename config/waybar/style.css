@@ -136,7 +136,8 @@ window.left #workspaces button.active {
 }
 
 #custom-distro {
-	color: @base09;
+	color: @base0E;
+	background: unset;
 
 	padding-right: 16px;
 }
