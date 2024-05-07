@@ -2,9 +2,15 @@ map e scrollDown
 map u scrollUp
 map E scrollPageDown
 map U scrollPageUp
+
 map n scrollLeft
 map i scrollRight
+
 map N previousTab
 map I nextTab
+
 map l goBack
 map y goForward
+
+map <a-i> performFind
+map <a-n> performBackwardsFind
