@@ -23,13 +23,21 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
-			mapping = cmp.mapping.preset.insert({
-				["<C-down>"] = cmp.mapping.select_prev_item(),
-				["<C-up>"] = cmp.mapping.select_next_item(),
+			-- mapping = cmp.mapping.preset.insert({
+			-- 	["<C-down>"] = cmp.mapping.select_prev_item(),
+			-- 	["<C-up>"] = cmp.mapping.select_next_item(),
+			-- 	["<C-Space>"] = cmp.mapping.complete(),
+			-- 	["<C-e>"] = cmp.mapping.abort(),
+			-- 	["<C-y>"] = cmp.mapping.confirm({ select = false }),
+			-- }),
+			mapping = cmp.mapping({
+				["<C-up>"] = cmp.mapping.select_prev_item(),
+				["<C-down>"] = cmp.mapping.select_next_item(),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
 				["<C-y>"] = cmp.mapping.confirm({ select = false }),
 			}),
+
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "buffer", max_item_count = 5 },

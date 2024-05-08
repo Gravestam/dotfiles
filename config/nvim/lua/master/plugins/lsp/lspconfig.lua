@@ -13,6 +13,14 @@ return {
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		local keymap = vim.keymap
+		local diagnostic = vim.diagnostic
+
+		diagnostic.config({
+			virtual_text = false,
+			signs = true,
+			underline = true,
+			update_in_insert = false,
+		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -42,6 +50,9 @@ return {
 
 				opts.desc = "Show LSP docs for what is under cursor"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
+				opts.desc = "Show diagnostics for current line"
+				keymap.set("n", "<leader><leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 			end,
 		})
 
@@ -71,7 +82,7 @@ return {
 			vim.lsp.diagnostic.on_publish_diagnostics(_, result, ctx, config)
 		end
 
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰠠 ", Info = " " }
 
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
