@@ -41,5 +41,17 @@ return {
 				},
 			},
 		})
+		
+		-- SETUP TREESITTER FOR FOLDS
+		local options = vim.opt
+
+		options.foldcolumn = "0"
+		options.foldmethod = "expr"
+		options.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		options.foldtext = ""
+
+		options.foldnestmax = 3
+		options.foldlevel = 99
+		options.foldlevelstart = 99
 	end,
 }

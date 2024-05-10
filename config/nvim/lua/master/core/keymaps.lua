@@ -24,3 +24,6 @@ keymap.set("n", "<leader>tb", "<cmd>tabnew %<CR>", { desc = "Open [T]ab with the
 
 keymap.set("n", "<C-right>", "<cmd>tabnext<CR>", { desc = "Next tab" })
 keymap.set("n", "<C-left>", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
+
+-- intdentation
+keymap.set("n", "<leader><leader>i", "gg=G<C-o>", { desc = "Auto [I]ndent" })
