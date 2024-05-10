@@ -2,15 +2,26 @@ return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {
-		-- add any options here
 	},
 	dependencies = {
-		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 		"MunifTanjim/nui.nvim",
+	},
+	config = function()
 
-		-- OPTIONAL:
-		--   `nvim-notify` is only needed, if you want to use the notification view.
-		--   If not available, we use `mini` as the fallback
-		-- "rcarriga/nvim-notify",
-	}
+		local noice = require("noice")
+
+		noice.setup({
+			presets = {
+				bottom_search = false,
+				command_palette = false,
+			},
+			-- cmdline = { view = "cmdline" }, 
+			routes = { -- enables the @recording message
+				{
+					view = "notify",
+					filter = { event = "msg_showmode"}
+				}
+			}
+		})
+	end,
 }
