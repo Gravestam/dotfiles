@@ -72,6 +72,8 @@ alias startHyprland="dbus-run-session Hyprland";
 
 alias ai="${HOME}/projects/node-ai/main.js shell"
 
+alias yarn_force_dir="${HOME}/projects/glimworks/retailer_config/yarn_force"
+
 # FZF Ripgrep && open with editor
 fzf-ripgrep-widget(){
 	setopt localoptions pipefail no_aliases 2> /dev/null
