@@ -1,212 +1,212 @@
 {
-  // Workspaces
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    "active-only": true,
-    "all-outputs": false,
-    "format": "{name}",
-    "format-icons": {
-      "default": " ",
-      "active": " ",
-      "urgent": " ",
-    },
-    "persistent-workspaces": {
-      "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      "DP-2": [10, 11, 12, 13, 14, 15],
-    },
-  },
+	// Workspaces
+	"hyprland/workspaces": {
+		"on-click": "activate",
+		"active-only": true,
+		"all-outputs": false,
+		"format": "{name}",
+		"format-icons": {
+			"default": " ",
+			"active": " ",
+			"urgent": " ",
+		},
+		"persistent-workspaces": {
+			"eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+			"DP-2": [10, 11, 12, 13, 14, 15],
+		},
+	},
 
-  // Taskbar
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 18,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition",
-    },
-    "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal",
-    },
-  },
+	// Taskbar
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 18,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [],
+		"app_ids-mapping": {
+			"firefoxdeveloperedition": "firefox-developer-edition",
+		},
+		"rewrite": {
+			"Firefox Web Browser": "Firefox",
+			"Foot Server": "Terminal",
+		},
+	},
 
-  // Hyprland Window
-  "hyprland/window": {
-    "max-length": 25,
-    "rewrite": {
-      "": "Do shit...",
-      "zsh": "Terminal",
-      "wezterm": "Terminal",
-      "nvim": "NeoVim",
-    },
-    "separate-outputs": false,
-  },
+	// Hyprland Window
+	"hyprland/window": {
+		"max-length": 25,
+		"rewrite": {
+			"": "Do shit...",
+			"zsh": "Terminal",
+			"wezterm": "Terminal",
+			"nvim": "NeoVim",
+		},
+		"separate-outputs": false,
+	},
 
-  // System tray
-  "tray": {
-    // "icon-size": 21,
-    "spacing": 12,
-  },
+	// System tray
+	"tray": {
+		// "icon-size": 21,
+		"spacing": 12,
+	},
 
-  // Clock
-  "clock": {
-    "format": "󰥔 {:%H:%M}",
-    "tooltip": true,
-    "tooltip-format": "{:%A, %d %B %Y }",
-  },
+	// Clock
+	"clock": {
+		"format": "󰥔 {:%H:%M}",
+		"tooltip": true,
+		"tooltip-format": "{:%A, %d %B %Y }",
+	},
 
-  // CPU
-  "cpu": {
-    "interval": 5,
-    "format": "{usage:2}%",
-    "tooltip": true,
-  },
+	// CPU
+	"cpu": {
+		"interval": 5,
+		"format": "{usage:2}%",
+		"tooltip": true,
+	},
 
-  // Memory
-  "memory": {
-    "interval": 5,
-    "format": "  {}%",
-    "tooltip": true,
-    // "format": "/ M {}% ",
-    // "on-click": "alacritty -e btop"
-  },
+	// Memory
+	"memory": {
+		"interval": 5,
+		"format": "  {}%",
+		"tooltip": true,
+		// "format": "/ M {}% ",
+		// "on-click": "alacritty -e btop"
+	},
 
-  // Harddisc space used
-  "disk": {
-    "interval": 30,
-    "format": "󰋊 {percentage_used}%",
-    "tooltip": true,
-    "path": "/",
-  },
+	// Harddisc space used
+	"disk": {
+		"interval": 30,
+		"format": "󰋊 {percentage_used}%",
+		"tooltip": true,
+		"path": "/",
+	},
 
-  "hyprland/language": {
-    "format": " {}",
-    "format-en": "ANSI",
-    "format-sv": "ISO",
-  },
+	"hyprland/language": {
+		"format": " {}",
+		"format-en": "ANSI",
+		"format-sv": "ISO",
+	},
 
-  // Network
-  "network": {
-    "format": "󰩠 {ipaddr}",
-    "format-wifi": "󰘊 {signalStrength}%",
-    "format-ethernet": "<big>󰩠</big> {ipaddr}",
-    "format-disconnected": "<big>󰅛</big> DC",
-    "tooltip-format": "{ifname} via {gwaddri}",
-    "tooltip-format-wifi": "{ifname} @ {essid}\n<big>󰩠</big> {ipaddr}\n<big>󰣾</big> {signalStrength}%\n<big>󰀂</big> {frequency}MHz\n<big>󰛶</big> {bandwidthUpBits}\n<big>󰛴</big> {bandwidthDownBits}",
-    "tooltip-format-ethernet": "{ifname}\n<big>󰩠</big> {ipaddr}\n<big>󰛶</big> {bandwidthUpBits}\n<big>󰛴</big> {bandwidthDownBits}",
-    "tooltip-format-disconnected": "󰌙 Disconnected",
-    "max-length": 50,
-    "on-click": "nm-connection-editor",
-  },
+	// Network
+	"network": {
+		"format": "󰩠 {ipaddr}",
+		"format-wifi": "󰘊 {signalStrength}%",
+		"format-ethernet": "<big>󰩠</big> {ipaddr}",
+		"format-disconnected": "<big>󰅛</big> DC",
+		"tooltip-format": "{ifname} via {gwaddri}",
+		"tooltip-format-wifi": "{ifname} @ {essid}\n<big>󰩠</big> {ipaddr}\n<big>󰣾</big> {signalStrength}%\n<big>󰀂</big> {frequency}MHz\n<big>󰛶</big> {bandwidthUpBits}\n<big>󰛴</big> {bandwidthDownBits}",
+		"tooltip-format-ethernet": "{ifname}\n<big>󰩠</big> {ipaddr}\n<big>󰛶</big> {bandwidthUpBits}\n<big>󰛴</big> {bandwidthDownBits}",
+		"tooltip-format-disconnected": "󰌙 Disconnected",
+		"max-length": 50,
+		"on-click": "nm-connection-editor",
+	},
 
-  // Battery
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15,
-    },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}",
-    "format-icons": ["", "", "", "", ""],
-  },
+	// Battery
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15,
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "󰂄 {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{icon} {time}",
+		"format-icons": ["", "", "", "", ""],
+	},
 
-  // Pulseaudio
-  "pulseaudio": {
-    "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", " ", " "],
-    },
-    "on-click": "sleep 0.1 && pavucontrol",
-  },
+	// Pulseaudio
+	"pulseaudio": {
+		"scroll-step": 1, // %, can be a float
+		"format": "{icon}  {volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", " ", " "],
+		},
+		"on-click": "sleep 0.1 && pavucontrol",
+	},
 
-  "pulseaudio": {
-    "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", " ", " "],
-    },
-    "on-click": "sleep 0.1 && pavucontrol",
-  },
+	"pulseaudio": {
+		"scroll-step": 1, // %, can be a float
+		"format": "{icon}  {volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", " ", " "],
+		},
+		"on-click": "sleep 0.1 && pavucontrol",
+	},
 
-  "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": " Muted",
-    "on-click-right": "sleep 0.1 && pavucontrol",
-    "scroll-step": 1,
-  },
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": " Muted",
+		"on-click-right": "sleep 0.1 && pavucontrol",
+		"scroll-step": 1,
+	},
 
-  // Bluetooth
-  "bluetooth": {
-    "format": "󰂰",
-    "format-disabled": "󰂲",
-    "format-off": "󰂲",
-    "format-no-controller": "󰂲",
-    "interval": 30,
-    "tooltip": true,
-  },
+	// Bluetooth
+	"bluetooth": {
+		"format": "󰂰",
+		"format-disabled": "󰂲",
+		"format-off": "󰂲",
+		"format-no-controller": "󰂲",
+		"interval": 30,
+		"tooltip": true,
+	},
 
-  "custom/distro": {
-    "format": "",
-    "tooltip": false,
-  },
+	"custom/distro": {
+		"format": "",
+		"tooltip": false,
+	},
 
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{} {icon}",
-    "format-icons": {
-      "notification": "",
-      "none": "",
-      "dnd-notification": "",
-      "dnd-none": "",
-      "inhibited-notification": "",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "",
-      "dnd-inhibited-none": "",
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true,
-  },
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{} {icon}",
+		"format-icons": {
+			"notification": "",
+			"none": "",
+			"dnd-notification": "",
+			"dnd-none": "",
+			"inhibited-notification": "",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "",
+			"dnd-inhibited-none": "",
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true,
+	},
 
-  "group/sound": {
-    "orientation": "horizontal",
-    "modules": ["pulseaudio", "pulseaudio#microphone"],
-  },
+	"group/sound": {
+		"orientation": "horizontal",
+		"modules": ["pulseaudio", "pulseaudio#microphone"],
+	},
 
-  "group/performance": {
-    "orientation": "horizontal",
-    "modules": ["disk", "cpu", "memory"],
-  },
+	"group/performance": {
+		"orientation": "horizontal",
+		"modules": ["disk", "cpu", "memory"],
+	},
 }
